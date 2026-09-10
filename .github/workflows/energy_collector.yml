@@ -3,7 +3,7 @@ name: Energy HTTP collector
 on:
   workflow_dispatch:
   schedule:
-    - cron: '7,22,37,52 * * * *'
+    - cron: '*/15 * * * *'
 
 permissions:
   contents: write
