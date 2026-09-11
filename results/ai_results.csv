@@ -1,0 +1,2 @@
+processed_at,device_id,date,status,cluster,anomaly_score,anomaly_threshold,actual_kwh,previous_prediction_kwh,prediction_error_kwh,prediction_kwh,base_prediction_kwh,correction_kwh,feedback_samples,hourly_error_mae
+2026-09-12T00:00:51.866287+05:30,153,2026-09-11,normal,2,5.780095,5.8129962635,,,,1460.502167,1460.502167,0.0,0,
