@@ -76,20 +76,45 @@ def anomaly_result(values: list[float], now: datetime, processed_date: str) -> d
     }
 
 
+def explain_profile(values: list[float], profiles: dict[str, dict], processed_date: str) -> str:
+    target_weekday = date.fromisoformat(processed_date).weekday()
+    peers = []
+    for day, profile in profiles.items():
+        if day >= processed_date or date.fromisoformat(day).weekday() != target_weekday:
+            continue
+        if all(str(hour) in profile for hour in range(24)):
+            peers.append([float(profile[str(hour)]) for hour in range(24)])
+    if len(peers) < 2:
+        return "Not enough comparable historical days for a detailed explanation."
+    averages = [sum(row[hour] for row in peers) / len(peers) for hour in range(24)]
+    deviations = [(values[hour] - averages[hour]) / max(averages[hour], 1.0) for hour in range(24)]
+    peak_hour = max(range(24), key=lambda hour: abs(deviations[hour]))
+    direction = "higher" if deviations[peak_hour] >= 0 else "lower"
+    percentage = abs(deviations[peak_hour]) * 100
+    kind = "weekday" if target_weekday < 5 else "weekend"
+    return f"{peak_hour:02d}:00 is {percentage:.1f}% {direction} than comparable {kind} profiles."
+
+
 def adaptive_daily_forecast(
     daily_totals: dict[str, float],
     forecast_history: dict[str, dict],
     target_date: str,
     source_date: str,
     now: datetime,
-) -> tuple[float, float, float, int] | None:
+) -> tuple[float, float, float, int, float, float, str] | None:
     ordered = sorted(
         ((day, total) for day, total in daily_totals.items() if day <= source_date),
         key=lambda item: item[0],
     )
     if len(ordered) < 3:
         return None
-    recent = [total for _, total in ordered[-3:]]
+    target_weekday = date.fromisoformat(target_date).weekday()
+    matching = [(day, total) for day, total in ordered if date.fromisoformat(day).weekday() == target_weekday]
+    selected = matching[-7:] if len(matching) >= 3 else ordered[-7:]
+    mode = "weekday profile" if len(matching) >= 3 else "recent profile"
+    weights = [0.72 ** (len(selected) - index - 1) for index in range(len(selected))]
+    weight_total = sum(weights)
+    recent = [total for _, total in selected[-3:]]
     features = [recent[-1], recent[-2], recent[-3], sum(recent) / 3]
     scaled_features = [
         (value - mean) / scale if scale else 0
@@ -112,14 +137,21 @@ def adaptive_daily_forecast(
     correction = sum(recent_errors) / len(recent_errors) if recent_errors else 0.0
     correction = max(-0.5 * abs(base_prediction), min(0.5 * abs(base_prediction), correction))
     prediction = max(0.0, base_prediction + correction)
+    weighted_mean = sum(weight * total for weight, (_, total) in zip(weights, selected)) / weight_total
+    spread = math.sqrt(sum(weight * (total - weighted_mean) ** 2 for weight, (_, total) in zip(weights, selected)) / weight_total)
+    lower = max(0.0, prediction - 1.28 * spread)
+    upper = prediction + 1.28 * spread
     forecast_history[target_date] = {
         "generated_at": now.isoformat(),
         "source_date": source_date,
         "base_prediction_kwh": round(base_prediction, 6),
         "correction_kwh": round(correction, 6),
         "predicted_kwh": round(prediction, 6),
+        "lower_kwh": round(lower, 6),
+        "upper_kwh": round(upper, 6),
+        "profile_mode": mode,
     }
-    return round(prediction, 6), round(base_prediction, 6), round(correction, 6), len(recent_errors)
+    return round(prediction, 6), round(base_prediction, 6), round(correction, 6), len(recent_errors), round(lower, 6), round(upper, 6), mode
 
 
 def adaptive_hourly_forecast(
@@ -128,7 +160,7 @@ def adaptive_hourly_forecast(
     target_date: str,
     source_date: str,
     now: datetime,
-) -> tuple[list[float], list[float], list[float], int] | None:
+) -> tuple[list[float], list[float], list[float], int, list[float], list[float], str] | None:
     completed = sorted(
         (day, profile)
         for day, profile in profiles.items()
@@ -136,11 +168,14 @@ def adaptive_hourly_forecast(
     )
     if not completed:
         return None
-    recent = completed[-7:]
-    base = [
-        sum(float(profile[str(hour)]) for _, profile in recent) / len(recent)
-        for hour in range(24)
-    ]
+    target_weekday = date.fromisoformat(target_date).weekday()
+    matching = [(day, profile) for day, profile in completed if date.fromisoformat(day).weekday() == target_weekday]
+    recent = matching[-7:] if len(matching) >= 3 else completed[-7:]
+    mode = "weekday profile" if len(matching) >= 3 else "recent profile"
+    weights = [0.72 ** (len(recent) - index - 1) for index in range(len(recent))]
+    weight_total = sum(weights)
+    base = [sum(weight * float(profile[str(hour)]) for weight, (_, profile) in zip(weights, recent)) / weight_total for hour in range(24)]
+    spread = [math.sqrt(sum(weight * (float(profile[str(hour)]) - base[hour]) ** 2 for weight, (_, profile) in zip(weights, recent)) / weight_total) for hour in range(24)]
     corrections = [0.0] * 24
     feedback_samples = 0
     for entry in hourly_history.values():
@@ -154,14 +189,19 @@ def adaptive_hourly_forecast(
     if feedback_samples:
         corrections = [value / feedback_samples for value in corrections]
     predicted = [max(0.0, base[hour] + corrections[hour]) for hour in range(24)]
+    lower = [max(0.0, predicted[hour] - 1.28 * spread[hour]) for hour in range(24)]
+    upper = [predicted[hour] + 1.28 * spread[hour] for hour in range(24)]
     hourly_history[target_date] = {
         "generated_at": now.isoformat(),
         "source_date": source_date,
         "base_prediction_kwh": [round(value, 6) for value in base],
         "correction_kwh": [round(value, 6) for value in corrections],
         "predicted_kwh": [round(value, 6) for value in predicted],
+        "lower_kwh": [round(value, 6) for value in lower],
+        "upper_kwh": [round(value, 6) for value in upper],
+        "profile_mode": mode,
     }
-    return predicted, base, corrections, feedback_samples
+    return predicted, base, corrections, feedback_samples, lower, upper, mode
 
 
 def write_hourly_result(target_date: str, now: datetime, result: dict) -> None:
@@ -213,6 +253,7 @@ result = None
 if len(completed_profile) == 24 and previous_date not in processed:
     values = [float(completed_profile[str(hour)]) for hour in range(24)]
     result = anomaly_result(values, now, previous_date)
+    result["anomaly_explanation"] = explain_profile(values, profiles, previous_date)
     daily_totals = fetch_daily_totals(now.date())
 
     prior_daily = forecast_history.get(previous_date)
@@ -234,26 +275,29 @@ if len(completed_profile) == 24 and previous_date not in processed:
 
     daily_forecast = adaptive_daily_forecast(daily_totals, forecast_history, today, previous_date, now)
     if daily_forecast:
-        prediction, base_prediction, correction, feedback_samples = daily_forecast
-        result.update({"prediction_kwh": prediction, "base_prediction_kwh": base_prediction, "correction_kwh": correction, "feedback_samples": feedback_samples})
+        prediction, base_prediction, correction, feedback_samples, lower, upper, mode = daily_forecast
+        result.update({"prediction_kwh": prediction, "base_prediction_kwh": base_prediction, "correction_kwh": correction, "feedback_samples": feedback_samples, "prediction_lower_kwh": lower, "prediction_upper_kwh": upper, "profile_mode": mode})
     else:
         result.update({"prediction_kwh": "", "base_prediction_kwh": "", "correction_kwh": "", "feedback_samples": 0})
 
     hourly_forecast = adaptive_hourly_forecast(profiles, hourly_history, today, previous_date, now)
     if hourly_forecast:
-        predicted, base, corrections, feedback_samples = hourly_forecast
+        predicted, base, corrections, feedback_samples, lower, upper, mode = hourly_forecast
         result.update({
             "hourly_forecast": {str(hour): round(predicted[hour], 6) for hour in range(24)},
             "hourly_base_prediction": {str(hour): round(base[hour], 6) for hour in range(24)},
             "hourly_correction": {str(hour): round(corrections[hour], 6) for hour in range(24)},
             "hourly_feedback_samples": feedback_samples,
+            "hourly_lower_kwh": {str(hour): round(lower[hour], 6) for hour in range(24)},
+            "hourly_upper_kwh": {str(hour): round(upper[hour], 6) for hour in range(24)},
+            "hourly_profile_mode": mode,
         })
         write_hourly_result(today, now, result)
     else:
         result.update({"hourly_forecast": {}, "hourly_feedback_samples": 0})
 
     processed[previous_date] = result
-    fields = ["processed_at", "device_id", "date", "status", "cluster", "anomaly_score", "anomaly_threshold", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae"]
+    fields = ["processed_at", "device_id", "date", "status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae"]
     exists = RESULTS.exists() and RESULTS.stat().st_size > 0
     with RESULTS.open("a", newline="", encoding="utf-8") as output:
         writer = csv.DictWriter(output, fieldnames=fields)
