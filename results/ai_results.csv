@@ -1,2 +1,3 @@
-processed_at,device_id,date,status,cluster,anomaly_score,anomaly_threshold,actual_kwh,previous_prediction_kwh,prediction_error_kwh,prediction_kwh,base_prediction_kwh,correction_kwh,feedback_samples,hourly_error_mae
-2026-09-12T00:00:51.866287+05:30,153,2026-09-11,normal,2,5.780095,5.8129962635,,,,1460.502167,1460.502167,0.0,0,
+processed_at,device_id,date,status,cluster,anomaly_score,anomaly_threshold,anomaly_explanation,actual_kwh,previous_prediction_kwh,prediction_error_kwh,prediction_kwh,prediction_lower_kwh,prediction_upper_kwh,profile_mode,base_prediction_kwh,correction_kwh,feedback_samples,hourly_error_mae
+2026-09-12T00:00:51.866287+05:30,153,2026-09-11,normal,2,5.780095,5.8129962635,,,,,1460.502167,,,,1460.502167,0.0,0,
+2026-09-13T00:01:14.050844+05:30,153,2026-09-12,normal,2,5.338963,5.8129962635,Not enough comparable historical days for a detailed explanation.,1646.93,1460.502167,186.427833,1812.524664,1696.20989,1928.839438,weekday profile,1626.096831,186.427833,1,9.8525
