@@ -299,6 +299,16 @@ if len(completed_profile) == 24 and previous_date not in processed:
     processed[previous_date] = result
     fields = ["processed_at", "device_id", "date", "status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae"]
     exists = RESULTS.exists() and RESULTS.stat().st_size > 0
+    if exists:
+        with RESULTS.open("r", newline="", encoding="utf-8") as existing_file:
+            existing_header = existing_file.readline().strip().split(",")
+        if existing_header != fields:
+            with RESULTS.open("r", newline="", encoding="utf-8") as existing_file:
+                old_rows = list(csv.DictReader(existing_file))
+            with RESULTS.open("w", newline="", encoding="utf-8") as migrated_file:
+                migrated_writer = csv.DictWriter(migrated_file, fieldnames=fields)
+                migrated_writer.writeheader()
+                migrated_writer.writerows(old_rows)
     with RESULTS.open("a", newline="", encoding="utf-8") as output:
         writer = csv.DictWriter(output, fieldnames=fields)
         if not exists:
