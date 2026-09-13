@@ -100,7 +100,8 @@
       "20": 69.88,
       "21": 74.0,
       "22": 52.68
-    }
+    },
+    "2026-09-14": {}
   },
   "processed": {
     "2026-09-11": {
@@ -349,7 +350,7 @@
       "hourly_profile_mode": "recent profile"
     }
   },
-  "last_run": "2026-09-13T23:46:20.831847+05:30",
+  "last_run": "2026-09-14T00:00:57.282656+05:30",
   "forecast_history": {
     "2026-09-12": {
       "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -647,20 +648,20 @@
   "model_version": "device153-adaptive-v2",
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-13T23:46:20.831847+05:30",
-    "last_run": "2026-09-13T23:46:20.831847+05:30",
+    "last_successful_collection": "2026-09-14T00:00:57.282656+05:30",
+    "last_run": "2026-09-14T00:00:57.282656+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 945.15,
+      "hourly": 890.48,
       "daily": null
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 23,
-      "expected_completed_hours": 23,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
       "completeness": 1.0,
-      "api_latency_ms": 945.15,
+      "api_latency_ms": 890.48,
       "status": "good"
     },
     "error": null,
