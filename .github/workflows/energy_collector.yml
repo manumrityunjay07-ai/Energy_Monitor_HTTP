@@ -35,6 +35,24 @@ jobs:
       - name: Collect and infer
         run: python collect_once.py
 
+      - name: Validate published outputs
+        run: python validate_outputs.py
+
+      - name: Write run summary
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          health = json.load(open('results/health.json', encoding='utf-8'))
+          quality = health.get('data_quality', {})
+          print('## Energy collector summary')
+          print(f"- Collector: **{health.get('collector_status')}**")
+          print(f"- Data quality: **{quality.get('score', 'n/a')}%**")
+          print(f"- Missing hours: **{health.get('missing_hours', [])}**")
+          print(f"- Learning status: **{health.get('learning_status')}**")
+          print(f"- Learning samples: **{health.get('learning_samples')}**")
+          print(f"- Model guard: `{health.get('rollback_guard')}`")
+          PY
+
       - name: Commit persisted state and results
         run: |
           git config user.name 'github-actions[bot]'
