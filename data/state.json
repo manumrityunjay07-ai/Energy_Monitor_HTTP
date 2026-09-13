@@ -355,7 +355,7 @@
       "hourly_profile_mode": "recent profile"
     }
   },
-  "last_run": "2026-09-14T04:31:24.566936+05:30",
+  "last_run": "2026-09-14T04:46:00.685474+05:30",
   "forecast_history": {
     "2026-09-12": {
       "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -653,11 +653,11 @@
   "model_version": "device153-adaptive-v2",
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-14T04:31:24.566936+05:30",
-    "last_run": "2026-09-14T04:31:24.566936+05:30",
+    "last_successful_collection": "2026-09-14T04:46:00.685474+05:30",
+    "last_run": "2026-09-14T04:46:00.685474+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 917.31,
+      "hourly": 974.51,
       "daily": null
     },
     "missing_hours": [],
@@ -666,7 +666,7 @@
       "completed_hours": 4,
       "expected_completed_hours": 4,
       "completeness": 1.0,
-      "api_latency_ms": 917.31,
+      "api_latency_ms": 974.51,
       "status": "good"
     },
     "error": null,
