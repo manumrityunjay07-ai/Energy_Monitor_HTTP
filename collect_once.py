@@ -20,6 +20,7 @@ STATE = Path("data/state.json")
 RESULTS = Path("results/ai_results.csv")
 HOURLY_RESULTS = Path("results/hourly_predictions.csv")
 HEALTH = Path("results/health.json")
+HEALTH_HISTORY = Path("results/health_history.json")
 DASHBOARD_DATA = Path("results/dashboard_data.json")
 PARAMS = json.loads(Path("esp32_parameters.json").read_text(encoding="utf-8"))
 MODEL_VERSION = "device153-adaptive-v2"
@@ -131,7 +132,17 @@ def explain_profile(values: list[float], profiles: dict[str, dict], processed_da
     return f"{peak_hour:02d}:00 is {abs(deviations[peak_hour]) * 100:.1f}% {direction} than comparable {'weekday' if target_weekday < 5 else 'weekend'} profiles."
 
 
-def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: dict[str, dict], target_date: str, source_date: str, now: datetime) -> tuple | None:
+def evaluate_model_guard(forecast_history: dict[str, dict]) -> dict:
+    evaluated = [item for item in forecast_history.values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, "") and item.get("base_prediction_kwh") not in (None, "") and item.get("predicted_kwh") not in (None, "")]
+    if len(evaluated) < 5:
+        return {"adaptation_enabled": True, "reason": "insufficient history for rollback decision", "evaluated_cycles": len(evaluated)}
+    base_mae = mean(abs(float(item["actual_kwh"]) - float(item["base_prediction_kwh"])) for item in evaluated[-14:])
+    adapted_mae = mean(abs(float(item["actual_kwh"]) - float(item["predicted_kwh"])) for item in evaluated[-14:])
+    enabled = adapted_mae <= base_mae * 1.10
+    return {"adaptation_enabled": enabled, "reason": "adapted model retained" if enabled else "rollback to base model: adapted MAE exceeded baseline by more than 10%", "evaluated_cycles": len(evaluated), "base_mae": round(base_mae, 6), "adapted_mae": round(adapted_mae, 6)}
+
+
+def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: dict[str, dict], target_date: str, source_date: str, now: datetime, adaptation_enabled: bool = True) -> tuple | None:
     ordered = sorted(((day, total) for day, total in daily_totals.items() if day <= source_date), key=lambda item: item[0])
     if len(ordered) < 3:
         return None
@@ -149,17 +160,17 @@ def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: di
     recent_errors = errors[-14:]
     mean_error = mean(recent_errors) if recent_errors else 0.0
     robust_error = median(recent_errors) if recent_errors else 0.0
-    correction = 0.6 * mean_error + 0.4 * robust_error
+    correction = 0.6 * mean_error + 0.4 * robust_error if adaptation_enabled else 0.0
     correction = max(-0.25 * abs(base_prediction), min(0.25 * abs(base_prediction), correction))
     prediction = max(0.0, base_prediction + correction)
     weighted_mean = sum(weight * total for weight, (_, total) in zip(weights, selected)) / weight_total
     spread = math.sqrt(sum(weight * (total - weighted_mean) ** 2 for weight, (_, total) in zip(weights, selected)) / weight_total)
     lower, upper = max(0.0, prediction - 1.28 * spread), prediction + 1.28 * spread
-    forecast_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": round(base_prediction, 6), "correction_kwh": round(correction, 6), "predicted_kwh": round(prediction, 6), "lower_kwh": round(lower, 6), "upper_kwh": round(upper, 6), "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": "robust median/mean blend, 25% cap"}
+    forecast_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": round(base_prediction, 6), "correction_kwh": round(correction, 6), "predicted_kwh": round(prediction, 6), "lower_kwh": round(lower, 6), "upper_kwh": round(upper, 6), "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": "robust median/mean blend, 25% cap" if adaptation_enabled else "rollback guard: base model"}
     return round(prediction, 6), round(base_prediction, 6), round(correction, 6), len(recent_errors), round(lower, 6), round(upper, 6), mode
 
 
-def adaptive_hourly_forecast(profiles: dict[str, dict], hourly_history: dict[str, dict], target_date: str, source_date: str, now: datetime) -> tuple | None:
+def adaptive_hourly_forecast(profiles: dict[str, dict], hourly_history: dict[str, dict], target_date: str, source_date: str, now: datetime, adaptation_enabled: bool = True) -> tuple | None:
     completed = sorted((day, profile) for day, profile in profiles.items() if day <= source_date and all(str(hour) in profile for hour in range(24)))
     if not completed:
         return None
@@ -180,11 +191,11 @@ def adaptive_hourly_forecast(profiles: dict[str, dict], hourly_history: dict[str
             samples += 1
     if samples:
         corrections = [value / samples for value in corrections]
-    corrections = [max(-0.25 * abs(base[hour]), min(0.25 * abs(base[hour]), corrections[hour])) for hour in range(24)]
+    corrections = [max(-0.25 * abs(base[hour]), min(0.25 * abs(base[hour]), corrections[hour])) for hour in range(24)] if adaptation_enabled else [0.0] * 24
     predicted = [max(0.0, base[hour] + corrections[hour]) for hour in range(24)]
     lower = [max(0.0, predicted[hour] - 1.28 * spread[hour]) for hour in range(24)]
     upper = [predicted[hour] + 1.28 * spread[hour] for hour in range(24)]
-    hourly_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": [round(v, 6) for v in base], "correction_kwh": [round(v, 6) for v in corrections], "predicted_kwh": [round(v, 6) for v in predicted], "lower_kwh": [round(v, 6) for v in lower], "upper_kwh": [round(v, 6) for v in upper], "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": "hourly correction capped at 25% of profile"}
+    hourly_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": [round(v, 6) for v in base], "correction_kwh": [round(v, 6) for v in corrections], "predicted_kwh": [round(v, 6) for v in predicted], "lower_kwh": [round(v, 6) for v in lower], "upper_kwh": [round(v, 6) for v in upper], "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": "hourly correction capped at 25% of profile" if adaptation_enabled else "rollback guard: base model"}
     return predicted, base, corrections, samples, lower, upper, mode
 
 
@@ -227,8 +238,19 @@ def data_quality(profile: dict[str, float], now: datetime, hourly_latency: float
 
 def write_health(state: dict, now: datetime, status: str, hourly_latency: float | None, daily_latency: float | None, missing_hours: list[int], quality: dict | None = None, error: str | None = None) -> dict:
     samples = sum(1 for item in state.get("processed", {}).values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, ""))
-    health = {"collector_status": status, "last_successful_collection": now.isoformat() if status == "healthy" else state.get("health", {}).get("last_successful_collection"), "last_run": now.isoformat(), "device_id": DEVICE_ID, "api_latency_ms": {"hourly": hourly_latency, "daily": daily_latency}, "missing_hours": missing_hours, "data_quality": quality or state.get("health", {}).get("data_quality", {}), "error": error, "model_version": MODEL_VERSION, "learning_samples": samples, "learning_status": "calibrating" if samples < 14 else "adaptive", "rollback_guard": "enabled"}
+    guard = state.get("model_guard", {"adaptation_enabled": True, "reason": "insufficient history for rollback decision"})
+    health = {"collector_status": status, "last_successful_collection": now.isoformat() if status == "healthy" else state.get("health", {}).get("last_successful_collection"), "last_run": now.isoformat(), "device_id": DEVICE_ID, "api_latency_ms": {"hourly": hourly_latency, "daily": daily_latency}, "missing_hours": missing_hours, "data_quality": quality or state.get("health", {}).get("data_quality", {}), "error": error, "model_version": MODEL_VERSION, "learning_samples": samples, "learning_status": "calibrating" if samples < 14 else "adaptive", "rollback_guard": guard}
     HEALTH.write_text(json.dumps(health, indent=2), encoding="utf-8")
+    history = []
+    if HEALTH_HISTORY.exists():
+        try:
+            history = json.loads(HEALTH_HISTORY.read_text(encoding="utf-8"))
+            if not isinstance(history, list):
+                history = []
+        except json.JSONDecodeError:
+            history = []
+    history.append(health)
+    HEALTH_HISTORY.write_text(json.dumps(history[-500:], indent=2), encoding="utf-8")
     state["health"] = health
     return health
 
@@ -239,7 +261,13 @@ def publish_dashboard_data(state: dict, health: dict) -> None:
             return []
         with path.open(encoding="utf-8", newline="") as handle:
             return list(csv.DictReader(handle))
-    DASHBOARD_DATA.write_text(json.dumps({"generated_at": now_ist().isoformat(), "device_id": DEVICE_ID, "ai_results": read_csv(RESULTS), "hourly_predictions": read_csv(HOURLY_RESULTS), "state": state, "health": health}, indent=2), encoding="utf-8")
+    health_history = []
+    if HEALTH_HISTORY.exists():
+        try:
+            health_history = json.loads(HEALTH_HISTORY.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            health_history = []
+    DASHBOARD_DATA.write_text(json.dumps({"generated_at": now_ist().isoformat(), "device_id": DEVICE_ID, "ai_results": read_csv(RESULTS), "hourly_predictions": read_csv(HOURLY_RESULTS), "state": state, "health": health, "health_history": health_history[-500:]}, indent=2), encoding="utf-8")
 
 
 def main() -> None:
@@ -249,6 +277,7 @@ def main() -> None:
     processed = state.setdefault("processed", {})
     forecast_history = state.setdefault("forecast_history", {})
     hourly_history = state.setdefault("hourly_forecast_history", {})
+    state["model_guard"] = evaluate_model_guard(forecast_history)
     today = now.date().isoformat()
     ai_fields = ["processed_at", "device_id", "date", "status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
     hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
@@ -274,6 +303,16 @@ def main() -> None:
             daily_totals, daily_latency = fetch_daily_totals(now.date())
             prior_daily = forecast_history.get(previous_date)
             actual_total = daily_totals.get(previous_date)
+            if actual_total is not None:
+                hourly_total = sum(values)
+                difference = abs(hourly_total - actual_total)
+                quality["daily_hourly_consistency"] = {
+                    "hourly_total_kwh": round(hourly_total, 6),
+                    "daily_total_kwh": round(actual_total, 6),
+                    "difference_kwh": round(difference, 6),
+                    "relative_difference": round(difference / max(abs(actual_total), 1.0), 6),
+                    "status": "good" if difference / max(abs(actual_total), 1.0) <= 0.05 else "review",
+                }
             if actual_total is not None and isinstance(prior_daily, dict):
                 predicted_total = float(prior_daily["predicted_kwh"])
                 error = actual_total - predicted_total
@@ -285,11 +324,13 @@ def main() -> None:
                 errors = [actual_hours[h] - float(prior_hourly["predicted_kwh"][h]) for h in range(24)]
                 prior_hourly.update({"actual_kwh": actual_hours, "error_kwh": [round(v, 6) for v in errors], "evaluated_at": now.isoformat()})
                 result["hourly_error_mae"] = round(sum(abs(v) for v in errors) / 24, 6)
-            daily_forecast = adaptive_daily_forecast(daily_totals, forecast_history, today, previous_date, now)
+            state["model_guard"] = evaluate_model_guard(forecast_history)
+            adaptation_enabled = state["model_guard"].get("adaptation_enabled", True)
+            daily_forecast = adaptive_daily_forecast(daily_totals, forecast_history, today, previous_date, now, adaptation_enabled)
             if daily_forecast:
                 prediction, base_prediction, correction, samples, lower, upper, mode = daily_forecast
                 result.update({"prediction_kwh": prediction, "base_prediction_kwh": base_prediction, "correction_kwh": correction, "feedback_samples": samples, "prediction_lower_kwh": lower, "prediction_upper_kwh": upper, "profile_mode": mode})
-            hourly_forecast = adaptive_hourly_forecast(profiles, hourly_history, today, previous_date, now)
+            hourly_forecast = adaptive_hourly_forecast(profiles, hourly_history, today, previous_date, now, adaptation_enabled)
             if hourly_forecast:
                 predicted, base, corrections, samples, lower, upper, mode = hourly_forecast
                 result.update({"hourly_forecast": {str(h): round(predicted[h], 6) for h in range(24)}, "hourly_actual": {}, "hourly_error": {}, "hourly_feedback_samples": samples, "hourly_lower_kwh": {str(h): round(lower[h], 6) for h in range(24)}, "hourly_upper_kwh": {str(h): round(upper[h], 6) for h in range(24)}, "hourly_profile_mode": mode})

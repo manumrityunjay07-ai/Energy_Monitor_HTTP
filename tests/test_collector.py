@@ -36,6 +36,19 @@ class CollectorSafetyTests(unittest.TestCase):
         self.assertLessEqual(abs(correction), abs(base) * 0.25 + 1e-6)
         self.assertGreaterEqual(prediction, 0)
 
+    def test_model_guard_rolls_back_when_adaptation_is_worse(self):
+        history = {
+            str(day): {
+                "actual_kwh": 1000,
+                "base_prediction_kwh": 1000,
+                "predicted_kwh": 1300,
+            }
+            for day in range(5)
+        }
+        guard = collect_once.evaluate_model_guard(history)
+        self.assertFalse(guard["adaptation_enabled"])
+        self.assertIn("rollback", guard["reason"])
+
 
 if __name__ == "__main__":
     unittest.main()
