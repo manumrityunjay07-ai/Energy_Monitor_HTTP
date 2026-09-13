@@ -39,10 +39,25 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config pull.rebase true
           git add -A data results
           if git diff --cached --quiet; then
             echo "No state or result changes to commit."
           else
             git commit -m "Update energy data and AI results"
-            git push
+            pushed=false
+            for attempt in 1 2 3 4 5; do
+              echo "Publishing attempt ${attempt}/5"
+              if git fetch origin main && git rebase origin/main && git push origin HEAD:main; then
+                pushed=true
+                break
+              fi
+              echo "Publish attempt ${attempt} failed; retrying after remote synchronization."
+              git rebase --abort || true
+              sleep $((attempt * 2))
+            done
+            if [ "$pushed" != true ]; then
+              echo "ERROR: collection succeeded but publishing failed after 5 attempts."
+              exit 1
+            fi
           fi
