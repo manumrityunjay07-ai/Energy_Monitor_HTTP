@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T19:09:28.864805+05:30",
+  "generated_at": "2026-09-13T19:14:40.018438+05:30",
   "device_id": 153,
   "ai_results": [
     {
@@ -21,7 +21,8 @@
       "base_prediction_kwh": "1460.502167",
       "correction_kwh": "0.0",
       "feedback_samples": "0",
-      "hourly_error_mae": ""
+      "hourly_error_mae": "",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -42,7 +43,8 @@
       "base_prediction_kwh": "1626.096831",
       "correction_kwh": "186.427833",
       "feedback_samples": "1",
-      "hourly_error_mae": "9.8525"
+      "hourly_error_mae": "9.8525",
+      "model_version": ""
     }
   ],
   "hourly_predictions": [
@@ -54,7 +56,8 @@
       "predicted_kwh": "57.99",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -64,87 +67,8 @@
       "predicted_kwh": "70.38",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
-    },
-    {
-      "processed_at": "2026-09-12T00:00:51.866287+05:30",
-      "device_id": "153",
-      "date": "2026-09-12",
-      "hour": "2",
-      "predicted_kwh": "68.0",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "0"
-    },
-    {
-      "processed_at": "2026-09-12T00:00:51.866287+05:30",
-      "device_id": "153",
-      "date": "2026-09-12",
-      "hour": "3",
-      "predicted_kwh": "62.5",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "0"
-    },
-    {
-      "processed_at": "2026-09-12T00:00:51.866287+05:30",
-      "device_id": "153",
-      "date": "2026-09-12",
-      "hour": "4",
-      "predicted_kwh": "61.62",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "0"
-    },
-    {
-      "processed_at": "2026-09-12T00:00:51.866287+05:30",
-      "device_id": "153",
-      "date": "2026-09-12",
-      "hour": "5",
-      "predicted_kwh": "71.57",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "0"
-    },
-    {
-      "processed_at": "2026-09-12T00:00:51.866287+05:30",
-      "device_id": "153",
-      "date": "2026-09-12",
-      "hour": "6",
-      "predicted_kwh": "70.69",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "0"
-    },
-    {
-      "processed_at": "2026-09-12T00:00:51.866287+05:30",
-      "device_id": "153",
-      "date": "2026-09-12",
-      "hour": "7",
-      "predicted_kwh": "141.56",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "0"
-    },
-    {
-      "processed_at": "2026-09-12T00:00:51.866287+05:30",
-      "device_id": "153",
-      "date": "2026-09-12",
-      "hour": "8",
-      "predicted_kwh": "87.5",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "0"
-    },
-    {
-      "processed_at": "2026-09-12T00:00:51.866287+05:30",
-      "device_id": "153",
-      "date": "2026-09-12",
-      "hour": "9",
-      "predicted_kwh": "51.62",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -154,7 +78,8 @@
       "predicted_kwh": "46.56",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -164,7 +89,8 @@
       "predicted_kwh": "56.94",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -174,7 +100,8 @@
       "predicted_kwh": "36.69",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -184,7 +111,8 @@
       "predicted_kwh": "42.81",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -194,7 +122,8 @@
       "predicted_kwh": "49.38",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -204,7 +133,8 @@
       "predicted_kwh": "53.81",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -214,7 +144,8 @@
       "predicted_kwh": "56.38",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -224,7 +155,8 @@
       "predicted_kwh": "47.37",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -234,7 +166,8 @@
       "predicted_kwh": "81.12",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -244,7 +177,19 @@
       "predicted_kwh": "82.82",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-12T00:00:51.866287+05:30",
+      "device_id": "153",
+      "date": "2026-09-12",
+      "hour": "2",
+      "predicted_kwh": "68.0",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -254,7 +199,8 @@
       "predicted_kwh": "86.62",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -264,7 +210,8 @@
       "predicted_kwh": "96.07",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -274,7 +221,8 @@
       "predicted_kwh": "105.18",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-12T00:00:51.866287+05:30",
@@ -284,7 +232,85 @@
       "predicted_kwh": "66.69",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "0"
+      "feedback_samples": "0",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-12T00:00:51.866287+05:30",
+      "device_id": "153",
+      "date": "2026-09-12",
+      "hour": "3",
+      "predicted_kwh": "62.5",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "0",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-12T00:00:51.866287+05:30",
+      "device_id": "153",
+      "date": "2026-09-12",
+      "hour": "4",
+      "predicted_kwh": "61.62",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "0",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-12T00:00:51.866287+05:30",
+      "device_id": "153",
+      "date": "2026-09-12",
+      "hour": "5",
+      "predicted_kwh": "71.57",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "0",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-12T00:00:51.866287+05:30",
+      "device_id": "153",
+      "date": "2026-09-12",
+      "hour": "6",
+      "predicted_kwh": "70.69",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "0",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-12T00:00:51.866287+05:30",
+      "device_id": "153",
+      "date": "2026-09-12",
+      "hour": "7",
+      "predicted_kwh": "141.56",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "0",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-12T00:00:51.866287+05:30",
+      "device_id": "153",
+      "date": "2026-09-12",
+      "hour": "8",
+      "predicted_kwh": "87.5",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "0",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-12T00:00:51.866287+05:30",
+      "device_id": "153",
+      "date": "2026-09-12",
+      "hour": "9",
+      "predicted_kwh": "51.62",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "0",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -294,7 +320,8 @@
       "predicted_kwh": "56.819767",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -304,87 +331,8 @@
       "predicted_kwh": "69.083256",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
-    },
-    {
-      "processed_at": "2026-09-13T00:01:14.050844+05:30",
-      "device_id": "153",
-      "date": "2026-09-13",
-      "hour": "2",
-      "predicted_kwh": "65.232558",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "1"
-    },
-    {
-      "processed_at": "2026-09-13T00:01:14.050844+05:30",
-      "device_id": "153",
-      "date": "2026-09-13",
-      "hour": "3",
-      "predicted_kwh": "60.127907",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "1"
-    },
-    {
-      "processed_at": "2026-09-13T00:01:14.050844+05:30",
-      "device_id": "153",
-      "date": "2026-09-13",
-      "hour": "4",
-      "predicted_kwh": "38.009767",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "1"
-    },
-    {
-      "processed_at": "2026-09-13T00:01:14.050844+05:30",
-      "device_id": "153",
-      "date": "2026-09-13",
-      "hour": "5",
-      "predicted_kwh": "58.997907",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "1"
-    },
-    {
-      "processed_at": "2026-09-13T00:01:14.050844+05:30",
-      "device_id": "153",
-      "date": "2026-09-13",
-      "hour": "6",
-      "predicted_kwh": "88.97093",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "1"
-    },
-    {
-      "processed_at": "2026-09-13T00:01:14.050844+05:30",
-      "device_id": "153",
-      "date": "2026-09-13",
-      "hour": "7",
-      "predicted_kwh": "122.59907",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "1"
-    },
-    {
-      "processed_at": "2026-09-13T00:01:14.050844+05:30",
-      "device_id": "153",
-      "date": "2026-09-13",
-      "hour": "8",
-      "predicted_kwh": "77.110233",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "1"
-    },
-    {
-      "processed_at": "2026-09-13T00:01:14.050844+05:30",
-      "device_id": "153",
-      "date": "2026-09-13",
-      "hour": "9",
-      "predicted_kwh": "51.525116",
-      "actual_kwh": "",
-      "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -394,7 +342,8 @@
       "predicted_kwh": "62.690233",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -404,7 +353,8 @@
       "predicted_kwh": "48.337209",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -414,7 +364,8 @@
       "predicted_kwh": "68.80814",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -424,7 +375,8 @@
       "predicted_kwh": "51.80814",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -434,7 +386,8 @@
       "predicted_kwh": "50.850698",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -444,7 +397,8 @@
       "predicted_kwh": "78.321628",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -454,7 +408,8 @@
       "predicted_kwh": "55.083256",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -464,7 +419,8 @@
       "predicted_kwh": "92.25",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -474,7 +430,8 @@
       "predicted_kwh": "56.513488",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -484,7 +441,19 @@
       "predicted_kwh": "103.662791",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-13T00:01:14.050844+05:30",
+      "device_id": "153",
+      "date": "2026-09-13",
+      "hour": "2",
+      "predicted_kwh": "65.232558",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -494,7 +463,8 @@
       "predicted_kwh": "87.726977",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -504,7 +474,8 @@
       "predicted_kwh": "31.027209",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -514,7 +485,8 @@
       "predicted_kwh": "77.410698",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
     },
     {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -524,7 +496,85 @@
       "predicted_kwh": "61.645349",
       "actual_kwh": "",
       "error_kwh": "",
-      "feedback_samples": "1"
+      "feedback_samples": "1",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-13T00:01:14.050844+05:30",
+      "device_id": "153",
+      "date": "2026-09-13",
+      "hour": "3",
+      "predicted_kwh": "60.127907",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "1",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-13T00:01:14.050844+05:30",
+      "device_id": "153",
+      "date": "2026-09-13",
+      "hour": "4",
+      "predicted_kwh": "38.009767",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "1",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-13T00:01:14.050844+05:30",
+      "device_id": "153",
+      "date": "2026-09-13",
+      "hour": "5",
+      "predicted_kwh": "58.997907",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "1",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-13T00:01:14.050844+05:30",
+      "device_id": "153",
+      "date": "2026-09-13",
+      "hour": "6",
+      "predicted_kwh": "88.97093",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "1",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-13T00:01:14.050844+05:30",
+      "device_id": "153",
+      "date": "2026-09-13",
+      "hour": "7",
+      "predicted_kwh": "122.59907",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "1",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-13T00:01:14.050844+05:30",
+      "device_id": "153",
+      "date": "2026-09-13",
+      "hour": "8",
+      "predicted_kwh": "77.110233",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "1",
+      "model_version": ""
+    },
+    {
+      "processed_at": "2026-09-13T00:01:14.050844+05:30",
+      "device_id": "153",
+      "date": "2026-09-13",
+      "hour": "9",
+      "predicted_kwh": "51.525116",
+      "actual_kwh": "",
+      "error_kwh": "",
+      "feedback_samples": "1",
+      "model_version": ""
     }
   ],
   "state": {
@@ -875,7 +925,7 @@
         "hourly_profile_mode": "recent profile"
       }
     },
-    "last_run": "2026-09-13T19:09:27.989317+05:30",
+    "last_run": "2026-09-13T19:14:36.684196+05:30",
     "forecast_history": {
       "2026-09-12": {
         "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -1173,31 +1223,51 @@
     "model_version": "device153-adaptive-v2",
     "health": {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-09-13T19:09:27.989317+05:30",
-      "last_run": "2026-09-13T19:09:27.989317+05:30",
+      "last_successful_collection": "2026-09-13T19:14:36.684196+05:30",
+      "last_run": "2026-09-13T19:14:36.684196+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 873.21,
+        "hourly": 3329.9,
         "daily": null
       },
       "missing_hours": [],
+      "data_quality": {
+        "score": 100.0,
+        "completed_hours": 19,
+        "expected_completed_hours": 19,
+        "completeness": 1.0,
+        "api_latency_ms": 3329.9,
+        "status": "good"
+      },
       "error": null,
       "model_version": "device153-adaptive-v2",
-      "learning_samples": 1
+      "learning_samples": 1,
+      "learning_status": "calibrating",
+      "rollback_guard": "enabled"
     }
   },
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-13T19:09:27.989317+05:30",
-    "last_run": "2026-09-13T19:09:27.989317+05:30",
+    "last_successful_collection": "2026-09-13T19:14:36.684196+05:30",
+    "last_run": "2026-09-13T19:14:36.684196+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 873.21,
+      "hourly": 3329.9,
       "daily": null
     },
     "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 19,
+      "expected_completed_hours": 19,
+      "completeness": 1.0,
+      "api_latency_ms": 3329.9,
+      "status": "good"
+    },
     "error": null,
     "model_version": "device153-adaptive-v2",
-    "learning_samples": 1
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": "enabled"
   }
 }

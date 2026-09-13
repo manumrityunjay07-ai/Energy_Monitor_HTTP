@@ -7,7 +7,7 @@ import os
 import time
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from statistics import mean, pstdev
+from statistics import mean, median, pstdev
 from zoneinfo import ZoneInfo
 
 import requests
@@ -147,13 +147,15 @@ def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: di
     base_prediction = PARAMS["prediction_intercept"] + sum(c * v for c, v in zip(PARAMS["prediction_coefficients"], scaled))
     errors = [float(item["error_kwh"]) for item in forecast_history.values() if isinstance(item, dict) and item.get("error_kwh") not in (None, "")]
     recent_errors = errors[-14:]
-    correction = sum(recent_errors) / len(recent_errors) if recent_errors else 0.0
-    correction = max(-0.5 * abs(base_prediction), min(0.5 * abs(base_prediction), correction))
+    mean_error = mean(recent_errors) if recent_errors else 0.0
+    robust_error = median(recent_errors) if recent_errors else 0.0
+    correction = 0.6 * mean_error + 0.4 * robust_error
+    correction = max(-0.25 * abs(base_prediction), min(0.25 * abs(base_prediction), correction))
     prediction = max(0.0, base_prediction + correction)
     weighted_mean = sum(weight * total for weight, (_, total) in zip(weights, selected)) / weight_total
     spread = math.sqrt(sum(weight * (total - weighted_mean) ** 2 for weight, (_, total) in zip(weights, selected)) / weight_total)
     lower, upper = max(0.0, prediction - 1.28 * spread), prediction + 1.28 * spread
-    forecast_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": round(base_prediction, 6), "correction_kwh": round(correction, 6), "predicted_kwh": round(prediction, 6), "lower_kwh": round(lower, 6), "upper_kwh": round(upper, 6), "profile_mode": mode, "model_version": MODEL_VERSION}
+    forecast_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": round(base_prediction, 6), "correction_kwh": round(correction, 6), "predicted_kwh": round(prediction, 6), "lower_kwh": round(lower, 6), "upper_kwh": round(upper, 6), "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": "robust median/mean blend, 25% cap"}
     return round(prediction, 6), round(base_prediction, 6), round(correction, 6), len(recent_errors), round(lower, 6), round(upper, 6), mode
 
 
@@ -178,15 +180,20 @@ def adaptive_hourly_forecast(profiles: dict[str, dict], hourly_history: dict[str
             samples += 1
     if samples:
         corrections = [value / samples for value in corrections]
+    corrections = [max(-0.25 * abs(base[hour]), min(0.25 * abs(base[hour]), corrections[hour])) for hour in range(24)]
     predicted = [max(0.0, base[hour] + corrections[hour]) for hour in range(24)]
     lower = [max(0.0, predicted[hour] - 1.28 * spread[hour]) for hour in range(24)]
     upper = [predicted[hour] + 1.28 * spread[hour] for hour in range(24)]
-    hourly_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": [round(v, 6) for v in base], "correction_kwh": [round(v, 6) for v in corrections], "predicted_kwh": [round(v, 6) for v in predicted], "lower_kwh": [round(v, 6) for v in lower], "upper_kwh": [round(v, 6) for v in upper], "profile_mode": mode, "model_version": MODEL_VERSION}
+    hourly_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": [round(v, 6) for v in base], "correction_kwh": [round(v, 6) for v in corrections], "predicted_kwh": [round(v, 6) for v in predicted], "lower_kwh": [round(v, 6) for v in lower], "upper_kwh": [round(v, 6) for v in upper], "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": "hourly correction capped at 25% of profile"}
     return predicted, base, corrections, samples, lower, upper, mode
 
 
 def upsert_csv(path: Path, fields: list[str], rows: list[dict], key_fields: list[str]) -> None:
-    existing = list(csv.DictReader(path.open(encoding="utf-8", newline=""))) if path.exists() and path.stat().st_size else []
+    if path.exists() and path.stat().st_size:
+        with path.open(encoding="utf-8", newline="") as handle:
+            existing = list(csv.DictReader(handle))
+    else:
+        existing = []
     merged: dict[tuple, dict] = {}
     for row in existing + rows:
         merged[tuple(str(row.get(k, "")) for k in key_fields)] = {field: row.get(field, "") for field in fields}
@@ -196,8 +203,31 @@ def upsert_csv(path: Path, fields: list[str], rows: list[dict], key_fields: list
         writer.writerows(sorted(merged.values(), key=lambda row: tuple(row.get(k, "") for k in key_fields)))
 
 
-def write_health(state: dict, now: datetime, status: str, hourly_latency: float | None, daily_latency: float | None, missing_hours: list[int], error: str | None = None) -> dict:
-    health = {"collector_status": status, "last_successful_collection": now.isoformat() if status == "healthy" else state.get("health", {}).get("last_successful_collection"), "last_run": now.isoformat(), "device_id": DEVICE_ID, "api_latency_ms": {"hourly": hourly_latency, "daily": daily_latency}, "missing_hours": missing_hours, "error": error, "model_version": MODEL_VERSION, "learning_samples": sum(1 for item in state.get("processed", {}).values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, ""))}
+def ensure_csv_schema(path: Path, fields: list[str], key_fields: list[str]) -> None:
+    """Migrate an existing CSV even when this run has no new forecast rows."""
+    if not path.exists() or not path.stat().st_size:
+        return
+    existing = list(csv.DictReader(path.open(encoding="utf-8", newline="")))
+    upsert_csv(path, fields, existing, key_fields)
+
+
+def data_quality(profile: dict[str, float], now: datetime, hourly_latency: float | None) -> dict:
+    expected = set(str(hour) for hour in range(now.hour))
+    received = set(profile)
+    completeness = len(received & expected) / len(expected) if expected else 1.0
+    return {
+        "score": round(completeness * 100, 2),
+        "completed_hours": len(received & expected),
+        "expected_completed_hours": len(expected),
+        "completeness": round(completeness, 4),
+        "api_latency_ms": hourly_latency,
+        "status": "good" if completeness >= 0.99 else "degraded",
+    }
+
+
+def write_health(state: dict, now: datetime, status: str, hourly_latency: float | None, daily_latency: float | None, missing_hours: list[int], quality: dict | None = None, error: str | None = None) -> dict:
+    samples = sum(1 for item in state.get("processed", {}).values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, ""))
+    health = {"collector_status": status, "last_successful_collection": now.isoformat() if status == "healthy" else state.get("health", {}).get("last_successful_collection"), "last_run": now.isoformat(), "device_id": DEVICE_ID, "api_latency_ms": {"hourly": hourly_latency, "daily": daily_latency}, "missing_hours": missing_hours, "data_quality": quality or state.get("health", {}).get("data_quality", {}), "error": error, "model_version": MODEL_VERSION, "learning_samples": samples, "learning_status": "calibrating" if samples < 14 else "adaptive", "rollback_guard": "enabled"}
     HEALTH.write_text(json.dumps(health, indent=2), encoding="utf-8")
     state["health"] = health
     return health
@@ -205,7 +235,10 @@ def write_health(state: dict, now: datetime, status: str, hourly_latency: float 
 
 def publish_dashboard_data(state: dict, health: dict) -> None:
     def read_csv(path: Path) -> list[dict]:
-        return list(csv.DictReader(path.open(encoding="utf-8", newline=""))) if path.exists() else []
+        if not path.exists():
+            return []
+        with path.open(encoding="utf-8", newline="") as handle:
+            return list(csv.DictReader(handle))
     DASHBOARD_DATA.write_text(json.dumps({"generated_at": now_ist().isoformat(), "device_id": DEVICE_ID, "ai_results": read_csv(RESULTS), "hourly_predictions": read_csv(HOURLY_RESULTS), "state": state, "health": health}, indent=2), encoding="utf-8")
 
 
@@ -217,9 +250,14 @@ def main() -> None:
     forecast_history = state.setdefault("forecast_history", {})
     hourly_history = state.setdefault("hourly_forecast_history", {})
     today = now.date().isoformat()
+    ai_fields = ["processed_at", "device_id", "date", "status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
+    hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
+    ensure_csv_schema(RESULTS, ai_fields, ["device_id", "date"])
+    ensure_csv_schema(HOURLY_RESULTS, hourly_fields, ["device_id", "date", "hour"])
     try:
         profile, hourly_latency, missing_hours = fetch_hourly(now)
         profiles.setdefault(today, {}).update(profile)
+        quality = data_quality(profiles[today], now, hourly_latency)
         previous_date = (now.date() - timedelta(days=1)).isoformat()
         result = None
         daily_latency = None
@@ -256,19 +294,17 @@ def main() -> None:
                 predicted, base, corrections, samples, lower, upper, mode = hourly_forecast
                 result.update({"hourly_forecast": {str(h): round(predicted[h], 6) for h in range(24)}, "hourly_actual": {}, "hourly_error": {}, "hourly_feedback_samples": samples, "hourly_lower_kwh": {str(h): round(lower[h], 6) for h in range(24)}, "hourly_upper_kwh": {str(h): round(upper[h], 6) for h in range(24)}, "hourly_profile_mode": mode})
             processed[previous_date] = result
-            ai_fields = ["processed_at", "device_id", "date", "status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
             upsert_csv(RESULTS, ai_fields, [result], ["device_id", "date"])
             if hourly_forecast:
-                hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
                 upsert_csv(HOURLY_RESULTS, hourly_fields, [{"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": today, "hour": h, "predicted_kwh": result["hourly_forecast"].get(str(h), ""), "actual_kwh": "", "error_kwh": "", "feedback_samples": result.get("hourly_feedback_samples", 0), "model_version": MODEL_VERSION} for h in range(24)], ["device_id", "date", "hour"])
         state["last_run"] = now.isoformat()
         state["model_version"] = MODEL_VERSION
-        health = write_health(state, now, "healthy", hourly_latency, daily_latency, missing_hours)
+        health = write_health(state, now, "healthy", hourly_latency, daily_latency, missing_hours, quality)
         STATE.write_text(json.dumps(state, indent=2), encoding="utf-8")
         publish_dashboard_data(state, health)
         print(f"Device {DEVICE_ID}; collected {len(profiles.get(today, {}))}/24 hours for {today}; model {MODEL_VERSION}")
     except Exception as exc:
-        health = write_health(state, now, "degraded", None, None, [], str(exc))
+        health = write_health(state, now, "degraded", None, None, [], None, str(exc))
         state["last_run"] = now.isoformat()
         STATE.write_text(json.dumps(state, indent=2), encoding="utf-8")
         publish_dashboard_data(state, health)
