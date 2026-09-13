@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T04:46:01.686915+05:30",
+  "generated_at": "2026-09-14T05:01:16.899248+05:30",
   "device_id": 153,
   "ai_results": [
     {
@@ -684,7 +684,8 @@
         "0": 46.38,
         "1": 59.75,
         "2": 58.06,
-        "3": 56.81
+        "3": 56.81,
+        "4": 52.32
       }
     },
     "processed": {
@@ -934,7 +935,7 @@
         "hourly_profile_mode": "recent profile"
       }
     },
-    "last_run": "2026-09-14T04:46:00.685474+05:30",
+    "last_run": "2026-09-14T05:01:16.004281+05:30",
     "forecast_history": {
       "2026-09-12": {
         "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -1232,20 +1233,20 @@
     "model_version": "device153-adaptive-v2",
     "health": {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-09-14T04:46:00.685474+05:30",
-      "last_run": "2026-09-14T04:46:00.685474+05:30",
+      "last_successful_collection": "2026-09-14T05:01:16.004281+05:30",
+      "last_run": "2026-09-14T05:01:16.004281+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 974.51,
+        "hourly": 890.38,
         "daily": null
       },
       "missing_hours": [],
       "data_quality": {
         "score": 100.0,
-        "completed_hours": 4,
-        "expected_completed_hours": 4,
+        "completed_hours": 5,
+        "expected_completed_hours": 5,
         "completeness": 1.0,
-        "api_latency_ms": 974.51,
+        "api_latency_ms": 890.38,
         "status": "good"
       },
       "error": null,
@@ -1266,20 +1267,20 @@
   },
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-14T04:46:00.685474+05:30",
-    "last_run": "2026-09-14T04:46:00.685474+05:30",
+    "last_successful_collection": "2026-09-14T05:01:16.004281+05:30",
+    "last_run": "2026-09-14T05:01:16.004281+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 974.51,
+      "hourly": 890.38,
       "daily": null
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 4,
-      "expected_completed_hours": 4,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
       "completeness": 1.0,
-      "api_latency_ms": 974.51,
+      "api_latency_ms": 890.38,
       "status": "good"
     },
     "error": null,
@@ -2540,6 +2541,34 @@
         "expected_completed_hours": 4,
         "completeness": 1.0,
         "api_latency_ms": 974.51,
+        "status": "good"
+      },
+      "error": null,
+      "model_version": "device153-adaptive-v2",
+      "learning_samples": 1,
+      "learning_status": "calibrating",
+      "rollback_guard": {
+        "adaptation_enabled": true,
+        "reason": "insufficient history for rollback decision",
+        "evaluated_cycles": 1
+      }
+    },
+    {
+      "collector_status": "healthy",
+      "last_successful_collection": "2026-09-14T05:01:16.004281+05:30",
+      "last_run": "2026-09-14T05:01:16.004281+05:30",
+      "device_id": 153,
+      "api_latency_ms": {
+        "hourly": 890.38,
+        "daily": null
+      },
+      "missing_hours": [],
+      "data_quality": {
+        "score": 100.0,
+        "completed_hours": 5,
+        "expected_completed_hours": 5,
+        "completeness": 1.0,
+        "api_latency_ms": 890.38,
         "status": "good"
       },
       "error": null,
