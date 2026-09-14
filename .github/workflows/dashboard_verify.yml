@@ -1,0 +1,39 @@
+name: Dashboard deployment verification
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,37 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check dashboard HTML and build marker
+        run: |
+          html="$(curl --fail --silent --show-error --retry 3 --max-time 30 https://manumrityunjay07-ai.github.io/Energy_Monitor_Dashboard/)"
+          echo "$html" | grep -q 'Device 153 Energy Monitoring Dashboard'
+          echo "$html" | grep -q 'dashboard-build'
+          echo "$html" | grep -q 'app.js?v='
+      - name: Check deployed JavaScript
+        run: |
+          curl --fail --silent --show-error --retry 3 --max-time 30 'https://manumrityunjay07-ai.github.io/Energy_Monitor_Dashboard/app.js' | grep -q 'renderAIImprovement'
+      - name: Check current data payload
+        run: |
+          payload="$(curl --fail --silent --show-error --retry 3 --max-time 30 'https://raw.githubusercontent.com/manumrityunjay07-ai/Energy_Monitor_HTTP/main/results/dashboard_data.json')"
+          echo "$payload" | grep -q '"ai_results"'
+          echo "$payload" | grep -q '"health"'
+          echo "$payload" | grep -q '2026-09-13'
+      - name: Write verification summary
+        run: |
+          {
+            echo '## Dashboard verification'
+            echo '- HTML reachable: yes'
+            echo '- JavaScript reachable: yes'
+            echo '- Data payload reachable: yes'
+            echo '- Required daily record found: yes'
+          } >> "$GITHUB_STEP_SUMMARY"
