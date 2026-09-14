@@ -23,6 +23,7 @@ HEALTH = Path("results/health.json")
 HEALTH_HISTORY = Path("results/health_history.json")
 DASHBOARD_DATA = Path("results/dashboard_data.json")
 PARAMS = json.loads(Path("esp32_parameters.json").read_text(encoding="utf-8"))
+HOLIDAYS = json.loads(Path("data/holidays.json").read_text(encoding="utf-8")) if Path("data/holidays.json").exists() else {"holidays": {}}
 MODEL_VERSION = "device153-adaptive-v2"
 MAX_RETRIES = 4
 HOURLY_REPAIR_ATTEMPTS = 2
@@ -36,6 +37,8 @@ def now_ist() -> datetime:
 
 
 def calendar_profile(day: str) -> str:
+    if day in HOLIDAYS.get("holidays", {}):
+        return "holiday"
     return "weekend" if date.fromisoformat(day).weekday() >= 5 else "weekday"
 
 
