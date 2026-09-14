@@ -237,6 +237,10 @@ def upsert_csv(path: Path, fields: list[str], rows: list[dict], key_fields: list
                 normalized["forecast_date"] = ""
         if "calendar_profile" in fields and not normalized.get("calendar_profile") and row.get("date"):
             normalized["calendar_profile"] = calendar_profile(str(row["date"]))
+        if "backfill_status" in fields and not normalized.get("backfill_status"):
+            normalized["backfill_status"] = "measured_hours_only" if row.get("status") in ("data_incomplete", "daily_total_only") else "measured_24_hours"
+        if "missing_hours" in fields and not normalized.get("missing_hours"):
+            normalized["missing_hours"] = "unknown" if normalized.get("backfill_status") == "measured_hours_only" else ""
         merged[tuple(str(row.get(k, "")) for k in key_fields)] = normalized
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -312,7 +316,7 @@ def main() -> None:
     hourly_history = state.setdefault("hourly_forecast_history", {})
     state["model_guard"] = evaluate_model_guard(forecast_history)
     today = now.date().isoformat()
-    ai_fields = ["processed_at", "device_id", "date", "actual_date", "forecast_date", "evaluated_at", "calendar_profile", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
+    ai_fields = ["processed_at", "device_id", "date", "actual_date", "forecast_date", "evaluated_at", "calendar_profile", "backfill_status", "missing_hours", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
     hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
     ensure_csv_schema(RESULTS, ai_fields, ["device_id", "date"])
     ensure_csv_schema(HOURLY_RESULTS, hourly_fields, ["device_id", "date", "hour"])
@@ -341,11 +345,13 @@ def main() -> None:
                 result = anomaly_result(values, now, previous_date, adaptive_threshold)
                 result["anomaly_explanation"] = explain_profile(values, profiles, previous_date)
             else:
-                result = {"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": previous_date, "status": "daily_total_only", "data_status": "daily_total_only", "cluster": "", "anomaly_score": "", "anomaly_threshold": adaptive_threshold, "anomaly_explanation": f"Daily total available; hourly profile is missing {24 - len(values)} hour(s)."}
+                result = {"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": previous_date, "status": "daily_total_only", "data_status": "daily_total_only", "backfill_status": "measured_hours_only", "missing_hours": [hour for hour in range(24) if str(hour) not in completed_profile], "cluster": "", "anomaly_score": "", "anomaly_threshold": adaptive_threshold, "anomaly_explanation": f"Daily total available; hourly profile is missing {24 - len(values)} hour(s); no hourly estimate was invented."}
             result.setdefault("data_status", "complete" if len(values) == 24 else "daily_total_only")
             result.setdefault("actual_date", previous_date)
             result.setdefault("forecast_date", today)
             result.setdefault("calendar_profile", calendar_profile(previous_date))
+            result.setdefault("backfill_status", "measured_24_hours" if len(values) == 24 else "measured_hours_only")
+            result.setdefault("missing_hours", [] if len(values) == 24 else [hour for hour in range(24) if str(hour) not in completed_profile])
             prior_daily = forecast_history.get(previous_date)
             if actual_total is not None:
                 if len(values) == 24:
@@ -353,7 +359,7 @@ def main() -> None:
                     difference = abs(hourly_total - actual_total)
                     quality["daily_hourly_consistency"] = {"hourly_total_kwh": round(hourly_total, 6), "daily_total_kwh": round(actual_total, 6), "difference_kwh": round(difference, 6), "relative_difference": round(difference / max(abs(actual_total), 1.0), 6), "status": "good" if difference / max(abs(actual_total), 1.0) <= 0.05 else "review"}
                 else:
-                    quality["daily_hourly_consistency"] = {"status": "review", "reason": "hourly profile incomplete", "available_hours": len(values), "daily_total_kwh": round(actual_total, 6)}
+                    quality["daily_hourly_consistency"] = {"status": "review", "reason": "hourly profile incomplete", "available_hours": len(values), "missing_hours": [hour for hour in range(24) if str(hour) not in completed_profile], "daily_total_kwh": round(actual_total, 6), "hourly_residual_not_allocated_kwh": None}
             if actual_total is not None and isinstance(prior_daily, dict):
                 predicted_total = float(prior_daily["predicted_kwh"])
                 error = actual_total - predicted_total
