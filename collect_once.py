@@ -221,6 +221,13 @@ def upsert_csv(path: Path, fields: list[str], rows: list[dict], key_fields: list
         normalized = {field: row.get(field, "") for field in fields}
         if "data_status" in fields and not normalized.get("data_status"):
             normalized["data_status"] = "daily_total_only" if row.get("status") in ("data_incomplete", "daily_total_only") else "complete"
+        if "actual_date" in fields and not normalized.get("actual_date"):
+            normalized["actual_date"] = row.get("date", "")
+        if "forecast_date" in fields and not normalized.get("forecast_date") and row.get("date"):
+            try:
+                normalized["forecast_date"] = (date.fromisoformat(str(row["date"])) + timedelta(days=1)).isoformat()
+            except ValueError:
+                normalized["forecast_date"] = ""
         merged[tuple(str(row.get(k, "")) for k in key_fields)] = normalized
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -294,7 +301,7 @@ def main() -> None:
     hourly_history = state.setdefault("hourly_forecast_history", {})
     state["model_guard"] = evaluate_model_guard(forecast_history)
     today = now.date().isoformat()
-    ai_fields = ["processed_at", "device_id", "date", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
+    ai_fields = ["processed_at", "device_id", "date", "actual_date", "forecast_date", "evaluated_at", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
     hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
     ensure_csv_schema(RESULTS, ai_fields, ["device_id", "date"])
     ensure_csv_schema(HOURLY_RESULTS, hourly_fields, ["device_id", "date", "hour"])
@@ -325,6 +332,8 @@ def main() -> None:
             else:
                 result = {"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": previous_date, "status": "daily_total_only", "data_status": "daily_total_only", "cluster": "", "anomaly_score": "", "anomaly_threshold": adaptive_threshold, "anomaly_explanation": f"Daily total available; hourly profile is missing {24 - len(values)} hour(s)."}
             result.setdefault("data_status", "complete" if len(values) == 24 else "daily_total_only")
+            result.setdefault("actual_date", previous_date)
+            result.setdefault("forecast_date", today)
             prior_daily = forecast_history.get(previous_date)
             if actual_total is not None:
                 if len(values) == 24:
@@ -337,7 +346,7 @@ def main() -> None:
                 predicted_total = float(prior_daily["predicted_kwh"])
                 error = actual_total - predicted_total
                 prior_daily.update({"actual_kwh": round(actual_total, 6), "error_kwh": round(error, 6), "evaluated_at": now.isoformat()})
-                result.update({"actual_kwh": round(actual_total, 6), "previous_prediction_kwh": round(predicted_total, 6), "prediction_error_kwh": round(error, 6)})
+                result.update({"actual_kwh": round(actual_total, 6), "previous_prediction_kwh": round(predicted_total, 6), "prediction_error_kwh": round(error, 6), "evaluated_at": now.isoformat()})
             prior_hourly = hourly_history.get(previous_date)
             if isinstance(prior_hourly, dict) and len(values) == 24 and len(prior_hourly.get("predicted_kwh", [])) == 24:
                 actual_hours = [float(completed_profile[str(hour)]) for hour in range(24)]
