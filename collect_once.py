@@ -81,6 +81,7 @@ def fetch_daily_totals(end_date: date) -> tuple[dict[str, float], float]:
         raw_total = row.get("total_consumption")
         try:
             day, value = str(raw_date)[:10], float(raw_total)
+            date.fromisoformat(day)
         except (TypeError, ValueError):
             continue
         if len(day) == 10 and math.isfinite(value) and value >= 0:
@@ -123,6 +124,10 @@ def fetch_hourly(now: datetime) -> tuple[dict[str, float], float, list[int]]:
 
 
 def anomaly_result(values: list[float], now: datetime, processed_date: str, threshold: float) -> dict:
+    if len(values) != len(PARAMS["cluster_scaler_mean"]) or len(values) != len(PARAMS["cluster_scaler_scale"]):
+        raise ValueError("Anomaly input length does not match scaler parameters")
+    if any(len(centroid) != len(values) for centroid in PARAMS["cluster_centres_scaled"]):
+        raise ValueError("Anomaly centroid length does not match input length")
     scaled = [(x - mean_value) / scale if scale else 0 for x, mean_value, scale in zip(values, PARAMS["cluster_scaler_mean"], PARAMS["cluster_scaler_scale"])]
     distances = [math.sqrt(sum((x - centre) ** 2 for x, centre in zip(scaled, centroid))) for centroid in PARAMS["cluster_centres_scaled"]]
     cluster_index = min(range(len(distances)), key=distances.__getitem__)

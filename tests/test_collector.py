@@ -62,6 +62,19 @@ class CollectorSafetyTests(unittest.TestCase):
         self.assertIsNotNone(forecast)
         self.assertEqual(forecast[2], 0.0)
 
+    def test_invalid_daily_date_is_rejected(self):
+        original = collect_once.request_json
+        try:
+            collect_once.request_json = lambda *args, **kwargs: ({"data": [{"custom_day": "2026-99-99", "total_consumption": "10"}, {"custom_day": "2026-09-13", "total_consumption": "12"}]}, 1.0)
+            totals, _ = collect_once.fetch_daily_totals(datetime(2026, 9, 14).date())
+            self.assertEqual(totals, {"2026-09-13": 12.0})
+        finally:
+            collect_once.request_json = original
+
+    def test_anomaly_input_dimension_mismatch_fails_closed(self):
+        with self.assertRaises(ValueError):
+            collect_once.anomaly_result([1.0], datetime.now(ZoneInfo("Asia/Kolkata")), "2026-09-13", 1.0)
+
 
 if __name__ == "__main__":
     unittest.main()
