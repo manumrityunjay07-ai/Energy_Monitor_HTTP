@@ -25,6 +25,7 @@ DASHBOARD_DATA = Path("results/dashboard_data.json")
 PARAMS = json.loads(Path("esp32_parameters.json").read_text(encoding="utf-8"))
 MODEL_VERSION = "device153-adaptive-v2"
 MAX_RETRIES = 4
+HOURLY_REPAIR_ATTEMPTS = 2
 
 STATE.parent.mkdir(exist_ok=True)
 RESULTS.parent.mkdir(exist_ok=True)
@@ -81,30 +82,37 @@ def fetch_daily_totals(end_date: date) -> tuple[dict[str, float], float]:
 
 
 def fetch_hourly(now: datetime) -> tuple[dict[str, float], float, list[int]]:
-    payload, latency = request_json("POST", HOURLY_URL, json={"deviceId": DEVICE_ID})
-    rows = payload.get("data", [])
-    if not isinstance(rows, list):
-        raise ValueError("Hourly API data field is not a list")
     by_hour: dict[int, float] = {}
-    for row in rows:
-        if not isinstance(row, dict):
-            continue
-        try:
-            hour = int(row["hour"])
-            value = float(row["total_energy"])
-        except (KeyError, TypeError, ValueError):
-            continue
-        if hour in by_hour:
-            raise ValueError(f"Hourly API returned duplicate hour {hour}")
-        if not 0 <= hour <= 23 or not math.isfinite(value) or value < 0:
-            raise ValueError(f"Invalid hourly row: hour={hour}, value={value}")
-        by_hour[hour] = value
-    missing = sorted(set(range(24)) - set(by_hour))
-    if missing:
-        raise ValueError(f"Hourly API response is missing hours: {missing}")
-    # The current hour is still incomplete and must not train or score the model.
-    completed = {str(hour): by_hour[hour] for hour in range(now.hour)}
-    return completed, latency, missing
+    latency = 0.0
+    last_missing: list[int] = []
+    for attempt in range(HOURLY_REPAIR_ATTEMPTS + 1):
+        payload, latency = request_json("POST", HOURLY_URL, json={"deviceId": DEVICE_ID})
+        rows = payload.get("data", [])
+        if not isinstance(rows, list):
+            raise ValueError("Hourly API data field is not a list")
+        candidate: dict[int, float] = {}
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            try:
+                hour = int(row["hour"])
+                value = float(row["total_energy"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            if hour in candidate:
+                raise ValueError(f"Hourly API returned duplicate hour {hour}")
+            if not 0 <= hour <= 23 or not math.isfinite(value) or value < 0:
+                raise ValueError(f"Invalid hourly row: hour={hour}, value={value}")
+            candidate[hour] = value
+        by_hour.update(candidate)
+        last_missing = sorted(set(range(now.hour)) - set(by_hour))
+        if not last_missing:
+            break
+        if attempt < HOURLY_REPAIR_ATTEMPTS:
+            time.sleep(1)
+    # The current hour and future hours are intentionally excluded from completeness.
+    completed = {str(hour): by_hour[hour] for hour in range(now.hour) if hour in by_hour}
+    return completed, latency, last_missing
 
 
 def anomaly_result(values: list[float], now: datetime, processed_date: str, threshold: float) -> dict:
@@ -235,7 +243,8 @@ def data_quality(profile: dict[str, float], now: datetime, hourly_latency: float
         "expected_completed_hours": len(expected),
         "completeness": round(completeness, 4),
         "api_latency_ms": hourly_latency,
-        "status": "good" if completeness >= 0.99 else "degraded",
+        "status": "complete" if completeness >= 0.99 else "partial",
+        "data_status": "complete" if completeness >= 0.99 else "partial",
     }
 
 
@@ -282,7 +291,7 @@ def main() -> None:
     hourly_history = state.setdefault("hourly_forecast_history", {})
     state["model_guard"] = evaluate_model_guard(forecast_history)
     today = now.date().isoformat()
-    ai_fields = ["processed_at", "device_id", "date", "status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
+    ai_fields = ["processed_at", "device_id", "date", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
     hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
     ensure_csv_schema(RESULTS, ai_fields, ["device_id", "date"])
     ensure_csv_schema(HOURLY_RESULTS, hourly_fields, ["device_id", "date", "hour"])
@@ -310,7 +319,8 @@ def main() -> None:
                 result = anomaly_result(values, now, previous_date, adaptive_threshold)
                 result["anomaly_explanation"] = explain_profile(values, profiles, previous_date)
             else:
-                result = {"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": previous_date, "status": "data_incomplete", "cluster": "", "anomaly_score": "", "anomaly_threshold": adaptive_threshold, "anomaly_explanation": f"Daily total available; hourly profile is missing {24 - len(values)} hour(s)."}
+                result = {"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": previous_date, "status": "daily_total_only", "data_status": "daily_total_only", "cluster": "", "anomaly_score": "", "anomaly_threshold": adaptive_threshold, "anomaly_explanation": f"Daily total available; hourly profile is missing {24 - len(values)} hour(s)."}
+            result.setdefault("data_status", "complete" if len(values) == 24 else "daily_total_only")
             prior_daily = forecast_history.get(previous_date)
             if actual_total is not None:
                 if len(values) == 24:

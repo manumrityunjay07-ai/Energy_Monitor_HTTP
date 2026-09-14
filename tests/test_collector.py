@@ -14,7 +14,7 @@ class CollectorSafetyTests(unittest.TestCase):
         quality = collect_once.data_quality(profile, now, 100.0)
         self.assertEqual(quality["score"], 100.0)
         self.assertEqual(quality["completed_hours"], 5)
-        self.assertEqual(quality["status"], "good")
+        self.assertEqual(quality["status"], "complete")
 
     def test_upsert_migrates_legacy_schema_without_duplicates(self):
         fields = ["device_id", "date", "model_version"]

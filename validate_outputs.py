@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 RESULTS = ROOT / "results"
 
-EXPECTED_AI = {"device_id", "date", "status", "prediction_kwh", "model_version"}
+EXPECTED_AI = {"device_id", "date", "status", "data_status", "prediction_kwh", "model_version"}
 EXPECTED_HOURLY = {"device_id", "date", "hour", "predicted_kwh", "model_version"}
 
 
@@ -21,7 +21,7 @@ def main() -> None:
     if health.get("collector_status") != "healthy":
         raise SystemExit(f"collector is not healthy: {health.get('error')}")
     quality = health.get("data_quality", {})
-    if quality.get("status") not in ("good", None):
+    if quality.get("status") not in ("complete", "partial", None):
         raise SystemExit(f"data quality is degraded: {quality}")
     ai_rows = read_csv(RESULTS / "ai_results.csv")
     hourly_rows = read_csv(RESULTS / "hourly_predictions.csv")
