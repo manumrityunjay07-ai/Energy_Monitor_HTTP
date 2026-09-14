@@ -111,7 +111,8 @@
       "6": 77.25,
       "7": 62.12,
       "8": 90.31,
-      "9": 76.76
+      "9": 76.76,
+      "10": 62.31
     }
   },
   "processed": {
@@ -361,7 +362,7 @@
       "hourly_profile_mode": "recent profile"
     }
   },
-  "last_run": "2026-09-14T10:45:58.924116+05:30",
+  "last_run": "2026-09-14T11:00:57.470237+05:30",
   "forecast_history": {
     "2026-09-12": {
       "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -659,20 +660,20 @@
   "model_version": "device153-adaptive-v2",
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-14T10:45:58.924116+05:30",
-    "last_run": "2026-09-14T10:45:58.924116+05:30",
+    "last_successful_collection": "2026-09-14T11:00:57.470237+05:30",
+    "last_run": "2026-09-14T11:00:57.470237+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 981.26,
+      "hourly": 924.0,
       "daily": null
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 10,
-      "expected_completed_hours": 10,
+      "completed_hours": 11,
+      "expected_completed_hours": 11,
       "completeness": 1.0,
-      "api_latency_ms": 981.26,
+      "api_latency_ms": 924.0,
       "status": "good"
     },
     "error": null,
