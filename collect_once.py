@@ -260,8 +260,10 @@ def data_quality(profile: dict[str, float], now: datetime, hourly_latency: float
 
 def write_health(state: dict, now: datetime, status: str, hourly_latency: float | None, daily_latency: float | None, missing_hours: list[int], quality: dict | None = None, error: str | None = None) -> dict:
     samples = sum(1 for item in state.get("processed", {}).values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, ""))
+    intervals = [item for item in state.get("processed", {}).values() if isinstance(item, dict) and all(item.get(key) not in (None, "") for key in ("actual_kwh", "prediction_lower_kwh", "prediction_upper_kwh"))]
+    inside = sum(float(item["prediction_lower_kwh"]) <= float(item["actual_kwh"]) <= float(item["prediction_upper_kwh"]) for item in intervals)
     guard = state.get("model_guard", {"adaptation_enabled": True, "reason": "insufficient history for rollback decision"})
-    health = {"collector_status": status, "last_successful_collection": now.isoformat() if status == "healthy" else state.get("health", {}).get("last_successful_collection"), "last_run": now.isoformat(), "device_id": DEVICE_ID, "api_latency_ms": {"hourly": hourly_latency, "daily": daily_latency}, "missing_hours": missing_hours, "data_quality": quality or state.get("health", {}).get("data_quality", {}), "error": error, "model_version": MODEL_VERSION, "learning_samples": samples, "learning_status": "calibrating" if samples < 14 else "adaptive", "rollback_guard": guard}
+    health = {"collector_status": status, "last_successful_collection": now.isoformat() if status == "healthy" else state.get("health", {}).get("last_successful_collection"), "last_run": now.isoformat(), "device_id": DEVICE_ID, "api_latency_ms": {"hourly": hourly_latency, "daily": daily_latency}, "missing_hours": missing_hours, "data_quality": quality or state.get("health", {}).get("data_quality", {}), "confidence_coverage": {"inside_interval": inside, "evaluated": len(intervals), "rate": round(inside / len(intervals), 4) if intervals else None}, "error": error, "model_version": MODEL_VERSION, "learning_samples": samples, "learning_status": "calibrating" if samples < 14 else "adaptive", "rollback_guard": guard}
     HEALTH.write_text(json.dumps(health, indent=2), encoding="utf-8")
     history = []
     if HEALTH_HISTORY.exists():
