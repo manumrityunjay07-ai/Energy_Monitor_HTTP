@@ -275,8 +275,11 @@ def write_health(state: dict, now: datetime, status: str, hourly_latency: float 
     samples = sum(1 for item in state.get("processed", {}).values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, ""))
     intervals = [item for item in state.get("processed", {}).values() if isinstance(item, dict) and all(item.get(key) not in (None, "") for key in ("actual_kwh", "prediction_lower_kwh", "prediction_upper_kwh"))]
     inside = sum(float(item["prediction_lower_kwh"]) <= float(item["actual_kwh"]) <= float(item["prediction_upper_kwh"]) for item in intervals)
+    evaluated = [item for item in state.get("processed", {}).values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, "") and item.get("previous_prediction_kwh") not in (None, "")]
+    errors = [float(item["actual_kwh"]) - float(item["previous_prediction_kwh"]) for item in evaluated]
+    versions = sorted({str(item.get("model_version")) for item in state.get("processed", {}).values() if isinstance(item, dict) and item.get("model_version")} | {MODEL_VERSION})
     guard = state.get("model_guard", {"adaptation_enabled": True, "reason": "insufficient history for rollback decision"})
-    health = {"collector_status": status, "last_successful_collection": now.isoformat() if status == "healthy" else state.get("health", {}).get("last_successful_collection"), "last_run": now.isoformat(), "device_id": DEVICE_ID, "api_latency_ms": {"hourly": hourly_latency, "daily": daily_latency}, "missing_hours": missing_hours, "data_quality": quality or state.get("health", {}).get("data_quality", {}), "confidence_coverage": {"inside_interval": inside, "evaluated": len(intervals), "rate": round(inside / len(intervals), 4) if intervals else None}, "error": error, "model_version": MODEL_VERSION, "learning_samples": samples, "learning_status": "calibrating" if samples < 14 else "adaptive", "rollback_guard": guard}
+    health = {"collector_status": status, "last_successful_collection": now.isoformat() if status == "healthy" else state.get("health", {}).get("last_successful_collection"), "last_run": now.isoformat(), "device_id": DEVICE_ID, "api_latency_ms": {"hourly": hourly_latency, "daily": daily_latency}, "missing_hours": missing_hours, "data_quality": quality or state.get("health", {}).get("data_quality", {}), "confidence_coverage": {"inside_interval": inside, "evaluated": len(intervals), "rate": round(inside / len(intervals), 4) if intervals else None}, "model_evaluation": {"evaluated_days": len(evaluated), "mae_kwh": round(sum(abs(v) for v in errors) / len(errors), 6) if errors else None, "rmse_kwh": round(math.sqrt(sum(v * v for v in errors) / len(errors)), 6) if errors else None, "mape_percent": round(sum(abs(v / float(item["actual_kwh"])) for v, item in zip(errors, evaluated) if float(item["actual_kwh"]) != 0) / max(1, sum(float(item["actual_kwh"]) != 0 for item in evaluated)) * 100, 6) if errors else None, "bias_kwh": round(sum(errors) / len(errors), 6) if errors else None}, "model_versions": versions, "error": error, "model_version": MODEL_VERSION, "learning_samples": samples, "learning_status": "calibrating" if samples < 14 else "adaptive", "rollback_guard": guard}
     HEALTH.write_text(json.dumps(health, indent=2), encoding="utf-8")
     history = []
     if HEALTH_HISTORY.exists():
@@ -350,6 +353,7 @@ def main() -> None:
             result.setdefault("actual_date", previous_date)
             result.setdefault("forecast_date", today)
             result.setdefault("calendar_profile", calendar_profile(previous_date))
+            result.setdefault("model_version", MODEL_VERSION)
             result.setdefault("backfill_status", "measured_24_hours" if len(values) == 24 else "measured_hours_only")
             result.setdefault("missing_hours", [] if len(values) == 24 else [hour for hour in range(24) if str(hour) not in completed_profile])
             prior_daily = forecast_history.get(previous_date)
@@ -381,6 +385,7 @@ def main() -> None:
             if hourly_forecast:
                 predicted, base, corrections, samples, lower, upper, mode = hourly_forecast
                 result.update({"hourly_forecast": {str(h): round(predicted[h], 6) for h in range(24)}, "hourly_actual": {}, "hourly_error": {}, "hourly_feedback_samples": samples, "hourly_lower_kwh": {str(h): round(lower[h], 6) for h in range(24)}, "hourly_upper_kwh": {str(h): round(upper[h], 6) for h in range(24)}, "hourly_profile_mode": mode})
+            state.setdefault("daily_quality_history", {})[previous_date] = {"data_status": result.get("data_status"), "backfill_status": result.get("backfill_status"), "available_hours": len(values), "missing_hours": result.get("missing_hours", []), "consistency": quality.get("daily_hourly_consistency", {}), "recorded_at": now.isoformat()}
             processed[previous_date] = result
             upsert_csv(RESULTS, ai_fields, [result], ["device_id", "date"])
             if hourly_forecast:
