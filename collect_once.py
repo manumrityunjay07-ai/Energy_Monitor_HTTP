@@ -35,6 +35,10 @@ def now_ist() -> datetime:
     return datetime.now(TZ)
 
 
+def calendar_profile(day: str) -> str:
+    return "weekend" if date.fromisoformat(day).weekday() >= 5 else "weekday"
+
+
 def request_json(method: str, url: str, **kwargs) -> tuple[dict, float]:
     last_error: Exception | None = None
     for attempt in range(1, MAX_RETRIES + 1):
@@ -228,6 +232,8 @@ def upsert_csv(path: Path, fields: list[str], rows: list[dict], key_fields: list
                 normalized["forecast_date"] = (date.fromisoformat(str(row["date"])) + timedelta(days=1)).isoformat()
             except ValueError:
                 normalized["forecast_date"] = ""
+        if "calendar_profile" in fields and not normalized.get("calendar_profile") and row.get("date"):
+            normalized["calendar_profile"] = calendar_profile(str(row["date"]))
         merged[tuple(str(row.get(k, "")) for k in key_fields)] = normalized
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -303,7 +309,7 @@ def main() -> None:
     hourly_history = state.setdefault("hourly_forecast_history", {})
     state["model_guard"] = evaluate_model_guard(forecast_history)
     today = now.date().isoformat()
-    ai_fields = ["processed_at", "device_id", "date", "actual_date", "forecast_date", "evaluated_at", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
+    ai_fields = ["processed_at", "device_id", "date", "actual_date", "forecast_date", "evaluated_at", "calendar_profile", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
     hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
     ensure_csv_schema(RESULTS, ai_fields, ["device_id", "date"])
     ensure_csv_schema(HOURLY_RESULTS, hourly_fields, ["device_id", "date", "hour"])
@@ -336,6 +342,7 @@ def main() -> None:
             result.setdefault("data_status", "complete" if len(values) == 24 else "daily_total_only")
             result.setdefault("actual_date", previous_date)
             result.setdefault("forecast_date", today)
+            result.setdefault("calendar_profile", calendar_profile(previous_date))
             prior_daily = forecast_history.get(previous_date)
             if actual_total is not None:
                 if len(values) == 24:
