@@ -160,13 +160,16 @@ def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: di
     recent_errors = errors[-14:]
     mean_error = mean(recent_errors) if recent_errors else 0.0
     robust_error = median(recent_errors) if recent_errors else 0.0
-    correction = 0.6 * mean_error + 0.4 * robust_error if adaptation_enabled else 0.0
+    # One or two feedback samples are too noisy to safely change the forecast.
+    # Keep the baseline until the rollback guard has enough evidence.
+    correction = 0.6 * mean_error + 0.4 * robust_error if adaptation_enabled and len(recent_errors) >= 5 else 0.0
     correction = max(-0.25 * abs(base_prediction), min(0.25 * abs(base_prediction), correction))
     prediction = max(0.0, base_prediction + correction)
     weighted_mean = sum(weight * total for weight, (_, total) in zip(weights, selected)) / weight_total
     spread = math.sqrt(sum(weight * (total - weighted_mean) ** 2 for weight, (_, total) in zip(weights, selected)) / weight_total)
     lower, upper = max(0.0, prediction - 1.28 * spread), prediction + 1.28 * spread
-    forecast_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": round(base_prediction, 6), "correction_kwh": round(correction, 6), "predicted_kwh": round(prediction, 6), "lower_kwh": round(lower, 6), "upper_kwh": round(upper, 6), "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": "robust median/mean blend, 25% cap" if adaptation_enabled else "rollback guard: base model"}
+    learning_guard = "robust median/mean blend, 25% cap" if adaptation_enabled and len(recent_errors) >= 5 else "baseline held: fewer than 5 feedback samples"
+    forecast_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": round(base_prediction, 6), "correction_kwh": round(correction, 6), "predicted_kwh": round(prediction, 6), "lower_kwh": round(lower, 6), "upper_kwh": round(upper, 6), "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": learning_guard}
     return round(prediction, 6), round(base_prediction, 6), round(correction, 6), len(recent_errors), round(lower, 6), round(upper, 6), mode
 
 

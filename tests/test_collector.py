@@ -49,6 +49,19 @@ class CollectorSafetyTests(unittest.TestCase):
         self.assertFalse(guard["adaptation_enabled"])
         self.assertIn("rollback", guard["reason"])
 
+    def test_early_feedback_holds_the_baseline(self):
+        daily_totals = {f"2026-09-{day:02d}": 1000.0 for day in range(10, 13)}
+        forecast = collect_once.adaptive_daily_forecast(
+            daily_totals,
+            {"2026-09-12": {"error_kwh": 500.0}},
+            "2026-09-13",
+            "2026-09-12",
+            datetime.now(ZoneInfo("Asia/Kolkata")),
+            True,
+        )
+        self.assertIsNotNone(forecast)
+        self.assertEqual(forecast[2], 0.0)
+
 
 if __name__ == "__main__":
     unittest.main()
