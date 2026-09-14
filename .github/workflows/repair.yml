@@ -1,0 +1,44 @@
+name: Repair and backfill energy data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 * * * *'
+
+concurrency:
+  group: energy-data-publisher
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run repair-aware collector
+        run: python collect_once.py
+      - name: Validate and summarize
+        run: |
+          python -W error -m unittest discover -s tests -v
+          python validate_outputs.py
+          {
+            echo '## Repair/backfill summary'
+            echo '- Collector run: passed'
+            echo '- Output reconciliation: passed'
+            echo "- Daily rows: $(tail -n +2 results/ai_results.csv | wc -l)"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish repaired outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data results
+          git diff --cached --quiet || git commit -m 'Repair and backfill energy outputs'
+          git push
