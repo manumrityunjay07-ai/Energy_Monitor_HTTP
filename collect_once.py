@@ -320,7 +320,7 @@ def main() -> None:
         profile, hourly_latency, missing_hours = fetch_hourly(now)
         profiles.setdefault(today, {}).update(profile)
         quality = data_quality(profiles[today], now, hourly_latency)
-        previous_date = (now.date() - timedelta(days=1)).isoformat()
+        previous_date = os.getenv("REPROCESS_DATE") or (now.date() - timedelta(days=1)).isoformat()
         result = None
         daily_latency = None
         completed_profile = profiles.get(previous_date, {})

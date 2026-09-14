@@ -1,0 +1,52 @@
+name: Reprocess historical energy day
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: 'IST date to reprocess (YYYY-MM-DD)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  reprocess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Validate requested date
+        env:
+          TARGET_DATE: ${{ inputs.target_date }}
+        run: python -c "import datetime, os; datetime.date.fromisoformat(os.environ['TARGET_DATE'])"
+      - name: Reprocess selected date
+        env:
+          REPROCESS_DATE: ${{ inputs.target_date }}
+        run: python collect_once.py
+      - name: Validate generated outputs
+        run: |
+          python -W error -m unittest discover -s tests -v
+          python validate_outputs.py
+      - name: Commit repaired historical outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data results
+          git diff --cached --quiet || git commit -m "Reprocess historical date ${{ inputs.target_date }}"
+          git push
+      - name: Write reprocessing summary
+        run: |
+          {
+            echo '## Historical reprocessing'
+            echo '- Date: ${{ inputs.target_date }}'
+            echo '- Output validation: passed'
+            echo '- Tests: passed'
+            echo '- Published: yes'
+          } >> "$GITHUB_STEP_SUMMARY"
