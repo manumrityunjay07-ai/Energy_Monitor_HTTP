@@ -311,6 +311,7 @@ def main() -> None:
         completed_profile = profiles.get(previous_date, {})
         if previous_date not in processed:
             daily_totals, daily_latency = fetch_daily_totals(now.date())
+            state["last_daily_total_collection"] = now.isoformat()
             actual_total = daily_totals.get(previous_date)
             values = [float(completed_profile[str(hour)]) for hour in range(24) if str(hour) in completed_profile]
             historical_scores = [float(item.get("anomaly_score")) for item in processed.values() if isinstance(item, dict) and item.get("anomaly_score") not in (None, "")]
@@ -360,6 +361,8 @@ def main() -> None:
         state["last_run"] = now.isoformat()
         state["model_version"] = MODEL_VERSION
         health = write_health(state, now, "healthy", hourly_latency, daily_latency, missing_hours, quality)
+        health.update({"hourly_collection_at": now.isoformat(), "daily_total_collection_at": state.get("last_daily_total_collection"), "dashboard_payload_generated_at": now.isoformat(), "dashboard_build": os.getenv("DASHBOARD_BUILD", "2026-09-14-r5")})
+        HEALTH.write_text(json.dumps(health, indent=2), encoding="utf-8")
         STATE.write_text(json.dumps(state, indent=2), encoding="utf-8")
         publish_dashboard_data(state, health)
         print(f"Device {DEVICE_ID}; collected {len(profiles.get(today, {}))}/24 hours for {today}; model {MODEL_VERSION}")
