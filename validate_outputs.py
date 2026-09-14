@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 RESULTS = ROOT / "results"
 
-EXPECTED_AI = {"device_id", "date", "status", "data_status", "prediction_kwh", "model_version"}
+EXPECTED_AI = {"device_id", "date", "actual_date", "forecast_date", "status", "data_status", "prediction_kwh", "model_version"}
 EXPECTED_HOURLY = {"device_id", "date", "hour", "predicted_kwh", "model_version"}
 
 
