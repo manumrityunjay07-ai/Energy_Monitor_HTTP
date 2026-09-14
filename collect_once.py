@@ -218,7 +218,10 @@ def upsert_csv(path: Path, fields: list[str], rows: list[dict], key_fields: list
         existing = []
     merged: dict[tuple, dict] = {}
     for row in existing + rows:
-        merged[tuple(str(row.get(k, "")) for k in key_fields)] = {field: row.get(field, "") for field in fields}
+        normalized = {field: row.get(field, "") for field in fields}
+        if "data_status" in fields and not normalized.get("data_status"):
+            normalized["data_status"] = "daily_total_only" if row.get("status") in ("data_incomplete", "daily_total_only") else "complete"
+        merged[tuple(str(row.get(k, "")) for k in key_fields)] = normalized
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
