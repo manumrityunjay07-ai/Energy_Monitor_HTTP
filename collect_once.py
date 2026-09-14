@@ -214,7 +214,7 @@ def upsert_csv(path: Path, fields: list[str], rows: list[dict], key_fields: list
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
-        writer.writerows(sorted(merged.values(), key=lambda row: tuple(row.get(k, "") for k in key_fields)))
+        writer.writerows(sorted(merged.values(), key=lambda row: tuple(str(row.get(k, "")) for k in key_fields)))
 
 
 def ensure_csv_schema(path: Path, fields: list[str], key_fields: list[str]) -> None:
@@ -286,6 +286,9 @@ def main() -> None:
     hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
     ensure_csv_schema(RESULTS, ai_fields, ["device_id", "date"])
     ensure_csv_schema(HOURLY_RESULTS, hourly_fields, ["device_id", "date", "hour"])
+    # Recover any state records that were persisted before a CSV write or push failed.
+    if processed:
+        upsert_csv(RESULTS, ai_fields, list(processed.values()), ["device_id", "date"])
     try:
         profile, hourly_latency, missing_hours = fetch_hourly(now)
         profiles.setdefault(today, {}).update(profile)
@@ -294,35 +297,35 @@ def main() -> None:
         result = None
         daily_latency = None
         completed_profile = profiles.get(previous_date, {})
-        if len(completed_profile) == 24 and previous_date not in processed:
-            values = [float(completed_profile[str(hour)]) for hour in range(24)]
+        if previous_date not in processed:
+            daily_totals, daily_latency = fetch_daily_totals(now.date())
+            actual_total = daily_totals.get(previous_date)
+            values = [float(completed_profile[str(hour)]) for hour in range(24) if str(hour) in completed_profile]
             historical_scores = [float(item.get("anomaly_score")) for item in processed.values() if isinstance(item, dict) and item.get("anomaly_score") not in (None, "")]
             adaptive_threshold = float(state.get("adaptive_anomaly_threshold", PARAMS["anomaly_threshold"]))
             if len(historical_scores) >= 7:
                 adaptive_threshold = max(float(PARAMS["anomaly_threshold"]), mean(historical_scores) + 2 * pstdev(historical_scores))
                 state["adaptive_anomaly_threshold"] = round(adaptive_threshold, 6)
-            result = anomaly_result(values, now, previous_date, adaptive_threshold)
-            result["anomaly_explanation"] = explain_profile(values, profiles, previous_date)
-            daily_totals, daily_latency = fetch_daily_totals(now.date())
+            if len(values) == 24:
+                result = anomaly_result(values, now, previous_date, adaptive_threshold)
+                result["anomaly_explanation"] = explain_profile(values, profiles, previous_date)
+            else:
+                result = {"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": previous_date, "status": "data_incomplete", "cluster": "", "anomaly_score": "", "anomaly_threshold": adaptive_threshold, "anomaly_explanation": f"Daily total available; hourly profile is missing {24 - len(values)} hour(s)."}
             prior_daily = forecast_history.get(previous_date)
-            actual_total = daily_totals.get(previous_date)
             if actual_total is not None:
-                hourly_total = sum(values)
-                difference = abs(hourly_total - actual_total)
-                quality["daily_hourly_consistency"] = {
-                    "hourly_total_kwh": round(hourly_total, 6),
-                    "daily_total_kwh": round(actual_total, 6),
-                    "difference_kwh": round(difference, 6),
-                    "relative_difference": round(difference / max(abs(actual_total), 1.0), 6),
-                    "status": "good" if difference / max(abs(actual_total), 1.0) <= 0.05 else "review",
-                }
+                if len(values) == 24:
+                    hourly_total = sum(values)
+                    difference = abs(hourly_total - actual_total)
+                    quality["daily_hourly_consistency"] = {"hourly_total_kwh": round(hourly_total, 6), "daily_total_kwh": round(actual_total, 6), "difference_kwh": round(difference, 6), "relative_difference": round(difference / max(abs(actual_total), 1.0), 6), "status": "good" if difference / max(abs(actual_total), 1.0) <= 0.05 else "review"}
+                else:
+                    quality["daily_hourly_consistency"] = {"status": "review", "reason": "hourly profile incomplete", "available_hours": len(values), "daily_total_kwh": round(actual_total, 6)}
             if actual_total is not None and isinstance(prior_daily, dict):
                 predicted_total = float(prior_daily["predicted_kwh"])
                 error = actual_total - predicted_total
                 prior_daily.update({"actual_kwh": round(actual_total, 6), "error_kwh": round(error, 6), "evaluated_at": now.isoformat()})
                 result.update({"actual_kwh": round(actual_total, 6), "previous_prediction_kwh": round(predicted_total, 6), "prediction_error_kwh": round(error, 6)})
             prior_hourly = hourly_history.get(previous_date)
-            if isinstance(prior_hourly, dict) and len(completed_profile) == 24 and len(prior_hourly.get("predicted_kwh", [])) == 24:
+            if isinstance(prior_hourly, dict) and len(values) == 24 and len(prior_hourly.get("predicted_kwh", [])) == 24:
                 actual_hours = [float(completed_profile[str(hour)]) for hour in range(24)]
                 errors = [actual_hours[h] - float(prior_hourly["predicted_kwh"][h]) for h in range(24)]
                 prior_hourly.update({"actual_kwh": actual_hours, "error_kwh": [round(v, 6) for v in errors], "evaluated_at": now.isoformat()})
