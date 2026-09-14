@@ -1,0 +1,51 @@
+name: Energy health alerts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '12,42 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Evaluate current health
+        env:
+          ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --retry 3 --max-time 30 \
+            https://raw.githubusercontent.com/manumrityunjay07-ai/Energy_Monitor_HTTP/main/results/health.json \
+            -o health.json
+          status="$(jq -r '.collector_status // "unknown"' health.json)"
+          quality="$(jq -r '.data_quality.status // "unknown"' health.json)"
+          missing="$(jq -c '.missing_hours // []' health.json)"
+          latency="$(jq -r '.api_latency_ms.hourly // 0' health.json)"
+          coverage="$(jq -r '.confidence_coverage.rate // "n/a"' health.json)"
+          now="$(date +%s)"
+          last="$(jq -r '.last_run // empty' health.json)"
+          age="unknown"
+          if [ -n "$last" ]; then age=$((now - $(date -d "$last" +%s))); fi
+          alert=""
+          [ "$status" = healthy ] || alert="collector=$status; $alert"
+          [ "$quality" = complete ] || alert="quality=$quality; $alert"
+          [ "$missing" = '[]' ] || alert="missing_hours=$missing; $alert"
+          [ "$age" = unknown ] || [ "$age" -lt 2700 ] || alert="stale_seconds=$age; $alert"
+          if [ "$latency" != 0 ] && awk "BEGIN {exit !($latency > 10000)}"; then alert="latency_ms=$latency; $alert"; fi
+          {
+            echo '## Energy health alert check'
+            echo "- Collector: $status"
+            echo "- Data quality: $quality"
+            echo "- Missing hours: $missing"
+            echo "- Hourly latency: ${latency} ms"
+            echo "- Confidence coverage: $coverage"
+            echo "- Alert: ${alert:-none}"
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "$alert" ] && [ -n "${ALERT_WEBHOOK_URL:-}" ]; then
+            jq -n --arg text "Energy Monitor alert: $alert" '{text:$text}' | curl --fail --silent --show-error --max-time 15 -X POST -H 'content-type: application/json' -d @- "$ALERT_WEBHOOK_URL"
+          fi
+          [ -z "$alert" ]
