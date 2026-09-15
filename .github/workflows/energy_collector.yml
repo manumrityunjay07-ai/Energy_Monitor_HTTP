@@ -11,6 +11,7 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   collect:
@@ -57,25 +58,17 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git config pull.rebase true
           git add -A data results
           if git diff --cached --quiet; then
             echo "No state or result changes to commit."
           else
+            branch="automation/energy-data-${GITHUB_RUN_ID}"
+            git switch -c "$branch"
             git commit -m "Update energy data and AI results"
-            pushed=false
-            for attempt in 1 2 3 4 5; do
-              echo "Publishing attempt ${attempt}/5"
-              if git fetch origin main && git rebase origin/main && git push origin HEAD:main; then
-                pushed=true
-                break
-              fi
-              echo "Publish attempt ${attempt} failed; retrying after remote synchronization."
-              git rebase --abort || true
-              sleep $((attempt * 2))
-            done
-            if [ "$pushed" != true ]; then
-              echo "ERROR: collection succeeded but publishing failed after 5 attempts."
-              exit 1
-            fi
+            git push --set-upstream origin "$branch"
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "Automated energy data update (${GITHUB_RUN_ID})" \
+              --body "Automated collector run ${GITHUB_RUN_ID} passed collection, safety tests, and validate_outputs.py. Please review and merge this data-only update into main."
           fi
