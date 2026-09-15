@@ -52,6 +52,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           snapshot=$(mktemp -d)
           cp -a data results "$snapshot/"
+          rm -rf data results
           git fetch origin "$LIVE_BRANCH" || true
           if git show-ref --verify --quiet "refs/remotes/origin/$LIVE_BRANCH"; then
             git switch -C "$LIVE_BRANCH" "origin/$LIVE_BRANCH"
