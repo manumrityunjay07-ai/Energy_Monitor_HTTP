@@ -99,28 +99,27 @@ jobs:
             versions = sorted({row.get('model_version') for row in daily + hourly if row.get('model_version')})
             quality = health.get('data_quality', {})
             print(f'''## Automated collector publication
+            This PR is maintained as the single review queue for the 15-minute collector schedule. New runs update this same branch and PR; they do not create unlimited PRs. Because stale reviews are dismissed by branch protection, approval is expected at the operator's chosen merge cadence, not every scheduled run.
 
-This PR is maintained as the single review queue for the 15-minute collector schedule. New runs update this same branch and PR; they do not create unlimited PRs. Because stale reviews are dismissed by branch protection, approval is expected at the operator's chosen merge cadence, not every scheduled run.
+            ### Run
+            - Workflow run: `{__import__('os').environ.get('GITHUB_RUN_ID')}`
+            - Source commit: `{__import__('os').environ.get('GITHUB_SHA')}`
+            - Generated at: `{health.get('last_run', 'unknown')}`
+            - Collector status: **{health.get('collector_status', 'unknown')}**
+            - Data quality: **{quality.get('score', 'n/a')}%** ({quality.get('status', 'unknown')})
+            - Missing hours: `{health.get('missing_hours', [])}`
+            - Daily rows: **{len(daily)}**; hourly rows: **{len(hourly)}**
+            - Data dates: `{dates[0] if dates else 'none'}` through `{dates[-1] if dates else 'none'}`
+            - Model versions: `{', '.join(versions) or 'none'}`
 
-### Run
-- Workflow run: `{__import__('os').environ.get('GITHUB_RUN_ID')}`
-- Source commit: `{__import__('os').environ.get('GITHUB_SHA')}`
-- Generated at: `{health.get('last_run', 'unknown')}`
-- Collector status: **{health.get('collector_status', 'unknown')}**
-- Data quality: **{quality.get('score', 'n/a')}%** ({quality.get('status', 'unknown')})
-- Missing hours: `{health.get('missing_hours', [])}`
-- Daily rows: **{len(daily)}**; hourly rows: **{len(hourly)}**
-- Data dates: `{dates[0] if dates else 'none'}` through `{dates[-1] if dates else 'none'}`
-- Model versions: `{', '.join(versions) or 'none'}`
+            ### Required checks
+            - Safety tests passed.
+            - `validate_outputs.py` passed exactly before publication.
+            - The required `test` check must pass on this data-only PR before merge.
 
-### Required checks
-- Safety tests passed.
-- `validate_outputs.py` passed exactly before publication.
-- The required `test` check must pass on this data-only PR before merge.
-
-### Review and merge policy
-Reviewers should merge the latest version of this PR at the chosen operational cadence. A new scheduled run may update the PR before review; that intentionally supersedes the prior snapshot. Do not merge an older commit after a newer run has updated the branch.
-''')
+            ### Review and merge policy
+            Reviewers should merge the latest version of this PR at the chosen operational cadence. A new scheduled run may update the PR before review; that intentionally supersedes the prior snapshot. Do not merge an older commit after a newer run has updated the branch.
+            ''')
             PY
 
             # Close superseded per-run automation PRs left by older workflow versions.
