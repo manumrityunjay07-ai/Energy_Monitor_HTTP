@@ -1,0 +1,4462 @@
+[
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T19:28:31.122370+05:30",
+    "last_run": "2026-09-13T19:28:31.122370+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 3755.0,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 19,
+      "expected_completed_hours": 19,
+      "completeness": 1.0,
+      "api_latency_ms": 3755.0,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision"
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T19:29:20.717454+05:30",
+    "last_run": "2026-09-13T19:29:20.717454+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 892.94,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 19,
+      "expected_completed_hours": 19,
+      "completeness": 1.0,
+      "api_latency_ms": 892.94,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T19:31:12.500198+05:30",
+    "last_run": "2026-09-13T19:31:12.500198+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 886.72,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 19,
+      "expected_completed_hours": 19,
+      "completeness": 1.0,
+      "api_latency_ms": 886.72,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T19:39:52.143158+05:30",
+    "last_run": "2026-09-13T19:39:52.143158+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 898.08,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 19,
+      "expected_completed_hours": 19,
+      "completeness": 1.0,
+      "api_latency_ms": 898.08,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T19:46:23.205153+05:30",
+    "last_run": "2026-09-13T19:46:23.205153+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 886.99,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 19,
+      "expected_completed_hours": 19,
+      "completeness": 1.0,
+      "api_latency_ms": 886.99,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T19:53:37.862481+05:30",
+    "last_run": "2026-09-13T19:53:37.862481+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 901.17,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 19,
+      "expected_completed_hours": 19,
+      "completeness": 1.0,
+      "api_latency_ms": 901.17,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T20:01:04.377676+05:30",
+    "last_run": "2026-09-13T20:01:04.377676+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 903.45,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 903.45,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T20:16:05.461708+05:30",
+    "last_run": "2026-09-13T20:16:05.461708+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 924.7,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 924.7,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T20:31:42.529789+05:30",
+    "last_run": "2026-09-13T20:31:42.529789+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 927.97,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 927.97,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T20:46:24.388479+05:30",
+    "last_run": "2026-09-13T20:46:24.388479+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 897.59,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 897.59,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T21:01:41.860689+05:30",
+    "last_run": "2026-09-13T21:01:41.860689+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 843.46,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 843.46,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T21:16:27.836340+05:30",
+    "last_run": "2026-09-13T21:16:27.836340+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 946.05,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 946.05,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T21:31:38.615444+05:30",
+    "last_run": "2026-09-13T21:31:38.615444+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 868.49,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 868.49,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T21:46:18.532467+05:30",
+    "last_run": "2026-09-13T21:46:18.532467+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 936.45,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 936.45,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T22:01:01.685069+05:30",
+    "last_run": "2026-09-13T22:01:01.685069+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 902.15,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 902.15,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T22:16:03.408204+05:30",
+    "last_run": "2026-09-13T22:16:03.408204+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 939.56,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 939.56,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T22:31:26.207813+05:30",
+    "last_run": "2026-09-13T22:31:26.207813+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 943.4,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 943.4,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T22:46:00.526161+05:30",
+    "last_run": "2026-09-13T22:46:00.526161+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 941.12,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 941.12,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T22:59:41.090719+05:30",
+    "last_run": "2026-09-13T22:59:41.090719+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 876.91,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 876.91,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T23:01:13.931902+05:30",
+    "last_run": "2026-09-13T23:01:13.931902+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 849.44,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 23,
+      "expected_completed_hours": 23,
+      "completeness": 1.0,
+      "api_latency_ms": 849.44,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T23:15:53.824290+05:30",
+    "last_run": "2026-09-13T23:15:53.824290+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 916.64,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 23,
+      "expected_completed_hours": 23,
+      "completeness": 1.0,
+      "api_latency_ms": 916.64,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T23:31:13.432391+05:30",
+    "last_run": "2026-09-13T23:31:13.432391+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 918.1,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 23,
+      "expected_completed_hours": 23,
+      "completeness": 1.0,
+      "api_latency_ms": 918.1,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-13T23:46:20.831847+05:30",
+    "last_run": "2026-09-13T23:46:20.831847+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 945.15,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 23,
+      "expected_completed_hours": 23,
+      "completeness": 1.0,
+      "api_latency_ms": 945.15,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T00:00:57.282656+05:30",
+    "last_run": "2026-09-14T00:00:57.282656+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 890.48,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 890.48,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T00:16:23.193833+05:30",
+    "last_run": "2026-09-14T00:16:23.193833+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 882.78,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 882.78,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T00:31:19.282123+05:30",
+    "last_run": "2026-09-14T00:31:19.282123+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 873.57,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 873.57,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T00:46:02.892424+05:30",
+    "last_run": "2026-09-14T00:46:02.892424+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 855.81,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 855.81,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T01:01:10.421577+05:30",
+    "last_run": "2026-09-14T01:01:10.421577+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 907.18,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 907.18,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T01:10:12.663637+05:30",
+    "last_run": "2026-09-14T01:10:12.663637+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 866.32,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 866.32,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T01:16:19.855327+05:30",
+    "last_run": "2026-09-14T01:16:19.855327+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 887.56,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 887.56,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T01:31:07.942943+05:30",
+    "last_run": "2026-09-14T01:31:07.942943+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 890.75,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 890.75,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T01:46:12.483608+05:30",
+    "last_run": "2026-09-14T01:46:12.483608+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 866.59,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 866.59,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T02:01:24.319194+05:30",
+    "last_run": "2026-09-14T02:01:24.319194+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 931.49,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
+      "completeness": 1.0,
+      "api_latency_ms": 931.49,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T02:16:15.718872+05:30",
+    "last_run": "2026-09-14T02:16:15.718872+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 901.25,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
+      "completeness": 1.0,
+      "api_latency_ms": 901.25,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T02:31:06.346680+05:30",
+    "last_run": "2026-09-14T02:31:06.346680+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 870.39,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
+      "completeness": 1.0,
+      "api_latency_ms": 870.39,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T02:46:06.991404+05:30",
+    "last_run": "2026-09-14T02:46:06.991404+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 941.74,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
+      "completeness": 1.0,
+      "api_latency_ms": 941.74,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T03:01:11.615240+05:30",
+    "last_run": "2026-09-14T03:01:11.615240+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 859.62,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 859.62,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T03:11:41.417056+05:30",
+    "last_run": "2026-09-14T03:11:41.417056+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 1017.73,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 1017.73,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T03:16:04.142462+05:30",
+    "last_run": "2026-09-14T03:16:04.142462+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 933.24,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 933.24,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T03:31:28.096988+05:30",
+    "last_run": "2026-09-14T03:31:28.096988+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 911.11,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 911.11,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T03:45:54.201678+05:30",
+    "last_run": "2026-09-14T03:45:54.201678+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 846.36,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 846.36,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T04:00:57.039992+05:30",
+    "last_run": "2026-09-14T04:00:57.039992+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 870.39,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 870.39,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T04:15:55.331615+05:30",
+    "last_run": "2026-09-14T04:15:55.331615+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 844.78,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 844.78,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T04:31:24.566936+05:30",
+    "last_run": "2026-09-14T04:31:24.566936+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 917.31,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 917.31,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T04:46:00.685474+05:30",
+    "last_run": "2026-09-14T04:46:00.685474+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 974.51,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 974.51,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T05:01:16.004281+05:30",
+    "last_run": "2026-09-14T05:01:16.004281+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 890.38,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
+      "completeness": 1.0,
+      "api_latency_ms": 890.38,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T05:15:58.674434+05:30",
+    "last_run": "2026-09-14T05:15:58.674434+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 854.92,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
+      "completeness": 1.0,
+      "api_latency_ms": 854.92,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T05:31:30.691761+05:30",
+    "last_run": "2026-09-14T05:31:30.691761+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 855.14,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
+      "completeness": 1.0,
+      "api_latency_ms": 855.14,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T05:45:51.670945+05:30",
+    "last_run": "2026-09-14T05:45:51.670945+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 864.66,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
+      "completeness": 1.0,
+      "api_latency_ms": 864.66,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T06:00:59.740850+05:30",
+    "last_run": "2026-09-14T06:00:59.740850+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 931.43,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 931.43,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T06:16:06.627086+05:30",
+    "last_run": "2026-09-14T06:16:06.627086+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 926.91,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 926.91,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T06:31:28.930821+05:30",
+    "last_run": "2026-09-14T06:31:28.930821+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 841.36,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 841.36,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T06:46:07.322273+05:30",
+    "last_run": "2026-09-14T06:46:07.322273+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 872.64,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 872.64,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T07:01:17.626876+05:30",
+    "last_run": "2026-09-14T07:01:17.626876+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 854.02,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 7,
+      "expected_completed_hours": 7,
+      "completeness": 1.0,
+      "api_latency_ms": 854.02,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 1,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 1
+    }
+  },
+  {
+    "collector_status": "degraded",
+    "last_successful_collection": "2026-09-14T07:01:17.626876+05:30",
+    "last_run": "2026-09-14T20:22:32.610476+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": null,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 7,
+      "expected_completed_hours": 7,
+      "completeness": 1.0,
+      "api_latency_ms": 854.02,
+      "status": "good"
+    },
+    "error": "'<' not supported between instances of 'int' and 'str'",
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:23:13.218647+05:30",
+    "last_run": "2026-09-14T20:23:13.218647+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 4054.38,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 4054.38,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:24:50.162103+05:30",
+    "last_run": "2026-09-14T20:24:50.162103+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 9069.27,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 9069.27,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:26:17.852030+05:30",
+    "last_run": "2026-09-14T20:26:17.852030+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 6633.98,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 6633.98,
+      "status": "good"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:37:43.394333+05:30",
+    "last_run": "2026-09-14T20:37:43.394333+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 5284.01,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 5284.01,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:38:08.644723+05:30",
+    "last_run": "2026-09-14T20:38:08.644723+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 4844.98,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 4844.98,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:40:09.653777+05:30",
+    "last_run": "2026-09-14T20:40:09.653777+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 5344.59,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 5344.59,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:41:40.017918+05:30",
+    "last_run": "2026-09-14T20:41:40.017918+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 4776.98,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 4776.98,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:42:27.264728+05:30",
+    "last_run": "2026-09-14T20:42:27.264728+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 6264.66,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 6264.66,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:45:12.023922+05:30",
+    "last_run": "2026-09-14T20:45:12.023922+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 4513.71,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 4513.71,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:45:57.819424+05:30",
+    "last_run": "2026-09-14T20:45:57.819424+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 4715.19,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 4715.19,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:52:55.404526+05:30",
+    "last_run": "2026-09-14T20:52:55.404526+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 4433.85,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 4433.85,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:54:07.630316+05:30",
+    "last_run": "2026-09-14T20:54:07.630316+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 5589.31,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 5589.31,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:56:22.668145+05:30",
+    "last_run": "2026-09-14T20:56:22.668145+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 6696.06,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 6696.06,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T20:57:10.247022+05:30",
+    "last_run": "2026-09-14T20:57:10.247022+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 5541.25,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 20,
+      "expected_completed_hours": 20,
+      "completeness": 1.0,
+      "api_latency_ms": 5541.25,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T21:05:11.062327+05:30",
+    "last_run": "2026-09-14T21:05:11.062327+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 5663.8,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 5663.8,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T21:07:47.649181+05:30",
+    "last_run": "2026-09-14T21:07:47.649181+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 4714.89,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 4714.89,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T21:16:00.031329+05:30",
+    "last_run": "2026-09-14T21:16:00.031329+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 903.53,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 903.53,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T21:31:07.029135+05:30",
+    "last_run": "2026-09-14T21:31:07.029135+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 902.0,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 902.0,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T21:46:57.653039+05:30",
+    "last_run": "2026-09-14T21:46:57.653039+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 899.91,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 21,
+      "expected_completed_hours": 21,
+      "completeness": 1.0,
+      "api_latency_ms": 899.91,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T22:01:02.545243+05:30",
+    "last_run": "2026-09-14T22:01:02.545243+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 930.06,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 930.06,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T22:15:57.435831+05:30",
+    "last_run": "2026-09-14T22:15:57.435831+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 924.7,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 924.7,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T22:31:58.517024+05:30",
+    "last_run": "2026-09-14T22:31:58.517024+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 937.68,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 937.68,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T22:45:58.730350+05:30",
+    "last_run": "2026-09-14T22:45:58.730350+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 871.93,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 22,
+      "expected_completed_hours": 22,
+      "completeness": 1.0,
+      "api_latency_ms": 871.93,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T23:01:29.372211+05:30",
+    "last_run": "2026-09-14T23:01:29.372211+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 886.94,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 23,
+      "expected_completed_hours": 23,
+      "completeness": 1.0,
+      "api_latency_ms": 886.94,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T23:16:27.361850+05:30",
+    "last_run": "2026-09-14T23:16:27.361850+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 888.25,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 23,
+      "expected_completed_hours": 23,
+      "completeness": 1.0,
+      "api_latency_ms": 888.25,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T23:31:33.579995+05:30",
+    "last_run": "2026-09-14T23:31:33.579995+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 905.46,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 23,
+      "expected_completed_hours": 23,
+      "completeness": 1.0,
+      "api_latency_ms": 905.46,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-14T23:46:02.798648+05:30",
+    "last_run": "2026-09-14T23:46:02.798648+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 1020.47,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 23,
+      "expected_completed_hours": 23,
+      "completeness": 1.0,
+      "api_latency_ms": 1020.47,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 1,
+      "evaluated": 2,
+      "rate": 0.5
+    },
+    "model_evaluation": {
+      "evaluated_days": 2,
+      "mae_kwh": 259.036248,
+      "rmse_kwh": 269.019999,
+      "mape_percent": 16.857413,
+      "bias_kwh": -72.608415
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 2,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 2
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T00:01:13.780796+05:30",
+    "last_run": "2026-09-15T00:01:13.780796+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 942.53,
+      "daily": 898.42
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 942.53,
+      "status": "complete",
+      "data_status": "complete",
+      "daily_hourly_consistency": {
+        "status": "review",
+        "reason": "hourly profile incomplete",
+        "available_hours": 23,
+        "missing_hours": [
+          23
+        ],
+        "daily_total_kwh": 1560.13,
+        "hourly_residual_not_allocated_kwh": null
+      }
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T00:15:59.480665+05:30",
+    "last_run": "2026-09-15T00:15:59.480665+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 870.43,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 870.43,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T00:31:19.853343+05:30",
+    "last_run": "2026-09-15T00:31:19.853343+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 835.5,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 835.5,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T00:37:23.470543+05:30",
+    "last_run": "2026-09-15T00:37:23.470543+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 874.64,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 874.64,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T00:46:16.208123+05:30",
+    "last_run": "2026-09-15T00:46:16.208123+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 867.26,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
+      "completeness": 1.0,
+      "api_latency_ms": 867.26,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T01:01:11.692697+05:30",
+    "last_run": "2026-09-15T01:01:11.692697+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 878.71,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 878.71,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T01:16:00.069028+05:30",
+    "last_run": "2026-09-15T01:16:00.069028+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 865.28,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 865.28,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T01:31:38.696178+05:30",
+    "last_run": "2026-09-15T01:31:38.696178+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 900.26,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 900.26,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T01:45:59.962777+05:30",
+    "last_run": "2026-09-15T01:45:59.962777+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 954.4,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 954.4,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T01:49:48.369247+05:30",
+    "last_run": "2026-09-15T01:49:48.369247+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 939.62,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 1,
+      "expected_completed_hours": 1,
+      "completeness": 1.0,
+      "api_latency_ms": 939.62,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T02:01:09.789461+05:30",
+    "last_run": "2026-09-15T02:01:09.789461+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 900.14,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
+      "completeness": 1.0,
+      "api_latency_ms": 900.14,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T02:16:21.375530+05:30",
+    "last_run": "2026-09-15T02:16:21.375530+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 898.04,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
+      "completeness": 1.0,
+      "api_latency_ms": 898.04,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T02:31:06.774240+05:30",
+    "last_run": "2026-09-15T02:31:06.774240+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 862.75,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
+      "completeness": 1.0,
+      "api_latency_ms": 862.75,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T02:45:54.701959+05:30",
+    "last_run": "2026-09-15T02:45:54.701959+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 928.0,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
+      "completeness": 1.0,
+      "api_latency_ms": 928.0,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T03:01:00.646867+05:30",
+    "last_run": "2026-09-15T03:01:00.646867+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 900.32,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 900.32,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T03:16:04.447739+05:30",
+    "last_run": "2026-09-15T03:16:04.447739+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 895.23,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 895.23,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T03:31:29.691406+05:30",
+    "last_run": "2026-09-15T03:31:29.691406+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 873.77,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 873.77,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T03:45:55.544657+05:30",
+    "last_run": "2026-09-15T03:45:55.544657+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 842.98,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 842.98,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T03:58:16.027015+05:30",
+    "last_run": "2026-09-15T03:58:16.027015+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 906.08,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 3,
+      "expected_completed_hours": 3,
+      "completeness": 1.0,
+      "api_latency_ms": 906.08,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T04:01:10.257678+05:30",
+    "last_run": "2026-09-15T04:01:10.257678+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 913.53,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 913.53,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T04:16:12.197775+05:30",
+    "last_run": "2026-09-15T04:16:12.197775+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 941.0,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 941.0,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T04:31:00.257847+05:30",
+    "last_run": "2026-09-15T04:31:00.257847+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 941.19,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 941.19,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T04:42:48.589597+05:30",
+    "last_run": "2026-09-15T04:42:48.589597+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 936.48,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 936.48,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T04:45:53.915859+05:30",
+    "last_run": "2026-09-15T04:45:53.915859+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 862.77,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 4,
+      "expected_completed_hours": 4,
+      "completeness": 1.0,
+      "api_latency_ms": 862.77,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T05:01:07.745335+05:30",
+    "last_run": "2026-09-15T05:01:07.745335+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 1095.25,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
+      "completeness": 1.0,
+      "api_latency_ms": 1095.25,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T05:16:07.574939+05:30",
+    "last_run": "2026-09-15T05:16:07.574939+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 852.17,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
+      "completeness": 1.0,
+      "api_latency_ms": 852.17,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T05:31:30.205791+05:30",
+    "last_run": "2026-09-15T05:31:30.205791+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 944.09,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
+      "completeness": 1.0,
+      "api_latency_ms": 944.09,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T05:45:52.006789+05:30",
+    "last_run": "2026-09-15T05:45:52.006789+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 898.0,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 5,
+      "expected_completed_hours": 5,
+      "completeness": 1.0,
+      "api_latency_ms": 898.0,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T06:00:54.960006+05:30",
+    "last_run": "2026-09-15T06:00:54.960006+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 846.71,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 846.71,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T06:16:01.891938+05:30",
+    "last_run": "2026-09-15T06:16:01.891938+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 930.97,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 930.97,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T06:17:24.404053+05:30",
+    "last_run": "2026-09-15T06:17:24.404053+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 881.4,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 881.4,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T06:31:01.113213+05:30",
+    "last_run": "2026-09-15T06:31:01.113213+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 865.5,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 865.5,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T06:45:57.432302+05:30",
+    "last_run": "2026-09-15T06:45:57.432302+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 1025.49,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 6,
+      "expected_completed_hours": 6,
+      "completeness": 1.0,
+      "api_latency_ms": 1025.49,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T07:00:55.765485+05:30",
+    "last_run": "2026-09-15T07:00:55.765485+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 927.92,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 7,
+      "expected_completed_hours": 7,
+      "completeness": 1.0,
+      "api_latency_ms": 927.92,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T07:02:07.026157+05:30",
+    "last_run": "2026-09-15T07:02:07.026157+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 883.89,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 7,
+      "expected_completed_hours": 7,
+      "completeness": 1.0,
+      "api_latency_ms": 883.89,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T07:16:03.297568+05:30",
+    "last_run": "2026-09-15T07:16:03.297568+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 855.17,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 7,
+      "expected_completed_hours": 7,
+      "completeness": 1.0,
+      "api_latency_ms": 855.17,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T07:31:27.478417+05:30",
+    "last_run": "2026-09-15T07:31:27.478417+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 855.87,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 7,
+      "expected_completed_hours": 7,
+      "completeness": 1.0,
+      "api_latency_ms": 855.87,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T07:45:56.718174+05:30",
+    "last_run": "2026-09-15T07:45:56.718174+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 957.48,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 7,
+      "expected_completed_hours": 7,
+      "completeness": 1.0,
+      "api_latency_ms": 957.48,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T08:01:07.240795+05:30",
+    "last_run": "2026-09-15T08:01:07.240795+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 839.88,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 8,
+      "expected_completed_hours": 8,
+      "completeness": 1.0,
+      "api_latency_ms": 839.88,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T08:15:59.770207+05:30",
+    "last_run": "2026-09-15T08:15:59.770207+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 955.13,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 8,
+      "expected_completed_hours": 8,
+      "completeness": 1.0,
+      "api_latency_ms": 955.13,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T08:31:04.147820+05:30",
+    "last_run": "2026-09-15T08:31:04.147820+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 902.31,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 8,
+      "expected_completed_hours": 8,
+      "completeness": 1.0,
+      "api_latency_ms": 902.31,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T12:01:58.565901+05:30",
+    "last_run": "2026-09-15T12:01:58.565901+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 3427.01,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 12,
+      "expected_completed_hours": 12,
+      "completeness": 1.0,
+      "api_latency_ms": 3427.01,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T12:12:07.627555+05:30",
+    "last_run": "2026-09-15T12:12:07.627555+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 3336.55,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 12,
+      "expected_completed_hours": 12,
+      "completeness": 1.0,
+      "api_latency_ms": 3336.55,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-09-15T16:33:07.964308+05:30",
+    "last_run": "2026-09-15T16:33:07.964308+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 950.58,
+      "daily": null
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 16,
+      "expected_completed_hours": 16,
+      "completeness": 1.0,
+      "api_latency_ms": 950.58,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 2,
+      "evaluated": 3,
+      "rate": 0.6667
+    },
+    "model_evaluation": {
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 3,
+    "learning_status": "calibrating",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
+  }
+]
