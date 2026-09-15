@@ -7,12 +7,16 @@ on:
       - '**.py'
       - 'requirements.txt'
       - '.github/workflows/**'
+      - 'data/**'
+      - 'results/**'
   pull_request:
     branches: [main]
     paths:
       - '**.py'
       - 'requirements.txt'
       - '.github/workflows/**'
+      - 'data/**'
+      - 'results/**'
 
 permissions:
   contents: read

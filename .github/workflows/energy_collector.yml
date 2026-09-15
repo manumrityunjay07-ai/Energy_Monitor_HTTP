@@ -11,6 +11,11 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  AUTOMATION_BRANCH: automation/energy-data
 
 jobs:
   collect:
@@ -57,25 +62,79 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git config pull.rebase true
-          git add -A data results
+          git add -A
           if git diff --cached --quiet; then
             echo "No state or result changes to commit."
           else
-            git commit -m "Update energy data and AI results"
-            pushed=false
-            for attempt in 1 2 3 4 5; do
-              echo "Publishing attempt ${attempt}/5"
-              if git fetch origin main && git rebase origin/main && git push origin HEAD:main; then
-                pushed=true
-                break
-              fi
-              echo "Publish attempt ${attempt} failed; retrying after remote synchronization."
-              git rebase --abort || true
-              sleep $((attempt * 2))
-            done
-            if [ "$pushed" != true ]; then
-              echo "ERROR: collection succeeded but publishing failed after 5 attempts."
+            unexpected=$(git diff --cached --name-only | grep -Ev '^(data|results)/' || true)
+            if [ -n "$unexpected" ]; then
+              echo "ERROR: collector changed files outside data/ and results/:"
+              printf '%s\n' "$unexpected"
               exit 1
+            fi
+
+            branch="$AUTOMATION_BRANCH"
+            snapshot=$(mktemp -d)
+            cp -a data results "$snapshot/"
+            git fetch origin main
+            git fetch origin "$branch" || true
+            git switch -C "$branch" origin/main
+            rm -rf data results
+            cp -a "$snapshot/data" data
+            cp -a "$snapshot/results" results
+            rm -rf "$snapshot"
+            git add -A data results
+            git commit -m "Update energy data and AI results"
+            git push --force-with-lease --set-upstream origin "$branch"
+
+            python - <<'PY' > /tmp/collector-pr-body.md
+            import csv
+            import json
+            from pathlib import Path
+
+            health = json.loads(Path('results/health.json').read_text(encoding='utf-8'))
+            daily = list(csv.DictReader(Path('results/ai_results.csv').open(encoding='utf-8', newline='')))
+            hourly = list(csv.DictReader(Path('results/hourly_predictions.csv').open(encoding='utf-8', newline='')))
+            dates = sorted({row.get('date') for row in daily + hourly if row.get('date')})
+            versions = sorted({row.get('model_version') for row in daily + hourly if row.get('model_version')})
+            quality = health.get('data_quality', {})
+            print(f'''## Automated collector publication
+
+This PR is maintained as the single review queue for the 15-minute collector schedule. New runs update this same branch and PR; they do not create unlimited PRs. Because stale reviews are dismissed by branch protection, approval is expected at the operator's chosen merge cadence, not every scheduled run.
+
+### Run
+- Workflow run: `{__import__('os').environ.get('GITHUB_RUN_ID')}`
+- Source commit: `{__import__('os').environ.get('GITHUB_SHA')}`
+- Generated at: `{health.get('last_run', 'unknown')}`
+- Collector status: **{health.get('collector_status', 'unknown')}**
+- Data quality: **{quality.get('score', 'n/a')}%** ({quality.get('status', 'unknown')})
+- Missing hours: `{health.get('missing_hours', [])}`
+- Daily rows: **{len(daily)}**; hourly rows: **{len(hourly)}**
+- Data dates: `{dates[0] if dates else 'none'}` through `{dates[-1] if dates else 'none'}`
+- Model versions: `{', '.join(versions) or 'none'}`
+
+### Required checks
+- Safety tests passed.
+- `validate_outputs.py` passed exactly before publication.
+- The required `test` check must pass on this data-only PR before merge.
+
+### Review and merge policy
+Reviewers should merge the latest version of this PR at the chosen operational cadence. A new scheduled run may update the PR before review; that intentionally supersedes the prior snapshot. Do not merge an older commit after a newer run has updated the branch.
+''')
+            PY
+
+            # Close superseded per-run automation PRs left by older workflow versions.
+            gh pr list --repo "$GITHUB_REPOSITORY" --state open --json number,headRefName --limit 100 |
+              python -c 'import json,sys,subprocess; current="automation/energy-data"; prs=json.load(sys.stdin); [subprocess.run(["gh","pr","close",str(p["number"]),"--repo",__import__("os").environ["GITHUB_REPOSITORY"],"--comment","Superseded by the consolidated automation PR."]) for p in prs if p.get("headRefName","").startswith("automation/energy-data-") and p.get("headRefName") != current]'
+
+            existing=$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --head "$branch" --state open --json number --jq '.[0].number // empty')
+            if [ -n "$existing" ]; then
+              gh pr edit "$existing" --repo "$GITHUB_REPOSITORY" --title "Automated energy data update" --body-file /tmp/collector-pr-body.md
+              echo "Updated existing collector PR #$existing"
+              echo "Collector PR: https://github.com/$GITHUB_REPOSITORY/pull/$existing" >> "$GITHUB_STEP_SUMMARY"
+            else
+              pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$branch" --title "Automated energy data update" --body-file /tmp/collector-pr-body.md)
+              echo "Created collector PR: $pr_url"
+              echo "Collector PR: $pr_url" >> "$GITHUB_STEP_SUMMARY"
             fi
           fi
