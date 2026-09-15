@@ -340,7 +340,8 @@ def main() -> None:
         result = None
         daily_latency = None
         completed_profile = profiles.get(previous_date, {})
-        if previous_date not in processed:
+        force_reprocess = bool(os.getenv("REPROCESS_DATE"))
+        if previous_date not in processed or force_reprocess:
             daily_totals, daily_latency = fetch_daily_totals(now.date())
             state["last_daily_total_collection"] = now.isoformat()
             actual_total = daily_totals.get(previous_date)
