@@ -65,7 +65,7 @@ class CollectorSafetyTests(unittest.TestCase):
     def test_invalid_daily_date_is_rejected(self):
         original = collect_once.request_json
         try:
-            collect_once.request_json = lambda *args, **kwargs: ({"data": [{"custom_day": "2026-99-99", "total_consumption": "10"}, {"custom_day": "2026-09-13", "total_consumption": "12"}]}, 1.0)
+            collect_once.request_json = lambda *args, **kwargs: ({"data": [{"custom_day": "2026-99-99", "total_consumption": "10"}, {"custom_day": "2026-01-01", "total_consumption": "11"}, {"custom_day": "2026-09-13", "total_consumption": "12"}, {"custom_day": "2026-09-15", "total_consumption": "13"}]}, 1.0)
             totals, _ = collect_once.fetch_daily_totals(datetime(2026, 9, 14).date())
             self.assertEqual(totals, {"2026-09-13": 12.0})
         finally:
@@ -74,6 +74,17 @@ class CollectorSafetyTests(unittest.TestCase):
     def test_anomaly_input_dimension_mismatch_fails_closed(self):
         with self.assertRaises(ValueError):
             collect_once.anomaly_result([1.0], datetime.now(ZoneInfo("Asia/Kolkata")), "2026-09-13", 1.0)
+
+    def test_model_guard_is_chronological_not_insertion_order(self):
+        history = {
+            "2026-09-14": {"actual_kwh": 100, "base_prediction_kwh": 100, "predicted_kwh": 100},
+            "2026-09-10": {"actual_kwh": 100, "base_prediction_kwh": 100, "predicted_kwh": 130},
+            "2026-09-12": {"actual_kwh": 100, "base_prediction_kwh": 100, "predicted_kwh": 130},
+            "2026-09-11": {"actual_kwh": 100, "base_prediction_kwh": 100, "predicted_kwh": 130},
+            "2026-09-13": {"actual_kwh": 100, "base_prediction_kwh": 100, "predicted_kwh": 130},
+        }
+        guard = collect_once.evaluate_model_guard(history)
+        self.assertFalse(guard["adaptation_enabled"])
 
 
 if __name__ == "__main__":

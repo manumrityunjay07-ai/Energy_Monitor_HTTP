@@ -61,12 +61,13 @@ def request_json(method: str, url: str, **kwargs) -> tuple[dict, float]:
 
 
 def fetch_daily_totals(end_date: date) -> tuple[dict[str, float], float]:
+    start_date = end_date - timedelta(days=60)
     payload, latency = request_json(
         "POST",
         DAYWISE_URL,
-        files={
-            "deviceId": (None, str(DEVICE_ID)),
-            "fromDate": (None, (end_date - timedelta(days=60)).isoformat()),
+            files={
+                "deviceId": (None, str(DEVICE_ID)),
+                "fromDate": (None, start_date.isoformat()),
             "toDate": (None, end_date.isoformat()),
         },
     )
@@ -84,7 +85,7 @@ def fetch_daily_totals(end_date: date) -> tuple[dict[str, float], float]:
             date.fromisoformat(day)
         except (TypeError, ValueError):
             continue
-        if len(day) == 10 and math.isfinite(value) and value >= 0:
+        if start_date.isoformat() <= day <= end_date.isoformat() and len(day) == 10 and math.isfinite(value) and value >= 0:
             totals[day] = value
     return totals, latency
 
@@ -153,7 +154,7 @@ def explain_profile(values: list[float], profiles: dict[str, dict], processed_da
 
 
 def evaluate_model_guard(forecast_history: dict[str, dict]) -> dict:
-    evaluated = [item for item in forecast_history.values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, "") and item.get("base_prediction_kwh") not in (None, "") and item.get("predicted_kwh") not in (None, "")]
+    evaluated = [item for _, item in sorted(forecast_history.items(), key=lambda pair: pair[0]) if isinstance(item, dict) and item.get("actual_kwh") not in (None, "") and item.get("base_prediction_kwh") not in (None, "") and item.get("predicted_kwh") not in (None, "")]
     if len(evaluated) < 5:
         return {"adaptation_enabled": True, "reason": "insufficient history for rollback decision", "evaluated_cycles": len(evaluated)}
     base_mae = mean(abs(float(item["actual_kwh"]) - float(item["base_prediction_kwh"])) for item in evaluated[-14:])
@@ -176,7 +177,7 @@ def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: di
     features = [recent[-1], recent[-2], recent[-3], sum(recent) / 3]
     scaled = [(value - m) / s if s else 0 for value, m, s in zip(features, PARAMS["prediction_scaler_mean"], PARAMS["prediction_scaler_scale"])]
     base_prediction = PARAMS["prediction_intercept"] + sum(c * v for c, v in zip(PARAMS["prediction_coefficients"], scaled))
-    errors = [float(item["error_kwh"]) for item in forecast_history.values() if isinstance(item, dict) and item.get("error_kwh") not in (None, "")]
+    errors = [float(item["error_kwh"]) for _, item in sorted(forecast_history.items(), key=lambda pair: pair[0]) if isinstance(item, dict) and item.get("error_kwh") not in (None, "")]
     recent_errors = errors[-14:]
     mean_error = mean(recent_errors) if recent_errors else 0.0
     robust_error = median(recent_errors) if recent_errors else 0.0
