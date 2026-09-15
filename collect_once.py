@@ -22,6 +22,7 @@ HOURLY_RESULTS = Path("results/hourly_predictions.csv")
 HEALTH = Path("results/health.json")
 HEALTH_HISTORY = Path("results/health_history.json")
 DASHBOARD_DATA = Path("results/dashboard_data.json")
+IMPROVEMENT_REPORT = Path("results/improvement_report.json")
 PARAMS = json.loads(Path("esp32_parameters.json").read_text(encoding="utf-8"))
 HOLIDAYS = json.loads(Path("data/holidays.json").read_text(encoding="utf-8")) if Path("data/holidays.json").exists() else {"holidays": {}}
 MODEL_VERSION = "device153-adaptive-v2"
@@ -161,6 +162,30 @@ def evaluate_model_guard(forecast_history: dict[str, dict]) -> dict:
     adapted_mae = mean(abs(float(item["actual_kwh"]) - float(item["predicted_kwh"])) for item in evaluated[-14:])
     enabled = adapted_mae <= base_mae * 1.10
     return {"adaptation_enabled": enabled, "reason": "adapted model retained" if enabled else "rollback to base model: adapted MAE exceeded baseline by more than 10%", "evaluated_cycles": len(evaluated), "base_mae": round(base_mae, 6), "adapted_mae": round(adapted_mae, 6)}
+
+
+def build_improvement_report(state: dict, now: datetime) -> dict:
+    guard = state.get("model_guard", {})
+    samples = sum(1 for item in state.get("processed", {}).values() if isinstance(item, dict) and item.get("actual_kwh") not in (None, ""))
+    return {
+        "generated_at": now.isoformat(),
+        "model_version": MODEL_VERSION,
+        "mode": "bounded_adaptation",
+        "status": "adaptive" if guard.get("adaptation_enabled", True) and samples >= 5 else "calibrating",
+        "learning_samples": samples,
+        "adaptation_enabled": guard.get("adaptation_enabled", True),
+        "guard_reason": guard.get("reason", "insufficient history for rollback decision"),
+        "evaluated_cycles": guard.get("evaluated_cycles", 0),
+        "base_mae_kwh": guard.get("base_mae"),
+        "adapted_mae_kwh": guard.get("adapted_mae"),
+        "safety_policy": {
+            "minimum_feedback_samples": 5,
+            "maximum_correction_fraction": 0.25,
+            "rollback_tolerance_fraction": 0.10,
+            "unreviewed_code_changes": False,
+        },
+        "next_action": "continue calibration" if samples < 5 else ("retain bounded adaptation" if guard.get("adaptation_enabled", True) else "use baseline until adaptation improves"),
+    }
 
 
 def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: dict[str, dict], target_date: str, source_date: str, now: datetime, adaptation_enabled: bool = True) -> tuple | None:
@@ -313,7 +338,8 @@ def publish_dashboard_data(state: dict, health: dict) -> None:
             health_history = json.loads(HEALTH_HISTORY.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             health_history = []
-    DASHBOARD_DATA.write_text(json.dumps({"generated_at": now_ist().isoformat(), "device_id": DEVICE_ID, "ai_results": read_csv(RESULTS), "hourly_predictions": read_csv(HOURLY_RESULTS), "state": state, "health": health, "health_history": health_history[-500:]}, indent=2), encoding="utf-8")
+    report = json.loads(IMPROVEMENT_REPORT.read_text(encoding="utf-8")) if IMPROVEMENT_REPORT.exists() else {}
+    DASHBOARD_DATA.write_text(json.dumps({"generated_at": now_ist().isoformat(), "device_id": DEVICE_ID, "ai_results": read_csv(RESULTS), "hourly_predictions": read_csv(HOURLY_RESULTS), "state": state, "health": health, "improvement_report": report, "health_history": health_history[-500:]}, indent=2), encoding="utf-8")
 
 
 def main() -> None:
@@ -399,6 +425,7 @@ def main() -> None:
                 upsert_csv(HOURLY_RESULTS, hourly_fields, [{"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": today, "hour": h, "predicted_kwh": result["hourly_forecast"].get(str(h), ""), "actual_kwh": "", "error_kwh": "", "feedback_samples": result.get("hourly_feedback_samples", 0), "model_version": MODEL_VERSION} for h in range(24)], ["device_id", "date", "hour"])
         state["last_run"] = now.isoformat()
         state["model_version"] = MODEL_VERSION
+        IMPROVEMENT_REPORT.write_text(json.dumps(build_improvement_report(state, now), indent=2), encoding="utf-8")
         health = write_health(state, now, "healthy", hourly_latency, daily_latency, missing_hours, quality)
         health.update({"hourly_collection_at": now.isoformat(), "daily_total_collection_at": state.get("last_daily_total_collection"), "dashboard_payload_generated_at": now.isoformat(), "dashboard_build": os.getenv("DASHBOARD_BUILD", "2026-09-14-r5")})
         HEALTH.write_text(json.dumps(health, indent=2), encoding="utf-8")

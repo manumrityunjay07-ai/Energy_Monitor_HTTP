@@ -86,6 +86,15 @@ class CollectorSafetyTests(unittest.TestCase):
         guard = collect_once.evaluate_model_guard(history)
         self.assertFalse(guard["adaptation_enabled"])
 
+    def test_improvement_report_is_bounded_and_review_gated(self):
+        report = collect_once.build_improvement_report(
+            {"model_guard": {"adaptation_enabled": True, "reason": "adapted model retained", "evaluated_cycles": 6, "base_mae": 10.0, "adapted_mae": 9.0}, "processed": {str(i): {"actual_kwh": 100} for i in range(6)}},
+            datetime(2026, 9, 15, 12, 0, tzinfo=ZoneInfo("Asia/Kolkata")),
+        )
+        self.assertEqual(report["status"], "adaptive")
+        self.assertEqual(report["safety_policy"]["maximum_correction_fraction"], 0.25)
+        self.assertFalse(report["safety_policy"]["unreviewed_code_changes"])
+
 
 if __name__ == "__main__":
     unittest.main()
