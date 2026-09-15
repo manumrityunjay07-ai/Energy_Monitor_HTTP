@@ -11,15 +11,19 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: energy-data-publisher
+  cancel-in-progress: false
+
 jobs:
   reprocess:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Validate requested date
