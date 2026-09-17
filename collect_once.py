@@ -19,6 +19,7 @@ DAYWISE_URL = os.getenv("DAYWISE_URL", "https://adc.bitsathy.ac.in/2024/ems_dash
 STATE = Path("data/state.json")
 RESULTS = Path("results/ai_results.csv")
 HOURLY_RESULTS = Path("results/hourly_predictions.csv")
+DAILY_TOTALS_RESULTS = Path("results/daily_totals.csv")
 HEALTH = Path("results/health.json")
 HEALTH_HISTORY = Path("results/health_history.json")
 DASHBOARD_DATA = Path("results/dashboard_data.json")
@@ -339,7 +340,7 @@ def publish_dashboard_data(state: dict, health: dict) -> None:
         except json.JSONDecodeError:
             health_history = []
     report = json.loads(IMPROVEMENT_REPORT.read_text(encoding="utf-8")) if IMPROVEMENT_REPORT.exists() else {}
-    DASHBOARD_DATA.write_text(json.dumps({"generated_at": now_ist().isoformat(), "device_id": DEVICE_ID, "ai_results": read_csv(RESULTS), "hourly_predictions": read_csv(HOURLY_RESULTS), "state": state, "health": health, "improvement_report": report, "health_history": health_history[-500:]}, indent=2), encoding="utf-8")
+    DASHBOARD_DATA.write_text(json.dumps({"generated_at": now_ist().isoformat(), "device_id": DEVICE_ID, "ai_results": read_csv(RESULTS), "hourly_predictions": read_csv(HOURLY_RESULTS), "daily_totals": read_csv(DAILY_TOTALS_RESULTS), "state": state, "health": health, "improvement_report": report, "health_history": health_history[-500:]}, indent=2), encoding="utf-8")
 
 
 def main() -> None:
@@ -362,13 +363,14 @@ def main() -> None:
         profile, hourly_latency, missing_hours = fetch_hourly(now)
         profiles.setdefault(today, {}).update(profile)
         quality = data_quality(profiles[today], now, hourly_latency)
+        daily_totals, daily_latency = fetch_daily_totals(now.date())
+        state["daily_totals"] = {day: round(total, 6) for day, total in sorted(daily_totals.items())}
+        upsert_csv(DAILY_TOTALS_RESULTS, ["device_id", "date", "total_kwh"], [{"device_id": DEVICE_ID, "date": day, "total_kwh": total} for day, total in daily_totals.items()], ["device_id", "date"])
         previous_date = os.getenv("REPROCESS_DATE") or (now.date() - timedelta(days=1)).isoformat()
         result = None
-        daily_latency = None
         completed_profile = profiles.get(previous_date, {})
         force_reprocess = bool(os.getenv("REPROCESS_DATE"))
         if previous_date not in processed or force_reprocess:
-            daily_totals, daily_latency = fetch_daily_totals(now.date())
             state["last_daily_total_collection"] = now.isoformat()
             actual_total = daily_totals.get(previous_date)
             values = [float(completed_profile[str(hour)]) for hour in range(24) if str(hour) in completed_profile]
