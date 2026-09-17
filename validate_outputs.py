@@ -11,6 +11,7 @@ RESULTS = ROOT / "results"
 DEVICE_ID = "153"
 EXPECTED_AI = {"device_id", "date", "actual_date", "forecast_date", "status", "data_status", "prediction_kwh", "model_version"}
 EXPECTED_HOURLY = {"device_id", "date", "hour", "predicted_kwh", "model_version"}
+EXPECTED_TOTALS = {"device_id", "date", "total_kwh"}
 
 
 def fail(message: str) -> None:
@@ -65,10 +66,13 @@ def main() -> None:
 
     ai_fields, ai_rows = read_csv(RESULTS / "ai_results.csv")
     hourly_fields, hourly_rows = read_csv(RESULTS / "hourly_predictions.csv")
+    totals_fields, totals_rows = read_csv(RESULTS / "daily_totals.csv")
     if not EXPECTED_AI.issubset(ai_fields):
         fail(f"AI schema is missing columns: {EXPECTED_AI - set(ai_fields)}")
     if not EXPECTED_HOURLY.issubset(hourly_fields):
         fail(f"hourly schema is missing columns: {EXPECTED_HOURLY - set(hourly_fields)}")
+    if not EXPECTED_TOTALS.issubset(totals_fields):
+        fail(f"daily totals schema is missing columns: {EXPECTED_TOTALS - set(totals_fields)}")
 
     daily_keys = [(row.get("device_id"), row.get("date")) for row in ai_rows]
     if len(daily_keys) != len(set(daily_keys)):
@@ -92,6 +96,13 @@ def main() -> None:
             fail(f"hour outside 0..23: {hour}")
         finite_number(row.get("predicted_kwh"), f"hourly prediction {row.get('date')}:{hour}")
         finite_number(row.get("actual_kwh"), f"hourly actual {row.get('date')}:{hour}")
+    total_keys = [(row.get("device_id"), row.get("date")) for row in totals_rows]
+    if len(total_keys) != len(set(total_keys)):
+        fail("duplicate daily total keys detected")
+    for row in totals_rows:
+        if row.get("device_id") != DEVICE_ID:
+            fail(f"daily total has wrong device: {row}")
+        finite_number(row.get("total_kwh"), f"daily total {row.get('date')}", allow_blank=False)
 
     processed = state.get("processed", {})
     if not isinstance(processed, dict):
@@ -101,13 +112,15 @@ def main() -> None:
     if state_dates != csv_dates:
         fail(f"state/CSV daily dates differ: state-only={sorted(state_dates - csv_dates)}, csv-only={sorted(csv_dates - state_dates)}")
 
-    for key in ("device_id", "ai_results", "hourly_predictions", "state", "health"):
+    for key in ("device_id", "ai_results", "hourly_predictions", "daily_totals", "state", "health"):
         if key not in payload:
             fail(f"dashboard payload is missing {key}")
     if payload["ai_results"] != ai_rows:
         fail("dashboard payload ai_results does not exactly match ai_results.csv")
     if payload["hourly_predictions"] != hourly_rows:
         fail("dashboard payload hourly_predictions does not exactly match hourly_predictions.csv")
+    if payload["daily_totals"] != totals_rows:
+        fail("dashboard payload daily_totals does not exactly match daily_totals.csv")
     if payload["state"] != state:
         fail("dashboard payload state does not exactly match state.json")
     if payload["health"] != health:
