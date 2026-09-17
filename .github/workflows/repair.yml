@@ -12,12 +12,18 @@ concurrency:
 permissions:
   contents: write
 
+env:
+  LIVE_BRANCH: live-data
+
 jobs:
   repair:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5
         with:
           python-version: '3.12'
@@ -36,9 +42,24 @@ jobs:
             echo "- Daily rows: $(tail -n +2 results/ai_results.csv | wc -l)"
           } >> "$GITHUB_STEP_SUMMARY"
       - name: Publish repaired outputs
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          snapshot=$(mktemp -d)
+          cp -a data results "$snapshot/"
+          git fetch origin "$LIVE_BRANCH" || true
+          if git show-ref --verify --quiet "refs/remotes/origin/$LIVE_BRANCH"; then
+            git switch -C "$LIVE_BRANCH" "origin/$LIVE_BRANCH"
+          else
+            git switch --orphan "$LIVE_BRANCH"
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+          rm -rf data results
+          cp -a "$snapshot/data" data
+          cp -a "$snapshot/results" results
+          rm -rf "$snapshot"
           git add data results
           git diff --cached --quiet || git commit -m 'Repair and backfill energy outputs'
-          git push
+          git push --force-with-lease origin "$LIVE_BRANCH"

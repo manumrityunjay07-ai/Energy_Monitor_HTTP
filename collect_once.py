@@ -360,10 +360,28 @@ def main() -> None:
     if processed:
         upsert_csv(RESULTS, ai_fields, list(processed.values()), ["device_id", "date"])
     try:
-        profile, hourly_latency, missing_hours = fetch_hourly(now)
+        recovery_errors: list[str] = []
+        try:
+            profile, hourly_latency, missing_hours = fetch_hourly(now)
+        except Exception as exc:
+            cached_profile = {str(hour): float(value) for hour, value in profiles.get(today, {}).items() if str(hour).isdigit() and 0 <= int(hour) < now.hour and math.isfinite(float(value)) and float(value) >= 0}
+            if not cached_profile:
+                raise
+            profile = cached_profile
+            hourly_latency = None
+            missing_hours = sorted(set(range(now.hour)) - set(profile))
+            recovery_errors.append(f"hourly API recovery used validated cache: {exc}")
         profiles.setdefault(today, {}).update(profile)
         quality = data_quality(profiles[today], now, hourly_latency)
-        daily_totals, daily_latency = fetch_daily_totals(now.date())
+        try:
+            daily_totals, daily_latency = fetch_daily_totals(now.date())
+        except Exception as exc:
+            cached_totals = state.get("daily_totals", {})
+            daily_totals = {str(day): float(total) for day, total in cached_totals.items() if math.isfinite(float(total)) and float(total) >= 0}
+            if not daily_totals:
+                raise
+            daily_latency = None
+            recovery_errors.append(f"daily API recovery used validated cache: {exc}")
         state["daily_totals"] = {day: round(total, 6) for day, total in sorted(daily_totals.items())}
         upsert_csv(DAILY_TOTALS_RESULTS, ["device_id", "date", "total_kwh"], [{"device_id": DEVICE_ID, "date": day, "total_kwh": total} for day, total in daily_totals.items()], ["device_id", "date"])
         previous_date = os.getenv("REPROCESS_DATE") or (now.date() - timedelta(days=1)).isoformat()
@@ -428,7 +446,8 @@ def main() -> None:
         state["last_run"] = now.isoformat()
         state["model_version"] = MODEL_VERSION
         IMPROVEMENT_REPORT.write_text(json.dumps(build_improvement_report(state, now), indent=2), encoding="utf-8")
-        health = write_health(state, now, "healthy", hourly_latency, daily_latency, missing_hours, quality)
+        recovery_error = " | ".join(recovery_errors) if recovery_errors else None
+        health = write_health(state, now, "degraded" if recovery_error else "healthy", hourly_latency, daily_latency, missing_hours, quality, recovery_error)
         health.update({"hourly_collection_at": now.isoformat(), "daily_total_collection_at": state.get("last_daily_total_collection"), "dashboard_payload_generated_at": now.isoformat(), "dashboard_build": os.getenv("DASHBOARD_BUILD", "2026-09-14-r5")})
         HEALTH.write_text(json.dumps(health, indent=2), encoding="utf-8")
         STATE.write_text(json.dumps(state, indent=2), encoding="utf-8")
