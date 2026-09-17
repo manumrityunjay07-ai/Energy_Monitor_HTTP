@@ -447,6 +447,21 @@ def main() -> None:
             upsert_csv(RESULTS, ai_fields, [result], ["device_id", "date"])
             if hourly_forecast:
                 upsert_csv(HOURLY_RESULTS, hourly_fields, [{"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": today, "hour": h, "predicted_kwh": result["hourly_forecast"].get(str(h), ""), "actual_kwh": "", "error_kwh": "", "feedback_samples": result.get("hourly_feedback_samples", 0), "model_version": MODEL_VERSION} for h in range(24)], ["device_id", "date", "hour"])
+        # Reconcile every previously processed date on every run. This repairs
+        # records created before a late daily total became available, even when
+        # no forecast-history entry exists for that date.
+        for day, total in daily_totals.items():
+            existing = processed.get(day)
+            if not isinstance(existing, dict) or existing.get("actual_kwh") not in (None, ""):
+                continue
+            existing["actual_kwh"] = round(total, 6)
+            prior_daily = forecast_history.get(day)
+            if isinstance(prior_daily, dict) and prior_daily.get("predicted_kwh") not in (None, ""):
+                predicted_total = float(prior_daily["predicted_kwh"])
+                error = round(total - predicted_total, 6)
+                prior_daily.update({"actual_kwh": round(total, 6), "error_kwh": error, "evaluated_at": now.isoformat()})
+                existing.update({"previous_prediction_kwh": round(predicted_total, 6), "prediction_error_kwh": error, "evaluated_at": now.isoformat()})
+        upsert_csv(RESULTS, ai_fields, list(processed.values()), ["device_id", "date"])
         state["last_run"] = now.isoformat()
         state["model_version"] = MODEL_VERSION
         IMPROVEMENT_REPORT.write_text(json.dumps(build_improvement_report(state, now), indent=2), encoding="utf-8")
