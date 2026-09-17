@@ -419,11 +419,13 @@ def main() -> None:
                     quality["daily_hourly_consistency"] = {"hourly_total_kwh": round(hourly_total, 6), "daily_total_kwh": round(actual_total, 6), "difference_kwh": round(difference, 6), "relative_difference": round(difference / max(abs(actual_total), 1.0), 6), "status": "good" if difference / max(abs(actual_total), 1.0) <= 0.05 else "review"}
                 else:
                     quality["daily_hourly_consistency"] = {"status": "review", "reason": "hourly profile incomplete", "available_hours": len(values), "missing_hours": [hour for hour in range(24) if str(hour) not in completed_profile], "daily_total_kwh": round(actual_total, 6), "hourly_residual_not_allocated_kwh": None}
-            if actual_total is not None and isinstance(prior_daily, dict):
-                predicted_total = float(prior_daily["predicted_kwh"])
-                error = actual_total - predicted_total
-                prior_daily.update({"actual_kwh": round(actual_total, 6), "error_kwh": round(error, 6), "evaluated_at": now.isoformat()})
-                result.update({"actual_kwh": round(actual_total, 6), "previous_prediction_kwh": round(predicted_total, 6), "prediction_error_kwh": round(error, 6), "evaluated_at": now.isoformat()})
+            if actual_total is not None:
+                result["actual_kwh"] = round(actual_total, 6)
+                if isinstance(prior_daily, dict) and prior_daily.get("predicted_kwh") not in (None, ""):
+                    predicted_total = float(prior_daily["predicted_kwh"])
+                    error = actual_total - predicted_total
+                    prior_daily.update({"actual_kwh": round(actual_total, 6), "error_kwh": round(error, 6), "evaluated_at": now.isoformat()})
+                    result.update({"previous_prediction_kwh": round(predicted_total, 6), "prediction_error_kwh": round(error, 6), "evaluated_at": now.isoformat()})
             prior_hourly = hourly_history.get(previous_date)
             if isinstance(prior_hourly, dict) and len(values) == 24 and len(prior_hourly.get("predicted_kwh", [])) == 24:
                 actual_hours = [float(completed_profile[str(hour)]) for hour in range(24)]
