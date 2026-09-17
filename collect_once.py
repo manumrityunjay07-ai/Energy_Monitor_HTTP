@@ -388,11 +388,11 @@ def main() -> None:
         result = None
         completed_profile = profiles.get(previous_date, {})
         force_reprocess = bool(os.getenv("REPROCESS_DATE"))
+        actual_total = daily_totals.get(previous_date)
         pending_actual = isinstance(processed.get(previous_date), dict) and processed[previous_date].get("actual_kwh") in (None, "")
         needs_reconciliation = actual_total is not None and pending_actual
         if previous_date not in processed or force_reprocess or needs_reconciliation:
             state["last_daily_total_collection"] = now.isoformat()
-            actual_total = daily_totals.get(previous_date)
             values = [float(completed_profile[str(hour)]) for hour in range(24) if str(hour) in completed_profile]
             historical_scores = [float(item.get("anomaly_score")) for item in processed.values() if isinstance(item, dict) and item.get("anomaly_score") not in (None, "")]
             adaptive_threshold = float(state.get("adaptive_anomaly_threshold", PARAMS["anomaly_threshold"]))
