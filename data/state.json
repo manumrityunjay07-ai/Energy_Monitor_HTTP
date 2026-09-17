@@ -167,7 +167,8 @@
       "19": 79.0
     },
     "2026-09-18": {
-      "0": 47.44
+      "0": 47.44,
+      "1": 44.19
     }
   },
   "processed": {
@@ -764,7 +765,7 @@
       "actual_kwh": 1653.56
     },
     "2026-09-17": {
-      "processed_at": "2026-09-18T01:45:54.225605+05:30",
+      "processed_at": "2026-09-18T02:01:10.328526+05:30",
       "device_id": 153,
       "date": "2026-09-17",
       "status": "daily_total_only",
@@ -787,7 +788,7 @@
       "actual_kwh": 1678.38,
       "previous_prediction_kwh": 1756.591656,
       "prediction_error_kwh": -78.211656,
-      "evaluated_at": "2026-09-18T01:45:54.225605+05:30",
+      "evaluated_at": "2026-09-18T02:01:10.328526+05:30",
       "prediction_kwh": 1546.813298,
       "base_prediction_kwh": 1546.813298,
       "correction_kwh": 0.0,
@@ -879,7 +880,7 @@
       "hourly_profile_mode": "recent profile"
     }
   },
-  "last_run": "2026-09-18T01:45:54.225605+05:30",
+  "last_run": "2026-09-18T02:01:10.328526+05:30",
   "forecast_history": {
     "2026-09-12": {
       "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -944,10 +945,10 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples",
       "actual_kwh": 1678.38,
       "error_kwh": -78.211656,
-      "evaluated_at": "2026-09-18T01:45:54.225605+05:30"
+      "evaluated_at": "2026-09-18T02:01:10.328526+05:30"
     },
     "2026-09-18": {
-      "generated_at": "2026-09-18T01:45:54.225605+05:30",
+      "generated_at": "2026-09-18T02:01:10.328526+05:30",
       "source_date": "2026-09-17",
       "base_prediction_kwh": 1546.813298,
       "correction_kwh": 0.0,
@@ -1642,7 +1643,7 @@
       "learning_guard": "hourly correction capped at 25% of profile"
     },
     "2026-09-18": {
-      "generated_at": "2026-09-18T01:45:54.225605+05:30",
+      "generated_at": "2026-09-18T02:01:10.328526+05:30",
       "source_date": "2026-09-17",
       "base_prediction_kwh": [
         57.559767,
@@ -1782,20 +1783,20 @@
   "model_version": "device153-adaptive-v2",
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-18T01:45:54.225605+05:30",
-    "last_run": "2026-09-18T01:45:54.225605+05:30",
+    "last_successful_collection": "2026-09-18T02:01:10.328526+05:30",
+    "last_run": "2026-09-18T02:01:10.328526+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 855.35,
-      "daily": 852.56
+      "hourly": 911.44,
+      "daily": 888.52
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 1,
-      "expected_completed_hours": 1,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
       "completeness": 1.0,
-      "api_latency_ms": 855.35,
+      "api_latency_ms": 911.44,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
@@ -1836,9 +1837,9 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 4
     },
-    "hourly_collection_at": "2026-09-18T01:45:54.225605+05:30",
-    "daily_total_collection_at": "2026-09-18T01:45:54.225605+05:30",
-    "dashboard_payload_generated_at": "2026-09-18T01:45:54.225605+05:30",
+    "hourly_collection_at": "2026-09-18T02:01:10.328526+05:30",
+    "daily_total_collection_at": "2026-09-18T02:01:10.328526+05:30",
+    "dashboard_payload_generated_at": "2026-09-18T02:01:10.328526+05:30",
     "dashboard_build": "2026-09-14-r5"
   },
   "model_guard": {
@@ -1846,7 +1847,7 @@
     "reason": "insufficient history for rollback decision",
     "evaluated_cycles": 4
   },
-  "last_daily_total_collection": "2026-09-18T01:45:54.225605+05:30",
+  "last_daily_total_collection": "2026-09-18T02:01:10.328526+05:30",
   "daily_quality_history": {
     "2026-09-14": {
       "data_status": "daily_total_only",
@@ -1955,7 +1956,7 @@
         "daily_total_kwh": 1678.38,
         "hourly_residual_not_allocated_kwh": null
       },
-      "recorded_at": "2026-09-18T01:45:54.225605+05:30"
+      "recorded_at": "2026-09-18T02:01:10.328526+05:30"
     }
   },
   "daily_totals": {
