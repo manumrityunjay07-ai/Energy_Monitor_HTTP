@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-17T23:46:16.130422+05:30",
+  "generated_at": "2026-09-18T00:01:26.144866+05:30",
   "model_version": "device153-adaptive-v2",
   "mode": "bounded_adaptation",
   "status": "adaptive",
-  "learning_samples": 5,
+  "learning_samples": 6,
   "adaptation_enabled": true,
   "guard_reason": "insufficient history for rollback decision",
-  "evaluated_cycles": 3,
+  "evaluated_cycles": 4,
   "base_mae_kwh": null,
   "adapted_mae_kwh": null,
   "safety_policy": {
