@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-17T21:26:50.421613+05:30",
+  "generated_at": "2026-09-17T21:29:36.051539+05:30",
   "model_version": "device153-adaptive-v2",
   "mode": "bounded_adaptation",
-  "status": "calibrating",
-  "learning_samples": 4,
+  "status": "adaptive",
+  "learning_samples": 5,
   "adaptation_enabled": true,
   "guard_reason": "insufficient history for rollback decision",
   "evaluated_cycles": 3,
@@ -15,5 +15,5 @@
     "rollback_tolerance_fraction": 0.1,
     "unreviewed_code_changes": false
   },
-  "next_action": "continue calibration"
+  "next_action": "retain bounded adaptation"
 }
