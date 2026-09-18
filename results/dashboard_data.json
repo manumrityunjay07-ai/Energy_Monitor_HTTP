@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T23:01:01.459440+05:30",
+  "generated_at": "2026-09-18T23:16:11.363223+05:30",
   "device_id": 153,
   "ai_results": [
     {
@@ -148,12 +148,12 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-17",
       "actual_date": "2026-09-17",
       "forecast_date": "2026-09-18",
-      "evaluated_at": "2026-09-18T23:00:59.717429+05:30",
+      "evaluated_at": "2026-09-18T23:16:09.555232+05:30",
       "calendar_profile": "weekday",
       "backfill_status": "measured_hours_only",
       "missing_hours": "[20, 21, 22, 23]",
@@ -1235,7 +1235,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "0",
@@ -1246,7 +1246,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "1",
@@ -1257,7 +1257,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "10",
@@ -1268,7 +1268,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "11",
@@ -1279,7 +1279,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "12",
@@ -1290,7 +1290,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "13",
@@ -1301,7 +1301,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "14",
@@ -1312,7 +1312,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "15",
@@ -1323,7 +1323,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "16",
@@ -1334,7 +1334,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "17",
@@ -1345,7 +1345,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "18",
@@ -1356,7 +1356,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "19",
@@ -1367,7 +1367,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "2",
@@ -1378,7 +1378,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "20",
@@ -1389,7 +1389,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "21",
@@ -1400,7 +1400,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "22",
@@ -1411,7 +1411,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "23",
@@ -1422,7 +1422,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "3",
@@ -1433,7 +1433,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "4",
@@ -1444,7 +1444,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "5",
@@ -1455,7 +1455,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "6",
@@ -1466,7 +1466,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "7",
@@ -1477,7 +1477,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "8",
@@ -1488,7 +1488,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-18T23:00:59.717429+05:30",
+      "processed_at": "2026-09-18T23:16:09.555232+05:30",
       "device_id": "153",
       "date": "2026-09-18",
       "hour": "9",
@@ -2504,7 +2504,7 @@
         "actual_kwh": 1653.56
       },
       "2026-09-17": {
-        "processed_at": "2026-09-18T23:00:59.717429+05:30",
+        "processed_at": "2026-09-18T23:16:09.555232+05:30",
         "device_id": 153,
         "date": "2026-09-17",
         "status": "daily_total_only",
@@ -2527,7 +2527,7 @@
         "actual_kwh": 1678.38,
         "previous_prediction_kwh": 1756.591656,
         "prediction_error_kwh": -78.211656,
-        "evaluated_at": "2026-09-18T23:00:59.717429+05:30",
+        "evaluated_at": "2026-09-18T23:16:09.555232+05:30",
         "prediction_kwh": 1546.813298,
         "base_prediction_kwh": 1546.813298,
         "correction_kwh": 0.0,
@@ -2619,7 +2619,7 @@
         "hourly_profile_mode": "recent profile"
       }
     },
-    "last_run": "2026-09-18T23:00:59.717429+05:30",
+    "last_run": "2026-09-18T23:16:09.555232+05:30",
     "forecast_history": {
       "2026-09-12": {
         "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -2684,10 +2684,10 @@
         "learning_guard": "baseline held: fewer than 5 feedback samples",
         "actual_kwh": 1678.38,
         "error_kwh": -78.211656,
-        "evaluated_at": "2026-09-18T23:00:59.717429+05:30"
+        "evaluated_at": "2026-09-18T23:16:09.555232+05:30"
       },
       "2026-09-18": {
-        "generated_at": "2026-09-18T23:00:59.717429+05:30",
+        "generated_at": "2026-09-18T23:16:09.555232+05:30",
         "source_date": "2026-09-17",
         "base_prediction_kwh": 1546.813298,
         "correction_kwh": 0.0,
@@ -3382,7 +3382,7 @@
         "learning_guard": "hourly correction capped at 25% of profile"
       },
       "2026-09-18": {
-        "generated_at": "2026-09-18T23:00:59.717429+05:30",
+        "generated_at": "2026-09-18T23:16:09.555232+05:30",
         "source_date": "2026-09-17",
         "base_prediction_kwh": [
           57.559767,
@@ -3522,12 +3522,12 @@
     "model_version": "device153-adaptive-v2",
     "health": {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-09-18T23:00:59.717429+05:30",
-      "last_run": "2026-09-18T23:00:59.717429+05:30",
+      "last_successful_collection": "2026-09-18T23:16:09.555232+05:30",
+      "last_run": "2026-09-18T23:16:09.555232+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 876.41,
-        "daily": 848.92
+        "hourly": 927.33,
+        "daily": 864.4
       },
       "missing_hours": [],
       "data_quality": {
@@ -3535,7 +3535,7 @@
         "completed_hours": 23,
         "expected_completed_hours": 23,
         "completeness": 1.0,
-        "api_latency_ms": 876.41,
+        "api_latency_ms": 927.33,
         "status": "complete",
         "data_status": "complete",
         "daily_hourly_consistency": {
@@ -3576,9 +3576,9 @@
         "reason": "insufficient history for rollback decision",
         "evaluated_cycles": 4
       },
-      "hourly_collection_at": "2026-09-18T23:00:59.717429+05:30",
-      "daily_total_collection_at": "2026-09-18T23:00:59.717429+05:30",
-      "dashboard_payload_generated_at": "2026-09-18T23:00:59.717429+05:30",
+      "hourly_collection_at": "2026-09-18T23:16:09.555232+05:30",
+      "daily_total_collection_at": "2026-09-18T23:16:09.555232+05:30",
+      "dashboard_payload_generated_at": "2026-09-18T23:16:09.555232+05:30",
       "dashboard_build": "2026-09-14-r5"
     },
     "model_guard": {
@@ -3586,7 +3586,7 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 4
     },
-    "last_daily_total_collection": "2026-09-18T23:00:59.717429+05:30",
+    "last_daily_total_collection": "2026-09-18T23:16:09.555232+05:30",
     "daily_quality_history": {
       "2026-09-14": {
         "data_status": "daily_total_only",
@@ -3695,7 +3695,7 @@
           "daily_total_kwh": 1678.38,
           "hourly_residual_not_allocated_kwh": null
         },
-        "recorded_at": "2026-09-18T23:00:59.717429+05:30"
+        "recorded_at": "2026-09-18T23:16:09.555232+05:30"
       }
     },
     "daily_totals": {
@@ -3746,12 +3746,12 @@
   },
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-18T23:00:59.717429+05:30",
-    "last_run": "2026-09-18T23:00:59.717429+05:30",
+    "last_successful_collection": "2026-09-18T23:16:09.555232+05:30",
+    "last_run": "2026-09-18T23:16:09.555232+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 876.41,
-      "daily": 848.92
+      "hourly": 927.33,
+      "daily": 864.4
     },
     "missing_hours": [],
     "data_quality": {
@@ -3759,7 +3759,7 @@
       "completed_hours": 23,
       "expected_completed_hours": 23,
       "completeness": 1.0,
-      "api_latency_ms": 876.41,
+      "api_latency_ms": 927.33,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
@@ -3800,13 +3800,13 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 4
     },
-    "hourly_collection_at": "2026-09-18T23:00:59.717429+05:30",
-    "daily_total_collection_at": "2026-09-18T23:00:59.717429+05:30",
-    "dashboard_payload_generated_at": "2026-09-18T23:00:59.717429+05:30",
+    "hourly_collection_at": "2026-09-18T23:16:09.555232+05:30",
+    "daily_total_collection_at": "2026-09-18T23:16:09.555232+05:30",
+    "dashboard_payload_generated_at": "2026-09-18T23:16:09.555232+05:30",
     "dashboard_build": "2026-09-14-r5"
   },
   "improvement_report": {
-    "generated_at": "2026-09-18T23:00:59.717429+05:30",
+    "generated_at": "2026-09-18T23:16:09.555232+05:30",
     "model_version": "device153-adaptive-v2",
     "mode": "bounded_adaptation",
     "status": "adaptive",
@@ -8364,12 +8364,12 @@
     },
     {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-09-18T23:00:59.717429+05:30",
-      "last_run": "2026-09-18T23:00:59.717429+05:30",
+      "last_successful_collection": "2026-09-18T23:16:09.555232+05:30",
+      "last_run": "2026-09-18T23:16:09.555232+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 876.41,
-        "daily": 848.92
+        "hourly": 927.33,
+        "daily": 864.4
       },
       "missing_hours": [],
       "data_quality": {
@@ -8377,7 +8377,7 @@
         "completed_hours": 23,
         "expected_completed_hours": 23,
         "completeness": 1.0,
-        "api_latency_ms": 876.41,
+        "api_latency_ms": 927.33,
         "status": "complete",
         "data_status": "complete",
         "daily_hourly_consistency": {
