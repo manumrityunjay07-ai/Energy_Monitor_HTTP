@@ -166,31 +166,7 @@
       "18": 75.87,
       "19": 79.0
     },
-    "2026-09-18": {
-      "0": 47.44,
-      "1": 44.19,
-      "2": 54.87,
-      "3": 54.25,
-      "4": 52.0,
-      "5": 59.63,
-      "6": 113.06,
-      "7": 173.13,
-      "8": 89.43,
-      "9": 52.81,
-      "10": 32.57,
-      "11": 52.06,
-      "12": 38.19,
-      "13": 68.5,
-      "14": 48.44,
-      "15": 53.06,
-      "16": 53.62,
-      "17": 71.06,
-      "18": 58.88,
-      "19": 79.56,
-      "20": 84.56,
-      "21": 96.69,
-      "22": 98.44
-    }
+    "2026-09-19": {}
   },
   "processed": {
     "2026-09-11": {
@@ -785,14 +761,34 @@
       "hourly_profile_mode": "recent profile",
       "actual_kwh": 1653.56
     },
-    "2026-09-17": {
-      "processed_at": "2026-09-18T23:46:01.677700+05:30",
+    "2026-09-18": {
+      "processed_at": "2026-09-19T00:00:58.761312+05:30",
       "device_id": 153,
-      "date": "2026-09-17",
+      "date": "2026-09-18",
       "status": "daily_total_only",
       "data_status": "daily_total_only",
       "backfill_status": "measured_hours_only",
       "missing_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
         20,
         21,
         22,
@@ -801,21 +797,18 @@
       "cluster": "",
       "anomaly_score": "",
       "anomaly_threshold": 5.8129962635,
-      "anomaly_explanation": "Daily total available; hourly profile is missing 4 hour(s); no hourly estimate was invented.",
-      "actual_date": "2026-09-17",
-      "forecast_date": "2026-09-18",
+      "anomaly_explanation": "Daily total available; hourly profile is missing 24 hour(s); no hourly estimate was invented.",
+      "actual_date": "2026-09-18",
+      "forecast_date": "2026-09-19",
       "calendar_profile": "weekday",
       "model_version": "device153-adaptive-v2",
-      "actual_kwh": 1678.38,
-      "previous_prediction_kwh": 1756.591656,
-      "prediction_error_kwh": -78.211656,
-      "evaluated_at": "2026-09-18T23:46:01.677700+05:30",
-      "prediction_kwh": 1546.813298,
-      "base_prediction_kwh": 1546.813298,
+      "actual_kwh": 1655.25,
+      "prediction_kwh": 1576.913679,
+      "base_prediction_kwh": 1576.913679,
       "correction_kwh": 0.0,
-      "feedback_samples": 4,
-      "prediction_lower_kwh": 1483.668611,
-      "prediction_upper_kwh": 1609.957984,
+      "feedback_samples": 3,
+      "prediction_lower_kwh": 1480.202422,
+      "prediction_upper_kwh": 1673.624935,
       "profile_mode": "weekday profile",
       "hourly_forecast": {
         "0": 56.819767,
@@ -901,7 +894,7 @@
       "hourly_profile_mode": "recent profile"
     }
   },
-  "last_run": "2026-09-18T23:46:01.677700+05:30",
+  "last_run": "2026-09-19T00:00:58.761312+05:30",
   "forecast_history": {
     "2026-09-12": {
       "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -963,19 +956,16 @@
       "upper_kwh": 2177.437234,
       "profile_mode": "weekday profile",
       "model_version": "device153-adaptive-v2",
-      "learning_guard": "baseline held: fewer than 5 feedback samples",
-      "actual_kwh": 1678.38,
-      "error_kwh": -78.211656,
-      "evaluated_at": "2026-09-18T23:46:01.677700+05:30"
+      "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
-    "2026-09-18": {
-      "generated_at": "2026-09-18T23:46:01.677700+05:30",
-      "source_date": "2026-09-17",
-      "base_prediction_kwh": 1546.813298,
+    "2026-09-19": {
+      "generated_at": "2026-09-19T00:00:58.761312+05:30",
+      "source_date": "2026-09-18",
+      "base_prediction_kwh": 1576.913679,
       "correction_kwh": 0.0,
-      "predicted_kwh": 1546.813298,
-      "lower_kwh": 1483.668611,
-      "upper_kwh": 1609.957984,
+      "predicted_kwh": 1576.913679,
+      "lower_kwh": 1480.202422,
+      "upper_kwh": 1673.624935,
       "profile_mode": "weekday profile",
       "model_version": "device153-adaptive-v2",
       "learning_guard": "baseline held: fewer than 5 feedback samples"
@@ -1663,9 +1653,9 @@
       "model_version": "device153-adaptive-v2",
       "learning_guard": "hourly correction capped at 25% of profile"
     },
-    "2026-09-18": {
-      "generated_at": "2026-09-18T23:46:01.677700+05:30",
-      "source_date": "2026-09-17",
+    "2026-09-19": {
+      "generated_at": "2026-09-19T00:00:58.761312+05:30",
+      "source_date": "2026-09-18",
       "base_prediction_kwh": [
         57.559767,
         69.903256,
@@ -1804,47 +1794,67 @@
   "model_version": "device153-adaptive-v2",
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-18T23:46:01.677700+05:30",
-    "last_run": "2026-09-18T23:46:01.677700+05:30",
+    "last_successful_collection": "2026-09-19T00:00:58.761312+05:30",
+    "last_run": "2026-09-19T00:00:58.761312+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 898.01,
-      "daily": 869.82
+      "hourly": 875.38,
+      "daily": 837.45
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 23,
-      "expected_completed_hours": 23,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
       "completeness": 1.0,
-      "api_latency_ms": 898.01,
+      "api_latency_ms": 875.38,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
         "status": "review",
         "reason": "hourly profile incomplete",
-        "available_hours": 20,
+        "available_hours": 0,
         "missing_hours": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
           20,
           21,
           22,
           23
         ],
-        "daily_total_kwh": 1678.38,
+        "daily_total_kwh": 1655.25,
         "hourly_residual_not_allocated_kwh": null
       }
     },
     "confidence_coverage": {
-      "inside_interval": 3,
+      "inside_interval": 4,
       "evaluated": 5,
-      "rate": 0.6
+      "rate": 0.8
     },
     "model_evaluation": {
-      "evaluated_days": 4,
-      "mae_kwh": 222.464147,
-      "rmse_kwh": 243.436521,
-      "mape_percent": 14.297988,
-      "bias_kwh": -129.250231
+      "evaluated_days": 3,
+      "mae_kwh": 270.548311,
+      "rmse_kwh": 277.445668,
+      "mape_percent": 17.510668,
+      "bias_kwh": -146.263089
     },
     "model_versions": [
       "device153-adaptive-v2"
@@ -1856,19 +1866,19 @@
     "rollback_guard": {
       "adaptation_enabled": true,
       "reason": "insufficient history for rollback decision",
-      "evaluated_cycles": 4
+      "evaluated_cycles": 3
     },
-    "hourly_collection_at": "2026-09-18T23:46:01.677700+05:30",
-    "daily_total_collection_at": "2026-09-18T23:46:01.677700+05:30",
-    "dashboard_payload_generated_at": "2026-09-18T23:46:01.677700+05:30",
+    "hourly_collection_at": "2026-09-19T00:00:58.761312+05:30",
+    "daily_total_collection_at": "2026-09-19T00:00:58.761312+05:30",
+    "dashboard_payload_generated_at": "2026-09-19T00:00:58.761312+05:30",
     "dashboard_build": "2026-09-14-r5"
   },
   "model_guard": {
     "adaptation_enabled": true,
     "reason": "insufficient history for rollback decision",
-    "evaluated_cycles": 4
+    "evaluated_cycles": 3
   },
-  "last_daily_total_collection": "2026-09-18T23:46:01.677700+05:30",
+  "last_daily_total_collection": "2026-09-19T00:00:58.761312+05:30",
   "daily_quality_history": {
     "2026-09-14": {
       "data_status": "daily_total_only",
@@ -1954,11 +1964,31 @@
       },
       "recorded_at": "2026-09-17T20:41:28.273945+05:30"
     },
-    "2026-09-17": {
+    "2026-09-18": {
       "data_status": "daily_total_only",
       "backfill_status": "measured_hours_only",
-      "available_hours": 20,
+      "available_hours": 0,
       "missing_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
         20,
         21,
         22,
@@ -1967,17 +1997,37 @@
       "consistency": {
         "status": "review",
         "reason": "hourly profile incomplete",
-        "available_hours": 20,
+        "available_hours": 0,
         "missing_hours": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
           20,
           21,
           22,
           23
         ],
-        "daily_total_kwh": 1678.38,
+        "daily_total_kwh": 1655.25,
         "hourly_residual_not_allocated_kwh": null
       },
-      "recorded_at": "2026-09-18T23:46:01.677700+05:30"
+      "recorded_at": "2026-09-19T00:00:58.761312+05:30"
     }
   },
   "daily_totals": {
@@ -2023,6 +2073,7 @@
     "2026-09-14": 1560.13,
     "2026-09-15": 1486.24,
     "2026-09-16": 1653.56,
-    "2026-09-17": 1678.38
+    "2026-09-17": 1678.38,
+    "2026-09-18": 1655.25
   }
 }
