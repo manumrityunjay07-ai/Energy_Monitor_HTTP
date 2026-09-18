@@ -19,7 +19,7 @@ jobs:
         run: |
           set -euo pipefail
           curl --fail --silent --show-error --retry 3 --max-time 30 \
-            https://raw.githubusercontent.com/manumrityunjay07-ai/Energy_Monitor_HTTP/main/results/health.json \
+            https://raw.githubusercontent.com/manumrityunjay07-ai/Energy_Monitor_HTTP/live-data/results/health.json \
             -o health.json
           status="$(jq -r '.collector_status // "unknown"' health.json)"
           quality="$(jq -r '.data_quality.status // "unknown"' health.json)"
