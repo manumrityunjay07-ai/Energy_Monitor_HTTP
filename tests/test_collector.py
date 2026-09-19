@@ -8,6 +8,13 @@ import collect_once
 
 
 class CollectorSafetyTests(unittest.TestCase):
+    def test_collector_requires_https_endpoints(self):
+        self.assertEqual(collect_once.validate_https_url("https://example.test/api"), "https://example.test/api")
+        with self.assertRaises(ValueError):
+            collect_once.validate_https_url("http://example.test/api")
+        with self.assertRaises(ValueError):
+            collect_once.validate_https_url("/relative/api")
+
     def test_data_quality_is_complete_for_completed_hours(self):
         now = datetime(2026, 9, 13, 5, 30, tzinfo=ZoneInfo("Asia/Kolkata"))
         profile = {str(hour): float(hour) for hour in range(5)}

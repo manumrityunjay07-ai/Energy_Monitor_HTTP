@@ -8,14 +8,22 @@ import time
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from statistics import mean, median, pstdev
+from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
 import requests
 
+def validate_https_url(url: str) -> str:
+    parsed = urlparse(url)
+    if parsed.scheme.lower() != "https" or not parsed.netloc:
+        raise ValueError(f"Collector endpoint must be an absolute HTTPS URL: {url!r}")
+    return url
+
+
 DEVICE_ID = int(os.getenv("DEVICE_ID", "153"))
 TZ = ZoneInfo("Asia/Kolkata")
-HOURLY_URL = os.getenv("HOURLY_URL", "https://adc.bitsathy.ac.in/2024/ems_dashboard/api/fetch_hourly_energy_consumption.php")
-DAYWISE_URL = os.getenv("DAYWISE_URL", "https://adc.bitsathy.ac.in/2024/ems_dashboard/api/fetch_day_energy_consumption.php")
+HOURLY_URL = validate_https_url(os.getenv("HOURLY_URL", "https://adc.bitsathy.ac.in/2024/ems_dashboard/api/fetch_hourly_energy_consumption.php"))
+DAYWISE_URL = validate_https_url(os.getenv("DAYWISE_URL", "https://adc.bitsathy.ac.in/2024/ems_dashboard/api/fetch_day_energy_consumption.php"))
 STATE = Path("data/state.json")
 RESULTS = Path("results/ai_results.csv")
 HOURLY_RESULTS = Path("results/hourly_predictions.csv")
@@ -45,11 +53,17 @@ def calendar_profile(day: str) -> str:
 
 
 def request_json(method: str, url: str, **kwargs) -> tuple[dict, float]:
+    validate_https_url(url)
+    kwargs.setdefault("verify", True)
+    kwargs.setdefault("allow_redirects", False)
+    kwargs.setdefault("headers", {"Accept": "application/json", "User-Agent": "Device153-Energy-Collector/1.0"})
     last_error: Exception | None = None
     for attempt in range(1, MAX_RETRIES + 1):
         started = time.perf_counter()
         try:
             response = requests.request(method, url, timeout=30, **kwargs)
+            if 300 <= response.status_code < 400:
+                raise ValueError(f"HTTPS endpoint returned redirect {response.status_code}; refusing downgrade or redirect")
             response.raise_for_status()
             payload = response.json()
             if not isinstance(payload, dict):
