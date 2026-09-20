@@ -785,7 +785,7 @@
       "actual_kwh": 1653.56
     },
     "2026-09-19": {
-      "processed_at": "2026-09-20T22:30:28.554431+05:30",
+      "processed_at": "2026-09-20T22:45:30.235097+05:30",
       "device_id": 153,
       "date": "2026-09-19",
       "status": "daily_total_only",
@@ -917,7 +917,7 @@
       "hourly_profile_mode": "recent profile"
     }
   },
-  "last_run": "2026-09-20T22:30:28.554431+05:30",
+  "last_run": "2026-09-20T22:45:30.235097+05:30",
   "forecast_history": {
     "2026-09-12": {
       "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -982,7 +982,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-20": {
-      "generated_at": "2026-09-20T22:30:28.554431+05:30",
+      "generated_at": "2026-09-20T22:45:30.235097+05:30",
       "source_date": "2026-09-19",
       "base_prediction_kwh": 1542.35645,
       "correction_kwh": 0.0,
@@ -1677,7 +1677,7 @@
       "learning_guard": "hourly correction capped at 25% of profile"
     },
     "2026-09-20": {
-      "generated_at": "2026-09-20T22:30:28.554431+05:30",
+      "generated_at": "2026-09-20T22:45:30.235097+05:30",
       "source_date": "2026-09-19",
       "base_prediction_kwh": [
         57.559767,
@@ -1817,12 +1817,12 @@
   "model_version": "device153-adaptive-v2",
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-20T22:30:28.554431+05:30",
-    "last_run": "2026-09-20T22:30:28.554431+05:30",
+    "last_successful_collection": "2026-09-20T22:45:30.235097+05:30",
+    "last_run": "2026-09-20T22:45:30.235097+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 974.87,
-      "daily": 896.12
+      "hourly": 1104.72,
+      "daily": 913.07
     },
     "missing_hours": [],
     "data_quality": {
@@ -1830,7 +1830,7 @@
       "completed_hours": 22,
       "expected_completed_hours": 22,
       "completeness": 1.0,
-      "api_latency_ms": 974.87,
+      "api_latency_ms": 1104.72,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
@@ -1891,9 +1891,9 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     },
-    "hourly_collection_at": "2026-09-20T22:30:28.554431+05:30",
-    "daily_total_collection_at": "2026-09-20T22:30:28.554431+05:30",
-    "dashboard_payload_generated_at": "2026-09-20T22:30:28.554431+05:30",
+    "hourly_collection_at": "2026-09-20T22:45:30.235097+05:30",
+    "daily_total_collection_at": "2026-09-20T22:45:30.235097+05:30",
+    "dashboard_payload_generated_at": "2026-09-20T22:45:30.235097+05:30",
     "dashboard_build": "2026-09-14-r5"
   },
   "model_guard": {
@@ -1901,7 +1901,7 @@
     "reason": "insufficient history for rollback decision",
     "evaluated_cycles": 3
   },
-  "last_daily_total_collection": "2026-09-20T22:30:28.554431+05:30",
+  "last_daily_total_collection": "2026-09-20T22:45:30.235097+05:30",
   "daily_quality_history": {
     "2026-09-14": {
       "data_status": "daily_total_only",
@@ -2050,7 +2050,7 @@
         "daily_total_kwh": 1627.81,
         "hourly_residual_not_allocated_kwh": null
       },
-      "recorded_at": "2026-09-20T22:30:28.554431+05:30"
+      "recorded_at": "2026-09-20T22:45:30.235097+05:30"
     }
   },
   "daily_totals": {
