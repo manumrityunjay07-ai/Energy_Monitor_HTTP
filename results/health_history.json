@@ -4538,20 +4538,20 @@
   },
   {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-21T17:45:30.202571+05:30",
-    "last_run": "2026-09-21T17:45:30.202571+05:30",
+    "last_successful_collection": "2026-09-21T18:00:31.356098+05:30",
+    "last_run": "2026-09-21T18:00:31.356098+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 1030.11,
-      "daily": 940.58
+      "hourly": 934.36,
+      "daily": 889.25
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 17,
-      "expected_completed_hours": 17,
+      "completed_hours": 18,
+      "expected_completed_hours": 18,
       "completeness": 1.0,
-      "api_latency_ms": 1030.11,
+      "api_latency_ms": 934.36,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
