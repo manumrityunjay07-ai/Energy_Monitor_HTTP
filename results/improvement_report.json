@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-22T18:00:33.538265+05:30",
+  "generated_at": "2026-09-22T18:14:24.025202+05:30",
   "model_version": "device153-adaptive-v2",
   "mode": "bounded_adaptation",
   "status": "adaptive",
-  "learning_samples": 6,
+  "learning_samples": 44,
   "adaptation_enabled": true,
   "guard_reason": "insufficient history for rollback decision",
   "evaluated_cycles": 3,
