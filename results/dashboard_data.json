@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T08:30:30.925428+05:30",
+  "generated_at": "2026-09-22T08:45:38.896382+05:30",
   "device_id": 153,
   "ai_results": [
     {
@@ -148,7 +148,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-21",
       "actual_date": "2026-09-21",
@@ -1235,7 +1235,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "0",
@@ -1246,7 +1246,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "1",
@@ -1257,7 +1257,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "10",
@@ -1268,7 +1268,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "11",
@@ -1279,7 +1279,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "12",
@@ -1290,7 +1290,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "13",
@@ -1301,7 +1301,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "14",
@@ -1312,7 +1312,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "15",
@@ -1323,7 +1323,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "16",
@@ -1334,7 +1334,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "17",
@@ -1345,7 +1345,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "18",
@@ -1356,7 +1356,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "19",
@@ -1367,7 +1367,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "2",
@@ -1378,7 +1378,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "20",
@@ -1389,7 +1389,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "21",
@@ -1400,7 +1400,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "22",
@@ -1411,7 +1411,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "23",
@@ -1422,7 +1422,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "3",
@@ -1433,7 +1433,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "4",
@@ -1444,7 +1444,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "5",
@@ -1455,7 +1455,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "6",
@@ -1466,7 +1466,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "7",
@@ -1477,7 +1477,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "8",
@@ -1488,7 +1488,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-09-22T08:30:29.149493+05:30",
+      "processed_at": "2026-09-22T08:45:37.028251+05:30",
       "device_id": "153",
       "date": "2026-09-22",
       "hour": "9",
@@ -2509,7 +2509,7 @@
         "actual_kwh": 1653.56
       },
       "2026-09-21": {
-        "processed_at": "2026-09-22T08:30:29.149493+05:30",
+        "processed_at": "2026-09-22T08:45:37.028251+05:30",
         "device_id": 153,
         "date": "2026-09-21",
         "status": "daily_total_only",
@@ -2641,7 +2641,7 @@
         "hourly_profile_mode": "recent profile"
       }
     },
-    "last_run": "2026-09-22T08:30:29.149493+05:30",
+    "last_run": "2026-09-22T08:45:37.028251+05:30",
     "forecast_history": {
       "2026-09-12": {
         "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -2706,7 +2706,7 @@
         "learning_guard": "baseline held: fewer than 5 feedback samples"
       },
       "2026-09-22": {
-        "generated_at": "2026-09-22T08:30:29.149493+05:30",
+        "generated_at": "2026-09-22T08:45:37.028251+05:30",
         "source_date": "2026-09-21",
         "base_prediction_kwh": 1542.399082,
         "correction_kwh": 0.0,
@@ -3401,7 +3401,7 @@
         "learning_guard": "hourly correction capped at 25% of profile"
       },
       "2026-09-22": {
-        "generated_at": "2026-09-22T08:30:29.149493+05:30",
+        "generated_at": "2026-09-22T08:45:37.028251+05:30",
         "source_date": "2026-09-21",
         "base_prediction_kwh": [
           57.559767,
@@ -3541,12 +3541,12 @@
     "model_version": "device153-adaptive-v2",
     "health": {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-09-22T08:30:29.149493+05:30",
-      "last_run": "2026-09-22T08:30:29.149493+05:30",
+      "last_successful_collection": "2026-09-22T08:45:37.028251+05:30",
+      "last_run": "2026-09-22T08:45:37.028251+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 917.88,
-        "daily": 841.5
+        "hourly": 942.28,
+        "daily": 913.42
       },
       "missing_hours": [],
       "data_quality": {
@@ -3554,7 +3554,7 @@
         "completed_hours": 8,
         "expected_completed_hours": 8,
         "completeness": 1.0,
-        "api_latency_ms": 917.88,
+        "api_latency_ms": 942.28,
         "status": "complete",
         "data_status": "complete",
         "daily_hourly_consistency": {
@@ -3615,9 +3615,9 @@
         "reason": "insufficient history for rollback decision",
         "evaluated_cycles": 3
       },
-      "hourly_collection_at": "2026-09-22T08:30:29.149493+05:30",
-      "daily_total_collection_at": "2026-09-22T08:30:29.149493+05:30",
-      "dashboard_payload_generated_at": "2026-09-22T08:30:29.149493+05:30",
+      "hourly_collection_at": "2026-09-22T08:45:37.028251+05:30",
+      "daily_total_collection_at": "2026-09-22T08:45:37.028251+05:30",
+      "dashboard_payload_generated_at": "2026-09-22T08:45:37.028251+05:30",
       "dashboard_build": "2026-09-14-r5"
     },
     "model_guard": {
@@ -3625,7 +3625,7 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     },
-    "last_daily_total_collection": "2026-09-22T08:30:29.149493+05:30",
+    "last_daily_total_collection": "2026-09-22T08:45:37.028251+05:30",
     "daily_quality_history": {
       "2026-09-14": {
         "data_status": "daily_total_only",
@@ -3774,7 +3774,7 @@
           "daily_total_kwh": 1587.43,
           "hourly_residual_not_allocated_kwh": null
         },
-        "recorded_at": "2026-09-22T08:30:29.149493+05:30"
+        "recorded_at": "2026-09-22T08:45:37.028251+05:30"
       }
     },
     "daily_totals": {
@@ -3829,12 +3829,12 @@
   },
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-22T08:30:29.149493+05:30",
-    "last_run": "2026-09-22T08:30:29.149493+05:30",
+    "last_successful_collection": "2026-09-22T08:45:37.028251+05:30",
+    "last_run": "2026-09-22T08:45:37.028251+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 917.88,
-      "daily": 841.5
+      "hourly": 942.28,
+      "daily": 913.42
     },
     "missing_hours": [],
     "data_quality": {
@@ -3842,7 +3842,7 @@
       "completed_hours": 8,
       "expected_completed_hours": 8,
       "completeness": 1.0,
-      "api_latency_ms": 917.88,
+      "api_latency_ms": 942.28,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
@@ -3903,13 +3903,13 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     },
-    "hourly_collection_at": "2026-09-22T08:30:29.149493+05:30",
-    "daily_total_collection_at": "2026-09-22T08:30:29.149493+05:30",
-    "dashboard_payload_generated_at": "2026-09-22T08:30:29.149493+05:30",
+    "hourly_collection_at": "2026-09-22T08:45:37.028251+05:30",
+    "daily_total_collection_at": "2026-09-22T08:45:37.028251+05:30",
+    "dashboard_payload_generated_at": "2026-09-22T08:45:37.028251+05:30",
     "dashboard_build": "2026-09-14-r5"
   },
   "improvement_report": {
-    "generated_at": "2026-09-22T08:30:29.149493+05:30",
+    "generated_at": "2026-09-22T08:45:37.028251+05:30",
     "model_version": "device153-adaptive-v2",
     "mode": "bounded_adaptation",
     "status": "adaptive",
@@ -8467,12 +8467,12 @@
     },
     {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-09-22T08:30:29.149493+05:30",
-      "last_run": "2026-09-22T08:30:29.149493+05:30",
+      "last_successful_collection": "2026-09-22T08:45:37.028251+05:30",
+      "last_run": "2026-09-22T08:45:37.028251+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 917.88,
-        "daily": 841.5
+        "hourly": 942.28,
+        "daily": 913.42
       },
       "missing_hours": [],
       "data_quality": {
@@ -8480,7 +8480,7 @@
         "completed_hours": 8,
         "expected_completed_hours": 8,
         "completeness": 1.0,
-        "api_latency_ms": 917.88,
+        "api_latency_ms": 942.28,
         "status": "complete",
         "data_status": "complete",
         "daily_hourly_consistency": {
