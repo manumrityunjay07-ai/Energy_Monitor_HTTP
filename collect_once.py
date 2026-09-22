@@ -386,6 +386,7 @@ def main() -> None:
     forecast_history = state.setdefault("forecast_history", {})
     hourly_history = state.setdefault("hourly_forecast_history", {})
     state["model_guard"] = evaluate_model_guard(forecast_history)
+    adaptation_enabled = state["model_guard"].get("adaptation_enabled", True)
     today = now.date().isoformat()
     ai_fields = ["processed_at", "device_id", "date", "actual_date", "forecast_date", "evaluated_at", "calendar_profile", "backfill_status", "missing_hours", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
     hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
