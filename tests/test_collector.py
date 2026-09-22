@@ -8,6 +8,17 @@ import collect_once
 
 
 class CollectorSafetyTests(unittest.TestCase):
+    def test_reconstructs_daily_prediction_without_hourly_values(self):
+        totals = {f"2026-09-{day:02d}": 1500.0 + day for day in range(10, 17)}
+        result = collect_once.reconstruct_daily_result(
+            "2026-09-17", 1600.0, None, totals, {}, datetime(2026, 9, 18, tzinfo=ZoneInfo("Asia/Kolkata")), True
+        )
+        self.assertIsNotNone(result)
+        self.assertEqual(result["backfill_status"], "reconstructed_from_daily_total")
+        self.assertEqual(result["missing_hours"], list(range(24)))
+        self.assertIsNotNone(result["prediction_kwh"])
+        self.assertAlmostEqual(result["prediction_error_kwh"], 1600.0 - result["prediction_kwh"])
+
     def test_data_quality_is_complete_for_completed_hours(self):
         now = datetime(2026, 9, 13, 5, 30, tzinfo=ZoneInfo("Asia/Kolkata"))
         profile = {str(hour): float(hour) for hour in range(5)}
