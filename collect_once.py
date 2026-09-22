@@ -220,6 +220,41 @@ def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: di
     return round(prediction, 6), round(base_prediction, 6), round(correction, 6), len(recent_errors), round(lower, 6), round(upper, 6), mode
 
 
+def reconstruct_daily_result(day: str, total: float, existing: dict | None, daily_totals: dict[str, float], forecast_history: dict[str, dict], now: datetime, adaptation_enabled: bool) -> dict | None:
+    """Restore a daily AI row from a persisted total without inventing hourly readings."""
+    source_date = (date.fromisoformat(day) - timedelta(days=1)).isoformat()
+    forecast = adaptive_daily_forecast(daily_totals, forecast_history, day, source_date, now, adaptation_enabled)
+    if not forecast:
+        return existing
+    prediction, base, correction, samples, lower, upper, mode = forecast
+    result = dict(existing or {})
+    result.update({
+        "processed_at": result.get("processed_at") or now.isoformat(),
+        "device_id": DEVICE_ID,
+        "date": day,
+        "actual_date": day,
+        "forecast_date": day,
+        "evaluated_at": now.isoformat(),
+        "calendar_profile": calendar_profile(day),
+        "backfill_status": "reconstructed_from_daily_total",
+        "missing_hours": list(range(24)),
+        "status": result.get("status") or "daily_total_only",
+        "data_status": result.get("data_status") or "daily_total_only",
+        "actual_kwh": round(total, 6),
+        "previous_prediction_kwh": prediction,
+        "prediction_error_kwh": round(total - prediction, 6),
+        "prediction_kwh": prediction,
+        "prediction_lower_kwh": lower,
+        "prediction_upper_kwh": upper,
+        "base_prediction_kwh": base,
+        "correction_kwh": correction,
+        "feedback_samples": samples,
+        "profile_mode": mode,
+        "model_version": MODEL_VERSION,
+    })
+    return result
+
+
 def adaptive_hourly_forecast(profiles: dict[str, dict], hourly_history: dict[str, dict], target_date: str, source_date: str, now: datetime, adaptation_enabled: bool = True) -> tuple | None:
     completed = sorted((day, profile) for day, profile in profiles.items() if day <= source_date and all(str(hour) in profile for hour in range(24)))
     if not completed:
@@ -351,6 +386,7 @@ def main() -> None:
     forecast_history = state.setdefault("forecast_history", {})
     hourly_history = state.setdefault("hourly_forecast_history", {})
     state["model_guard"] = evaluate_model_guard(forecast_history)
+    adaptation_enabled = state["model_guard"].get("adaptation_enabled", True)
     today = now.date().isoformat()
     ai_fields = ["processed_at", "device_id", "date", "actual_date", "forecast_date", "evaluated_at", "calendar_profile", "backfill_status", "missing_hours", "status", "data_status", "cluster", "anomaly_score", "anomaly_threshold", "anomaly_explanation", "actual_kwh", "previous_prediction_kwh", "prediction_error_kwh", "prediction_kwh", "prediction_lower_kwh", "prediction_upper_kwh", "profile_mode", "base_prediction_kwh", "correction_kwh", "feedback_samples", "hourly_error_mae", "model_version"]
     hourly_fields = ["processed_at", "device_id", "date", "hour", "predicted_kwh", "actual_kwh", "error_kwh", "feedback_samples", "model_version"]
@@ -447,11 +483,17 @@ def main() -> None:
             upsert_csv(RESULTS, ai_fields, [result], ["device_id", "date"])
             if hourly_forecast:
                 upsert_csv(HOURLY_RESULTS, hourly_fields, [{"processed_at": now.isoformat(), "device_id": DEVICE_ID, "date": today, "hour": h, "predicted_kwh": result["hourly_forecast"].get(str(h), ""), "actual_kwh": "", "error_kwh": "", "feedback_samples": result.get("hourly_feedback_samples", 0), "model_version": MODEL_VERSION} for h in range(24)], ["device_id", "date", "hour"])
-        # Reconcile every previously processed date on every run. This repairs
-        # records created before a late daily total became available, even when
-        # no forecast-history entry exists for that date.
-        for day, total in daily_totals.items():
+        # Reconcile every persisted daily total on every run. This repairs
+        # records created before a late daily total became available and
+        # recreates rows lost by an interrupted publication. No hourly values
+        # are invented; reconstructed rows remain daily_total_only.
+        for day, total in sorted(daily_totals.items()):
             existing = processed.get(day)
+            if day < today and (not isinstance(existing, dict) or existing.get("prediction_kwh") in (None, "")):
+                restored = reconstruct_daily_result(day, total, existing if isinstance(existing, dict) else None, daily_totals, forecast_history, now, adaptation_enabled)
+                if restored is not None:
+                    processed[day] = restored
+                    existing = restored
             if not isinstance(existing, dict) or existing.get("actual_kwh") not in (None, ""):
                 continue
             existing["actual_kwh"] = round(total, 6)
