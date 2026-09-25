@@ -4538,20 +4538,20 @@
   },
   {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-09-25T23:45:28.796870+05:30",
-    "last_run": "2026-09-25T23:45:28.796870+05:30",
+    "last_successful_collection": "2026-09-26T00:00:34.171881+05:30",
+    "last_run": "2026-09-26T00:00:34.171881+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 898.55,
-      "daily": 854.62
+      "hourly": 933.65,
+      "daily": 949.95
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 23,
-      "expected_completed_hours": 23,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
       "completeness": 1.0,
-      "api_latency_ms": 898.55,
+      "api_latency_ms": 933.65,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
@@ -4584,14 +4584,14 @@
           22,
           23
         ],
-        "daily_total_kwh": 1583.88,
+        "daily_total_kwh": 1472.81,
         "hourly_residual_not_allocated_kwh": null
       }
     },
     "confidence_coverage": {
-      "inside_interval": 3,
+      "inside_interval": 4,
       "evaluated": 5,
-      "rate": 0.6
+      "rate": 0.8
     },
     "model_evaluation": {
       "evaluated_days": 3,
