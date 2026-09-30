@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T01:46:19.495874+05:30",
+  "generated_at": "2026-10-01T02:01:22.635070+05:30",
   "device_id": 153,
   "ai_results": [
     {
@@ -148,7 +148,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-09-30",
       "actual_date": "2026-09-30",
@@ -1235,7 +1235,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "0",
@@ -1246,7 +1246,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "1",
@@ -1257,7 +1257,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "10",
@@ -1268,7 +1268,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "11",
@@ -1279,7 +1279,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "12",
@@ -1290,7 +1290,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "13",
@@ -1301,7 +1301,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "14",
@@ -1312,7 +1312,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "15",
@@ -1323,7 +1323,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "16",
@@ -1334,7 +1334,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "17",
@@ -1345,7 +1345,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "18",
@@ -1356,7 +1356,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "19",
@@ -1367,7 +1367,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "2",
@@ -1378,7 +1378,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "20",
@@ -1389,7 +1389,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "21",
@@ -1400,7 +1400,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "22",
@@ -1411,7 +1411,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "23",
@@ -1422,7 +1422,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "3",
@@ -1433,7 +1433,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "4",
@@ -1444,7 +1444,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "5",
@@ -1455,7 +1455,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "6",
@@ -1466,7 +1466,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "7",
@@ -1477,7 +1477,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "8",
@@ -1488,7 +1488,7 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T01:46:17.597612+05:30",
+      "processed_at": "2026-10-01T02:01:20.767116+05:30",
       "device_id": "153",
       "date": "2026-10-01",
       "hour": "9",
@@ -1950,7 +1950,8 @@
         "19": 79.0
       },
       "2026-10-01": {
-        "0": 51.0
+        "0": 51.0,
+        "1": 64.0
       }
     },
     "processed": {
@@ -2547,7 +2548,7 @@
         "actual_kwh": 1653.56
       },
       "2026-09-30": {
-        "processed_at": "2026-10-01T01:46:17.597612+05:30",
+        "processed_at": "2026-10-01T02:01:20.767116+05:30",
         "device_id": 153,
         "date": "2026-09-30",
         "status": "daily_total_only",
@@ -2679,7 +2680,7 @@
         "hourly_profile_mode": "recent profile"
       }
     },
-    "last_run": "2026-10-01T01:46:17.597612+05:30",
+    "last_run": "2026-10-01T02:01:20.767116+05:30",
     "forecast_history": {
       "2026-09-12": {
         "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -2744,7 +2745,7 @@
         "learning_guard": "baseline held: fewer than 5 feedback samples"
       },
       "2026-10-01": {
-        "generated_at": "2026-10-01T01:46:17.597612+05:30",
+        "generated_at": "2026-10-01T02:01:20.767116+05:30",
         "source_date": "2026-09-30",
         "base_prediction_kwh": 1464.890595,
         "correction_kwh": 0.0,
@@ -3439,7 +3440,7 @@
         "learning_guard": "hourly correction capped at 25% of profile"
       },
       "2026-10-01": {
-        "generated_at": "2026-10-01T01:46:17.597612+05:30",
+        "generated_at": "2026-10-01T02:01:20.767116+05:30",
         "source_date": "2026-09-30",
         "base_prediction_kwh": [
           57.559767,
@@ -3579,20 +3580,20 @@
     "model_version": "device153-adaptive-v2",
     "health": {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-10-01T01:46:17.597612+05:30",
-      "last_run": "2026-10-01T01:46:17.597612+05:30",
+      "last_successful_collection": "2026-10-01T02:01:20.767116+05:30",
+      "last_run": "2026-10-01T02:01:20.767116+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 966.62,
-        "daily": 914.78
+        "hourly": 944.35,
+        "daily": 906.88
       },
       "missing_hours": [],
       "data_quality": {
         "score": 100.0,
-        "completed_hours": 1,
-        "expected_completed_hours": 1,
+        "completed_hours": 2,
+        "expected_completed_hours": 2,
         "completeness": 1.0,
-        "api_latency_ms": 966.62,
+        "api_latency_ms": 944.35,
         "status": "complete",
         "data_status": "complete",
         "daily_hourly_consistency": {
@@ -3653,9 +3654,9 @@
         "reason": "insufficient history for rollback decision",
         "evaluated_cycles": 3
       },
-      "hourly_collection_at": "2026-10-01T01:46:17.597612+05:30",
-      "daily_total_collection_at": "2026-10-01T01:46:17.597612+05:30",
-      "dashboard_payload_generated_at": "2026-10-01T01:46:17.597612+05:30",
+      "hourly_collection_at": "2026-10-01T02:01:20.767116+05:30",
+      "daily_total_collection_at": "2026-10-01T02:01:20.767116+05:30",
+      "dashboard_payload_generated_at": "2026-10-01T02:01:20.767116+05:30",
       "dashboard_build": "2026-09-14-r5"
     },
     "model_guard": {
@@ -3663,7 +3664,7 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     },
-    "last_daily_total_collection": "2026-10-01T01:46:17.597612+05:30",
+    "last_daily_total_collection": "2026-10-01T02:01:20.767116+05:30",
     "daily_quality_history": {
       "2026-09-14": {
         "data_status": "daily_total_only",
@@ -3812,7 +3813,7 @@
           "daily_total_kwh": 1524.12,
           "hourly_residual_not_allocated_kwh": null
         },
-        "recorded_at": "2026-10-01T01:46:17.597612+05:30"
+        "recorded_at": "2026-10-01T02:01:20.767116+05:30"
       }
     },
     "daily_totals": {
@@ -3876,20 +3877,20 @@
   },
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-10-01T01:46:17.597612+05:30",
-    "last_run": "2026-10-01T01:46:17.597612+05:30",
+    "last_successful_collection": "2026-10-01T02:01:20.767116+05:30",
+    "last_run": "2026-10-01T02:01:20.767116+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 966.62,
-      "daily": 914.78
+      "hourly": 944.35,
+      "daily": 906.88
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 1,
-      "expected_completed_hours": 1,
+      "completed_hours": 2,
+      "expected_completed_hours": 2,
       "completeness": 1.0,
-      "api_latency_ms": 966.62,
+      "api_latency_ms": 944.35,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
@@ -3950,13 +3951,13 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     },
-    "hourly_collection_at": "2026-10-01T01:46:17.597612+05:30",
-    "daily_total_collection_at": "2026-10-01T01:46:17.597612+05:30",
-    "dashboard_payload_generated_at": "2026-10-01T01:46:17.597612+05:30",
+    "hourly_collection_at": "2026-10-01T02:01:20.767116+05:30",
+    "daily_total_collection_at": "2026-10-01T02:01:20.767116+05:30",
+    "dashboard_payload_generated_at": "2026-10-01T02:01:20.767116+05:30",
     "dashboard_build": "2026-09-14-r5"
   },
   "improvement_report": {
-    "generated_at": "2026-10-01T01:46:17.597612+05:30",
+    "generated_at": "2026-10-01T02:01:20.767116+05:30",
     "model_version": "device153-adaptive-v2",
     "mode": "bounded_adaptation",
     "status": "adaptive",
@@ -8514,20 +8515,20 @@
     },
     {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-10-01T01:46:17.597612+05:30",
-      "last_run": "2026-10-01T01:46:17.597612+05:30",
+      "last_successful_collection": "2026-10-01T02:01:20.767116+05:30",
+      "last_run": "2026-10-01T02:01:20.767116+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 966.62,
-        "daily": 914.78
+        "hourly": 944.35,
+        "daily": 906.88
       },
       "missing_hours": [],
       "data_quality": {
         "score": 100.0,
-        "completed_hours": 1,
-        "expected_completed_hours": 1,
+        "completed_hours": 2,
+        "expected_completed_hours": 2,
         "completeness": 1.0,
-        "api_latency_ms": 966.62,
+        "api_latency_ms": 944.35,
         "status": "complete",
         "data_status": "complete",
         "daily_hourly_consistency": {
