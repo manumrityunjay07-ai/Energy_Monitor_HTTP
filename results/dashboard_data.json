@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T23:46:13.141663+05:30",
+  "generated_at": "2026-10-02T00:01:18.326652+05:30",
   "device_id": 153,
   "ai_results": [
     {
@@ -148,11 +148,11 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-09-30",
-      "actual_date": "2026-09-30",
-      "forecast_date": "2026-10-01",
+      "date": "2026-10-01",
+      "actual_date": "2026-10-01",
+      "forecast_date": "2026-10-02",
       "evaluated_at": "",
       "calendar_profile": "weekday",
       "backfill_status": "measured_hours_only",
@@ -163,14 +163,14 @@
       "anomaly_score": "",
       "anomaly_threshold": "5.8129962635",
       "anomaly_explanation": "Daily total available; hourly profile is missing 24 hour(s); no hourly estimate was invented.",
-      "actual_kwh": "1524.12",
+      "actual_kwh": "1490.81",
       "previous_prediction_kwh": "",
       "prediction_error_kwh": "",
-      "prediction_kwh": "1464.890595",
-      "prediction_lower_kwh": "1152.465041",
-      "prediction_upper_kwh": "1777.316149",
+      "prediction_kwh": "1492.933737",
+      "prediction_lower_kwh": "1389.326658",
+      "prediction_upper_kwh": "1596.540815",
       "profile_mode": "weekday profile",
-      "base_prediction_kwh": "1464.890595",
+      "base_prediction_kwh": "1492.933737",
       "correction_kwh": "0.0",
       "feedback_samples": "3",
       "hourly_error_mae": "",
@@ -1235,9 +1235,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "0",
       "predicted_kwh": "56.819767",
       "actual_kwh": "",
@@ -1246,9 +1246,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "1",
       "predicted_kwh": "69.083256",
       "actual_kwh": "",
@@ -1257,9 +1257,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "10",
       "predicted_kwh": "62.690233",
       "actual_kwh": "",
@@ -1268,9 +1268,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "11",
       "predicted_kwh": "48.337209",
       "actual_kwh": "",
@@ -1279,9 +1279,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "12",
       "predicted_kwh": "60.622674",
       "actual_kwh": "",
@@ -1290,9 +1290,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "13",
       "predicted_kwh": "51.80814",
       "actual_kwh": "",
@@ -1301,9 +1301,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "14",
       "predicted_kwh": "50.850698",
       "actual_kwh": "",
@@ -1312,9 +1312,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "15",
       "predicted_kwh": "78.321628",
       "actual_kwh": "",
@@ -1323,9 +1323,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "16",
       "predicted_kwh": "55.083256",
       "actual_kwh": "",
@@ -1334,9 +1334,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "17",
       "predicted_kwh": "79.8375",
       "actual_kwh": "",
@@ -1345,9 +1345,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "18",
       "predicted_kwh": "56.513488",
       "actual_kwh": "",
@@ -1356,9 +1356,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "19",
       "predicted_kwh": "103.662791",
       "actual_kwh": "",
@@ -1367,9 +1367,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "2",
       "predicted_kwh": "65.232558",
       "actual_kwh": "",
@@ -1378,9 +1378,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "20",
       "predicted_kwh": "87.726977",
       "actual_kwh": "",
@@ -1389,9 +1389,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "21",
       "predicted_kwh": "54.117907",
       "actual_kwh": "",
@@ -1400,9 +1400,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "22",
       "predicted_kwh": "77.410698",
       "actual_kwh": "",
@@ -1411,9 +1411,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "23",
       "predicted_kwh": "61.645349",
       "actual_kwh": "",
@@ -1422,9 +1422,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "3",
       "predicted_kwh": "60.127907",
       "actual_kwh": "",
@@ -1433,9 +1433,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "4",
       "predicted_kwh": "39.704826",
       "actual_kwh": "",
@@ -1444,9 +1444,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "5",
       "predicted_kwh": "58.997907",
       "actual_kwh": "",
@@ -1455,9 +1455,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "6",
       "predicted_kwh": "88.97093",
       "actual_kwh": "",
@@ -1466,9 +1466,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "7",
       "predicted_kwh": "122.59907",
       "actual_kwh": "",
@@ -1477,9 +1477,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "8",
       "predicted_kwh": "77.110233",
       "actual_kwh": "",
@@ -1488,9 +1488,9 @@
       "model_version": "device153-adaptive-v2"
     },
     {
-      "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "processed_at": "2026-10-02T00:01:16.503007+05:30",
       "device_id": "153",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "hour": "9",
       "predicted_kwh": "51.525116",
       "actual_kwh": "",
@@ -1779,6 +1779,11 @@
       "device_id": "153",
       "date": "2026-09-30",
       "total_kwh": "1524.1199999999953"
+    },
+    {
+      "device_id": "153",
+      "date": "2026-10-01",
+      "total_kwh": "1490.8100000000559"
     }
   ],
   "state": {
@@ -1949,31 +1954,7 @@
         "18": 75.87,
         "19": 79.0
       },
-      "2026-10-01": {
-        "0": 51.0,
-        "1": 64.0,
-        "2": 45.5,
-        "3": 62.31,
-        "4": 44.44,
-        "5": 58.62,
-        "6": 81.94,
-        "7": 101.31,
-        "8": 83.44,
-        "9": 53.13,
-        "10": 38.93,
-        "11": 57.88,
-        "12": 44.75,
-        "13": 65.0,
-        "14": 44.5,
-        "15": 21.62,
-        "16": 57.31,
-        "17": 78.88,
-        "18": 80.44,
-        "19": 62.44,
-        "20": 77.87,
-        "21": 71.94,
-        "22": 75.12
-      }
+      "2026-10-02": {}
     },
     "processed": {
       "2026-09-11": {
@@ -2568,10 +2549,10 @@
         "hourly_profile_mode": "recent profile",
         "actual_kwh": 1653.56
       },
-      "2026-09-30": {
-        "processed_at": "2026-10-01T23:46:11.133793+05:30",
+      "2026-10-01": {
+        "processed_at": "2026-10-02T00:01:16.503007+05:30",
         "device_id": 153,
-        "date": "2026-09-30",
+        "date": "2026-10-01",
         "status": "daily_total_only",
         "data_status": "daily_total_only",
         "backfill_status": "measured_hours_only",
@@ -2605,17 +2586,17 @@
         "anomaly_score": "",
         "anomaly_threshold": 5.8129962635,
         "anomaly_explanation": "Daily total available; hourly profile is missing 24 hour(s); no hourly estimate was invented.",
-        "actual_date": "2026-09-30",
-        "forecast_date": "2026-10-01",
+        "actual_date": "2026-10-01",
+        "forecast_date": "2026-10-02",
         "calendar_profile": "weekday",
         "model_version": "device153-adaptive-v2",
-        "actual_kwh": 1524.12,
-        "prediction_kwh": 1464.890595,
-        "base_prediction_kwh": 1464.890595,
+        "actual_kwh": 1490.81,
+        "prediction_kwh": 1492.933737,
+        "base_prediction_kwh": 1492.933737,
         "correction_kwh": 0.0,
         "feedback_samples": 3,
-        "prediction_lower_kwh": 1152.465041,
-        "prediction_upper_kwh": 1777.316149,
+        "prediction_lower_kwh": 1389.326658,
+        "prediction_upper_kwh": 1596.540815,
         "profile_mode": "weekday profile",
         "hourly_forecast": {
           "0": 56.819767,
@@ -2701,7 +2682,7 @@
         "hourly_profile_mode": "recent profile"
       }
     },
-    "last_run": "2026-10-01T23:46:11.133793+05:30",
+    "last_run": "2026-10-02T00:01:16.503007+05:30",
     "forecast_history": {
       "2026-09-12": {
         "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -2765,14 +2746,14 @@
         "model_version": "device153-adaptive-v2",
         "learning_guard": "baseline held: fewer than 5 feedback samples"
       },
-      "2026-10-01": {
-        "generated_at": "2026-10-01T23:46:11.133793+05:30",
-        "source_date": "2026-09-30",
-        "base_prediction_kwh": 1464.890595,
+      "2026-10-02": {
+        "generated_at": "2026-10-02T00:01:16.503007+05:30",
+        "source_date": "2026-10-01",
+        "base_prediction_kwh": 1492.933737,
         "correction_kwh": 0.0,
-        "predicted_kwh": 1464.890595,
-        "lower_kwh": 1152.465041,
-        "upper_kwh": 1777.316149,
+        "predicted_kwh": 1492.933737,
+        "lower_kwh": 1389.326658,
+        "upper_kwh": 1596.540815,
         "profile_mode": "weekday profile",
         "model_version": "device153-adaptive-v2",
         "learning_guard": "baseline held: fewer than 5 feedback samples"
@@ -3460,9 +3441,9 @@
         "model_version": "device153-adaptive-v2",
         "learning_guard": "hourly correction capped at 25% of profile"
       },
-      "2026-10-01": {
-        "generated_at": "2026-10-01T23:46:11.133793+05:30",
-        "source_date": "2026-09-30",
+      "2026-10-02": {
+        "generated_at": "2026-10-02T00:01:16.503007+05:30",
+        "source_date": "2026-10-01",
         "base_prediction_kwh": [
           57.559767,
           69.903256,
@@ -3601,20 +3582,20 @@
     "model_version": "device153-adaptive-v2",
     "health": {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-10-01T23:46:11.133793+05:30",
-      "last_run": "2026-10-01T23:46:11.133793+05:30",
+      "last_successful_collection": "2026-10-02T00:01:16.503007+05:30",
+      "last_run": "2026-10-02T00:01:16.503007+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 1042.58,
-        "daily": 949.17
+        "hourly": 907.33,
+        "daily": 899.55
       },
       "missing_hours": [],
       "data_quality": {
         "score": 100.0,
-        "completed_hours": 23,
-        "expected_completed_hours": 23,
+        "completed_hours": 0,
+        "expected_completed_hours": 0,
         "completeness": 1.0,
-        "api_latency_ms": 1042.58,
+        "api_latency_ms": 907.33,
         "status": "complete",
         "data_status": "complete",
         "daily_hourly_consistency": {
@@ -3647,7 +3628,7 @@
             22,
             23
           ],
-          "daily_total_kwh": 1524.12,
+          "daily_total_kwh": 1490.81,
           "hourly_residual_not_allocated_kwh": null
         }
       },
@@ -3675,9 +3656,9 @@
         "reason": "insufficient history for rollback decision",
         "evaluated_cycles": 3
       },
-      "hourly_collection_at": "2026-10-01T23:46:11.133793+05:30",
-      "daily_total_collection_at": "2026-10-01T23:46:11.133793+05:30",
-      "dashboard_payload_generated_at": "2026-10-01T23:46:11.133793+05:30",
+      "hourly_collection_at": "2026-10-02T00:01:16.503007+05:30",
+      "daily_total_collection_at": "2026-10-02T00:01:16.503007+05:30",
+      "dashboard_payload_generated_at": "2026-10-02T00:01:16.503007+05:30",
       "dashboard_build": "2026-09-14-r5"
     },
     "model_guard": {
@@ -3685,7 +3666,7 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     },
-    "last_daily_total_collection": "2026-10-01T23:46:11.133793+05:30",
+    "last_daily_total_collection": "2026-10-02T00:01:16.503007+05:30",
     "daily_quality_history": {
       "2026-09-14": {
         "data_status": "daily_total_only",
@@ -3771,7 +3752,7 @@
         },
         "recorded_at": "2026-09-17T20:41:28.273945+05:30"
       },
-      "2026-09-30": {
+      "2026-10-01": {
         "data_status": "daily_total_only",
         "backfill_status": "measured_hours_only",
         "available_hours": 0,
@@ -3831,10 +3812,10 @@
             22,
             23
           ],
-          "daily_total_kwh": 1524.12,
+          "daily_total_kwh": 1490.81,
           "hourly_residual_not_allocated_kwh": null
         },
-        "recorded_at": "2026-10-01T23:46:11.133793+05:30"
+        "recorded_at": "2026-10-02T00:01:16.503007+05:30"
       }
     },
     "daily_totals": {
@@ -3893,25 +3874,26 @@
       "2026-09-27": 1135.75,
       "2026-09-28": 1493.0,
       "2026-09-29": 1566.94,
-      "2026-09-30": 1524.12
+      "2026-09-30": 1524.12,
+      "2026-10-01": 1490.81
     }
   },
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-10-01T23:46:11.133793+05:30",
-    "last_run": "2026-10-01T23:46:11.133793+05:30",
+    "last_successful_collection": "2026-10-02T00:01:16.503007+05:30",
+    "last_run": "2026-10-02T00:01:16.503007+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 1042.58,
-      "daily": 949.17
+      "hourly": 907.33,
+      "daily": 899.55
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 23,
-      "expected_completed_hours": 23,
+      "completed_hours": 0,
+      "expected_completed_hours": 0,
       "completeness": 1.0,
-      "api_latency_ms": 1042.58,
+      "api_latency_ms": 907.33,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
@@ -3944,7 +3926,7 @@
           22,
           23
         ],
-        "daily_total_kwh": 1524.12,
+        "daily_total_kwh": 1490.81,
         "hourly_residual_not_allocated_kwh": null
       }
     },
@@ -3972,13 +3954,13 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     },
-    "hourly_collection_at": "2026-10-01T23:46:11.133793+05:30",
-    "daily_total_collection_at": "2026-10-01T23:46:11.133793+05:30",
-    "dashboard_payload_generated_at": "2026-10-01T23:46:11.133793+05:30",
+    "hourly_collection_at": "2026-10-02T00:01:16.503007+05:30",
+    "daily_total_collection_at": "2026-10-02T00:01:16.503007+05:30",
+    "dashboard_payload_generated_at": "2026-10-02T00:01:16.503007+05:30",
     "dashboard_build": "2026-09-14-r5"
   },
   "improvement_report": {
-    "generated_at": "2026-10-01T23:46:11.133793+05:30",
+    "generated_at": "2026-10-02T00:01:16.503007+05:30",
     "model_version": "device153-adaptive-v2",
     "mode": "bounded_adaptation",
     "status": "adaptive",
@@ -8536,20 +8518,20 @@
     },
     {
       "collector_status": "healthy",
-      "last_successful_collection": "2026-10-01T23:46:11.133793+05:30",
-      "last_run": "2026-10-01T23:46:11.133793+05:30",
+      "last_successful_collection": "2026-10-02T00:01:16.503007+05:30",
+      "last_run": "2026-10-02T00:01:16.503007+05:30",
       "device_id": 153,
       "api_latency_ms": {
-        "hourly": 1042.58,
-        "daily": 949.17
+        "hourly": 907.33,
+        "daily": 899.55
       },
       "missing_hours": [],
       "data_quality": {
         "score": 100.0,
-        "completed_hours": 23,
-        "expected_completed_hours": 23,
+        "completed_hours": 0,
+        "expected_completed_hours": 0,
         "completeness": 1.0,
-        "api_latency_ms": 1042.58,
+        "api_latency_ms": 907.33,
         "status": "complete",
         "data_status": "complete",
         "daily_hourly_consistency": {
@@ -8582,7 +8564,7 @@
             22,
             23
           ],
-          "daily_total_kwh": 1524.12,
+          "daily_total_kwh": 1490.81,
           "hourly_residual_not_allocated_kwh": null
         }
       },
