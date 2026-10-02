@@ -62,6 +62,27 @@ class CollectorSafetyTests(unittest.TestCase):
         self.assertIsNotNone(forecast)
         self.assertEqual(forecast[2], 0.0)
 
+    def test_historical_backfill_persists_evaluated_error_without_hourly_data(self):
+        daily_totals = {f"2026-09-{day:02d}": 1000.0 + day for day in range(1, 13)}
+        processed, history = {}, {}
+        changed = collect_once.backfill_daily_forecast_rows(
+            daily_totals,
+            processed,
+            history,
+            datetime(2026, 9, 13, 8, 0, tzinfo=ZoneInfo("Asia/Kolkata")),
+            "2026-09-13",
+            True,
+        )
+        self.assertGreater(changed, 0)
+        row = processed["2026-09-12"]
+        self.assertEqual(row["data_status"], "daily_total_only")
+        self.assertNotIn("hourly_forecast", row)
+        self.assertAlmostEqual(
+            float(row["prediction_error_kwh"]),
+            float(row["actual_kwh"]) - float(row["previous_prediction_kwh"]),
+            places=6,
+        )
+
     def test_invalid_daily_date_is_rejected(self):
         original = collect_once.request_json
         try:
