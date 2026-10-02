@@ -4612,5 +4612,49 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     }
+  },
+  {
+    "collector_status": "healthy",
+    "last_successful_collection": "2026-10-02T08:55:04.428585+05:30",
+    "last_run": "2026-10-02T08:55:04.428585+05:30",
+    "device_id": 153,
+    "api_latency_ms": {
+      "hourly": 3056.52,
+      "daily": 2542.37
+    },
+    "missing_hours": [],
+    "data_quality": {
+      "score": 100.0,
+      "completed_hours": 8,
+      "expected_completed_hours": 8,
+      "completeness": 1.0,
+      "api_latency_ms": 3056.52,
+      "status": "complete",
+      "data_status": "complete"
+    },
+    "confidence_coverage": {
+      "inside_interval": 4,
+      "evaluated": 5,
+      "rate": 0.8
+    },
+    "model_evaluation": {
+      "evaluated_days": 54,
+      "mae_kwh": 134.82773,
+      "rmse_kwh": 196.147423,
+      "mape_percent": 10.128757,
+      "bias_kwh": -44.522332
+    },
+    "model_versions": [
+      "device153-adaptive-v2"
+    ],
+    "error": null,
+    "model_version": "device153-adaptive-v2",
+    "learning_samples": 54,
+    "learning_status": "adaptive",
+    "rollback_guard": {
+      "adaptation_enabled": true,
+      "reason": "insufficient history for rollback decision",
+      "evaluated_cycles": 3
+    }
   }
 ]
