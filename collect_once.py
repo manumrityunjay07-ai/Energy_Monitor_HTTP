@@ -26,7 +26,7 @@ DASHBOARD_DATA = Path("results/dashboard_data.json")
 IMPROVEMENT_REPORT = Path("results/improvement_report.json")
 PARAMS = json.loads(Path("esp32_parameters.json").read_text(encoding="utf-8"))
 HOLIDAYS = json.loads(Path("data/holidays.json").read_text(encoding="utf-8")) if Path("data/holidays.json").exists() else {"holidays": {}}
-MODEL_VERSION = "device153-adaptive-v2"
+MODEL_VERSION = "device153-adaptive-v3"
 MAX_RETRIES = 4
 HOURLY_REPAIR_ATTEMPTS = 2
 
@@ -202,7 +202,12 @@ def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: di
     recent = [total for _, total in selected[-3:]]
     features = [recent[-1], recent[-2], recent[-3], sum(recent) / 3]
     scaled = [(value - m) / s if s else 0 for value, m, s in zip(features, PARAMS["prediction_scaler_mean"], PARAMS["prediction_scaler_scale"])]
-    base_prediction = PARAMS["prediction_intercept"] + sum(c * v for c, v in zip(PARAMS["prediction_coefficients"], scaled))
+    parameter_prediction = PARAMS["prediction_intercept"] + sum(c * v for c, v in zip(PARAMS["prediction_coefficients"], scaled))
+    # The trained model is useful but overreacts to short-term spikes. Blend it
+    # with a leakage-safe, recency-weighted seven-day baseline. Walk-forward
+    # validation on the available device history selected equal weights.
+    weighted_mean = sum(weight * total for weight, (_, total) in zip(weights, selected)) / weight_total
+    base_prediction = 0.5 * parameter_prediction + 0.5 * weighted_mean
     errors = [float(item["error_kwh"]) for _, item in sorted(forecast_history.items(), key=lambda pair: pair[0]) if isinstance(item, dict) and item.get("error_kwh") not in (None, "")]
     recent_errors = errors[-14:]
     mean_error = mean(recent_errors) if recent_errors else 0.0
@@ -212,10 +217,9 @@ def adaptive_daily_forecast(daily_totals: dict[str, float], forecast_history: di
     correction = 0.6 * mean_error + 0.4 * robust_error if adaptation_enabled and len(recent_errors) >= 5 else 0.0
     correction = max(-0.25 * abs(base_prediction), min(0.25 * abs(base_prediction), correction))
     prediction = max(0.0, base_prediction + correction)
-    weighted_mean = sum(weight * total for weight, (_, total) in zip(weights, selected)) / weight_total
     spread = math.sqrt(sum(weight * (total - weighted_mean) ** 2 for weight, (_, total) in zip(weights, selected)) / weight_total)
     lower, upper = max(0.0, prediction - 1.28 * spread), prediction + 1.28 * spread
-    learning_guard = "robust median/mean blend, 25% cap" if adaptation_enabled and len(recent_errors) >= 5 else "baseline held: fewer than 5 feedback samples"
+    learning_guard = "trained/weighted-history blend, robust correction, 25% cap" if adaptation_enabled and len(recent_errors) >= 5 else "trained/weighted-history blend; baseline correction held: fewer than 5 feedback samples"
     forecast_history[target_date] = {"generated_at": now.isoformat(), "source_date": source_date, "base_prediction_kwh": round(base_prediction, 6), "correction_kwh": round(correction, 6), "predicted_kwh": round(prediction, 6), "lower_kwh": round(lower, 6), "upper_kwh": round(upper, 6), "profile_mode": mode, "model_version": MODEL_VERSION, "learning_guard": learning_guard}
     return round(prediction, 6), round(base_prediction, 6), round(correction, 6), len(recent_errors), round(lower, 6), round(upper, 6), mode
 

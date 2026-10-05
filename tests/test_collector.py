@@ -36,6 +36,24 @@ class CollectorSafetyTests(unittest.TestCase):
         self.assertLessEqual(abs(correction), abs(base) * 0.25 + 1e-6)
         self.assertGreaterEqual(prediction, 0)
 
+    def test_daily_forecast_uses_bounded_trained_history_blend(self):
+        daily = {f"2026-09-{day:02d}": 1400.0 + day * 10 for day in range(1, 8)}
+        history = {}
+        forecast = collect_once.adaptive_daily_forecast(
+            daily,
+            history,
+            "2026-09-08",
+            "2026-09-07",
+            datetime.now(ZoneInfo("Asia/Kolkata")),
+            False,
+        )
+        self.assertIsNotNone(forecast)
+        prediction, base, correction, *_ = forecast
+        self.assertEqual(correction, 0.0)
+        self.assertEqual(history["2026-09-08"]["model_version"], collect_once.MODEL_VERSION)
+        self.assertGreaterEqual(prediction, 0.0)
+        self.assertGreaterEqual(base, 0.0)
+
     def test_model_guard_rolls_back_when_adaptation_is_worse(self):
         history = {
             str(day): {
