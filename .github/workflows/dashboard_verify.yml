@@ -24,7 +24,7 @@ jobs:
           curl --fail --silent --show-error --retry 3 --max-time 30 'https://manumrityunjay07-ai.github.io/Energy_Monitor_Dashboard/app.js' | grep -q 'renderAIImprovement'
       - name: Check current data payload
         run: |
-          payload="$(curl --fail --silent --show-error --retry 3 --max-time 30 'https://raw.githubusercontent.com/manumrityunjay07-ai/Energy_Monitor_HTTP/main/results/dashboard_data.json')"
+          payload="$(curl --fail --silent --show-error --retry 3 --max-time 30 'https://raw.githubusercontent.com/manumrityunjay07-ai/Energy_Monitor_HTTP/live-data/results/dashboard_data.json')"
           echo "$payload" | grep -q '"ai_results"'
           echo "$payload" | grep -q '"health"'
           echo "$payload" | grep -q '2026-09-13'
