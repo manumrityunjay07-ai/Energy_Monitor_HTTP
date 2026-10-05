@@ -288,6 +288,83 @@ def ensure_csv_schema(path: Path, fields: list[str], key_fields: list[str]) -> N
     upsert_csv(path, fields, existing, key_fields)
 
 
+def backfill_daily_forecast_rows(
+    daily_totals: dict[str, float],
+    processed: dict[str, dict],
+    forecast_history: dict[str, dict],
+    now: datetime,
+    today: str,
+    adaptation_enabled: bool,
+) -> int:
+    """Reconstruct missing daily forecast/error pairs without inventing hours.
+
+    A forecast for target day D is generated only from daily totals through
+    D-1.  A temporary history view prevents forecasts or errors from later
+    dates leaking into an earlier backfill.  Existing forecast history is
+    preserved; only missing historical forecast entries are added.
+    """
+    changed = 0
+    for day in sorted(day for day in daily_totals if day < today):
+        total = float(daily_totals[day])
+        forecast = forecast_history.get(day)
+        if not isinstance(forecast, dict) or forecast.get("predicted_kwh") in (None, ""):
+            prior_history = {key: value for key, value in forecast_history.items() if key < day}
+            source_date = (date.fromisoformat(day) - timedelta(days=1)).isoformat()
+            generated = adaptive_daily_forecast(
+                daily_totals,
+                prior_history,
+                day,
+                source_date,
+                now,
+                adaptation_enabled,
+            )
+            forecast = prior_history.get(day) if generated else None
+            if forecast:
+                forecast_history[day] = forecast
+                changed += 1
+        if not isinstance(forecast, dict) or forecast.get("predicted_kwh") in (None, ""):
+            continue
+
+        predicted = round(float(forecast["predicted_kwh"]), 6)
+        existing = processed.get(day)
+        if not isinstance(existing, dict):
+            existing = {
+                "processed_at": now.isoformat(),
+                "device_id": DEVICE_ID,
+                "date": day,
+                "actual_date": day,
+                "forecast_date": (date.fromisoformat(day) + timedelta(days=1)).isoformat(),
+                "status": "daily_total_only",
+                "data_status": "daily_total_only",
+                "backfill_status": "daily_total_only_forecast_backfill",
+                "missing_hours": list(range(24)),
+                "cluster": "",
+                "anomaly_score": "",
+                "anomaly_threshold": "",
+                "anomaly_explanation": "Daily total available; historical forecast backfilled without inventing hourly data.",
+                "model_version": MODEL_VERSION,
+            }
+            processed[day] = existing
+            changed += 1
+        if existing.get("actual_kwh") in (None, ""):
+            existing["actual_kwh"] = round(total, 6)
+            changed += 1
+        if existing.get("previous_prediction_kwh") in (None, "") or existing.get("prediction_error_kwh") in (None, ""):
+            existing.update({
+                "previous_prediction_kwh": predicted,
+                "prediction_error_kwh": round(total - predicted, 6),
+                "evaluated_at": now.isoformat(),
+            })
+            changed += 1
+        next_forecast = forecast_history.get((date.fromisoformat(day) + timedelta(days=1)).isoformat())
+        if existing.get("prediction_kwh") in (None, "") and isinstance(next_forecast, dict):
+            existing["prediction_kwh"] = next_forecast.get("predicted_kwh", "")
+            existing["prediction_lower_kwh"] = next_forecast.get("lower_kwh", "")
+            existing["prediction_upper_kwh"] = next_forecast.get("upper_kwh", "")
+            existing["profile_mode"] = next_forecast.get("profile_mode", "")
+    return changed
+
+
 def data_quality(profile: dict[str, float], now: datetime, hourly_latency: float | None) -> dict:
     expected = set(str(hour) for hour in range(now.hour))
     received = set(profile)
@@ -461,6 +538,14 @@ def main() -> None:
                 error = round(total - predicted_total, 6)
                 prior_daily.update({"actual_kwh": round(total, 6), "error_kwh": error, "evaluated_at": now.isoformat()})
                 existing.update({"previous_prediction_kwh": round(predicted_total, 6), "prediction_error_kwh": error, "evaluated_at": now.isoformat()})
+        backfill_daily_forecast_rows(
+            daily_totals,
+            processed,
+            forecast_history,
+            now,
+            today,
+            state["model_guard"].get("adaptation_enabled", True),
+        )
         upsert_csv(RESULTS, ai_fields, list(processed.values()), ["device_id", "date"])
         state["last_run"] = now.isoformat()
         state["model_version"] = MODEL_VERSION
