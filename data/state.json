@@ -173,7 +173,8 @@
       "3": 51.94,
       "4": 52.44,
       "5": 48.25,
-      "6": 61.88
+      "6": 61.88,
+      "7": 88.75
     }
   },
   "processed": {
@@ -271,7 +272,7 @@
       "actual_kwh": 1672.75,
       "previous_prediction_kwh": 1544.356473,
       "prediction_error_kwh": 128.393527,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-12": {
       "processed_at": "2026-09-13T00:01:14.050844+05:30",
@@ -773,10 +774,10 @@
       "actual_kwh": 1653.56,
       "previous_prediction_kwh": 1590.750318,
       "prediction_error_kwh": 62.809682,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-10": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-10",
       "status": "daily_total_only",
@@ -908,10 +909,10 @@
       "hourly_profile_mode": "recent profile",
       "previous_prediction_kwh": 1578.693968,
       "prediction_error_kwh": 26.676032,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-15": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-15",
       "actual_date": "2026-08-15",
@@ -953,10 +954,10 @@
       "actual_kwh": 1391.0,
       "previous_prediction_kwh": 1522.205588,
       "prediction_error_kwh": -131.205588,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-16": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-16",
       "actual_date": "2026-08-16",
@@ -998,10 +999,10 @@
       "actual_kwh": 1442.24,
       "previous_prediction_kwh": 1563.672656,
       "prediction_error_kwh": -121.432656,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-17": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-17",
       "actual_date": "2026-08-17",
@@ -1043,10 +1044,10 @@
       "actual_kwh": 1633.81,
       "previous_prediction_kwh": 1628.351174,
       "prediction_error_kwh": 5.458826,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-18": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-18",
       "actual_date": "2026-08-18",
@@ -1088,10 +1089,10 @@
       "actual_kwh": 1581.82,
       "previous_prediction_kwh": 1659.561125,
       "prediction_error_kwh": -77.741125,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-19": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-19",
       "actual_date": "2026-08-19",
@@ -1133,10 +1134,10 @@
       "actual_kwh": 1600.31,
       "previous_prediction_kwh": 1584.500054,
       "prediction_error_kwh": 15.809946,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-20": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-20",
       "actual_date": "2026-08-20",
@@ -1178,10 +1179,10 @@
       "actual_kwh": 1627.5,
       "previous_prediction_kwh": 1532.022398,
       "prediction_error_kwh": 95.477602,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-21": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-21",
       "actual_date": "2026-08-21",
@@ -1223,10 +1224,10 @@
       "actual_kwh": 1597.06,
       "previous_prediction_kwh": 1546.038825,
       "prediction_error_kwh": 51.021175,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-22": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-22",
       "actual_date": "2026-08-22",
@@ -1268,10 +1269,10 @@
       "actual_kwh": 1495.94,
       "previous_prediction_kwh": 1530.658459,
       "prediction_error_kwh": -34.718459,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-23": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-23",
       "actual_date": "2026-08-23",
@@ -1313,10 +1314,10 @@
       "actual_kwh": 1372.0,
       "previous_prediction_kwh": 1526.514893,
       "prediction_error_kwh": -154.514893,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-24": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-24",
       "actual_date": "2026-08-24",
@@ -1358,10 +1359,10 @@
       "actual_kwh": 1358.13,
       "previous_prediction_kwh": 1562.469473,
       "prediction_error_kwh": -204.339473,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-25": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-25",
       "actual_date": "2026-08-25",
@@ -1403,10 +1404,10 @@
       "actual_kwh": 1473.94,
       "previous_prediction_kwh": 1633.647056,
       "prediction_error_kwh": -159.707056,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-26": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-26",
       "actual_date": "2026-08-26",
@@ -1448,10 +1449,10 @@
       "actual_kwh": 1431.63,
       "previous_prediction_kwh": 1685.395577,
       "prediction_error_kwh": -253.765577,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-27": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-27",
       "actual_date": "2026-08-27",
@@ -1493,10 +1494,10 @@
       "actual_kwh": 1567.43,
       "previous_prediction_kwh": 1655.598994,
       "prediction_error_kwh": -88.168994,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-28": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-28",
       "actual_date": "2026-08-28",
@@ -1538,10 +1539,10 @@
       "actual_kwh": 1584.25,
       "previous_prediction_kwh": 1631.019422,
       "prediction_error_kwh": -46.769422,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-29": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-29",
       "actual_date": "2026-08-29",
@@ -1583,10 +1584,10 @@
       "actual_kwh": 1556.31,
       "previous_prediction_kwh": 1607.469549,
       "prediction_error_kwh": -51.159549,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-30": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-30",
       "actual_date": "2026-08-30",
@@ -1628,10 +1629,10 @@
       "actual_kwh": 1578.19,
       "previous_prediction_kwh": 1553.485997,
       "prediction_error_kwh": 24.704003,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-08-31": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-08-31",
       "actual_date": "2026-08-31",
@@ -1673,10 +1674,10 @@
       "actual_kwh": 820.63,
       "previous_prediction_kwh": 1556.264101,
       "prediction_error_kwh": -735.634101,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-03": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-03",
       "actual_date": "2026-09-03",
@@ -1718,10 +1719,10 @@
       "actual_kwh": 900.06,
       "previous_prediction_kwh": 1533.50226,
       "prediction_error_kwh": -633.44226,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-04": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-04",
       "actual_date": "2026-09-04",
@@ -1763,10 +1764,10 @@
       "actual_kwh": 1599.68,
       "previous_prediction_kwh": 1573.56046,
       "prediction_error_kwh": 26.11954,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-05": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-05",
       "actual_date": "2026-09-05",
@@ -1808,10 +1809,10 @@
       "actual_kwh": 1526.76,
       "previous_prediction_kwh": 1641.597514,
       "prediction_error_kwh": -114.837514,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-06": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-06",
       "actual_date": "2026-09-06",
@@ -1853,10 +1854,10 @@
       "actual_kwh": 1601.19,
       "previous_prediction_kwh": 1659.804087,
       "prediction_error_kwh": -58.614087,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-07": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-07",
       "actual_date": "2026-09-07",
@@ -1898,10 +1899,10 @@
       "actual_kwh": 1739.31,
       "previous_prediction_kwh": 1571.371259,
       "prediction_error_kwh": 167.938741,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-08": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-08",
       "actual_date": "2026-09-08",
@@ -1943,10 +1944,10 @@
       "actual_kwh": 1730.19,
       "previous_prediction_kwh": 1568.9419,
       "prediction_error_kwh": 161.2481,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-09": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-09",
       "actual_date": "2026-09-09",
@@ -1988,10 +1989,10 @@
       "actual_kwh": 1711.0,
       "previous_prediction_kwh": 1516.827408,
       "prediction_error_kwh": 194.172592,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-10": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-10",
       "actual_date": "2026-09-10",
@@ -2033,10 +2034,10 @@
       "actual_kwh": 1743.0,
       "previous_prediction_kwh": 1515.874765,
       "prediction_error_kwh": 227.125235,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-15": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-15",
       "actual_date": "2026-09-15",
@@ -2078,10 +2079,10 @@
       "actual_kwh": 1486.24,
       "previous_prediction_kwh": 1585.747457,
       "prediction_error_kwh": -99.507457,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-17": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-17",
       "actual_date": "2026-09-17",
@@ -2123,10 +2124,10 @@
       "actual_kwh": 1678.38,
       "previous_prediction_kwh": 1756.591656,
       "prediction_error_kwh": -78.211656,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-18": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-18",
       "actual_date": "2026-09-18",
@@ -2168,10 +2169,10 @@
       "actual_kwh": 1655.25,
       "previous_prediction_kwh": 1546.813298,
       "prediction_error_kwh": 108.436702,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-19": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-19",
       "actual_date": "2026-09-19",
@@ -2213,10 +2214,10 @@
       "actual_kwh": 1627.81,
       "previous_prediction_kwh": 1576.913679,
       "prediction_error_kwh": 50.896321,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-20": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-20",
       "actual_date": "2026-09-20",
@@ -2258,10 +2259,10 @@
       "actual_kwh": 1700.19,
       "previous_prediction_kwh": 1542.35645,
       "prediction_error_kwh": 157.83355,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-21": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-21",
       "actual_date": "2026-09-21",
@@ -2303,10 +2304,10 @@
       "actual_kwh": 1587.43,
       "previous_prediction_kwh": 1774.219079,
       "prediction_error_kwh": -186.789079,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-22": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-22",
       "actual_date": "2026-09-22",
@@ -2348,10 +2349,10 @@
       "actual_kwh": 1628.19,
       "previous_prediction_kwh": 1542.399082,
       "prediction_error_kwh": 85.790918,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-23": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-23",
       "actual_date": "2026-09-23",
@@ -2393,10 +2394,10 @@
       "actual_kwh": 1623.06,
       "previous_prediction_kwh": 1568.341096,
       "prediction_error_kwh": 54.718904,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-24": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-24",
       "actual_date": "2026-09-24",
@@ -2438,10 +2439,10 @@
       "actual_kwh": 1583.88,
       "previous_prediction_kwh": 1748.746239,
       "prediction_error_kwh": -164.866239,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-25": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-25",
       "actual_date": "2026-09-25",
@@ -2483,10 +2484,10 @@
       "actual_kwh": 1472.81,
       "previous_prediction_kwh": 1519.719456,
       "prediction_error_kwh": -46.909456,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-26": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-26",
       "actual_date": "2026-09-26",
@@ -2528,10 +2529,10 @@
       "actual_kwh": 1396.94,
       "previous_prediction_kwh": 1552.177223,
       "prediction_error_kwh": -155.237223,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-27": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-27",
       "actual_date": "2026-09-27",
@@ -2573,10 +2574,10 @@
       "actual_kwh": 1135.75,
       "previous_prediction_kwh": 1575.90217,
       "prediction_error_kwh": -440.15217,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-28": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-28",
       "actual_date": "2026-09-28",
@@ -2618,10 +2619,10 @@
       "actual_kwh": 1493.0,
       "previous_prediction_kwh": 1500.38044,
       "prediction_error_kwh": -7.38044,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-29": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-29",
       "actual_date": "2026-09-29",
@@ -2663,10 +2664,10 @@
       "actual_kwh": 1566.94,
       "previous_prediction_kwh": 1526.21758,
       "prediction_error_kwh": 40.72242,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-09-30": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-09-30",
       "actual_date": "2026-09-30",
@@ -2708,10 +2709,10 @@
       "actual_kwh": 1524.12,
       "previous_prediction_kwh": 1484.668518,
       "prediction_error_kwh": 39.451482,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-01": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-01",
       "actual_date": "2026-10-01",
@@ -2753,10 +2754,10 @@
       "actual_kwh": 1490.81,
       "previous_prediction_kwh": 1464.890595,
       "prediction_error_kwh": 25.919405,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-02": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-02",
       "actual_date": "2026-10-02",
@@ -2798,10 +2799,10 @@
       "actual_kwh": 1388.31,
       "previous_prediction_kwh": 1492.933737,
       "prediction_error_kwh": -104.623737,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-03": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-03",
       "actual_date": "2026-10-03",
@@ -2843,10 +2844,10 @@
       "actual_kwh": 1329.37,
       "previous_prediction_kwh": 1507.56877,
       "prediction_error_kwh": -178.19877,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-04": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-04",
       "actual_date": "2026-10-04",
@@ -2888,10 +2889,10 @@
       "actual_kwh": 1500.56,
       "previous_prediction_kwh": 1537.297109,
       "prediction_error_kwh": -36.737109,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-05": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-05",
       "actual_date": "2026-10-05",
@@ -2933,10 +2934,10 @@
       "actual_kwh": 1624.75,
       "previous_prediction_kwh": 1553.125678,
       "prediction_error_kwh": 71.624322,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-06": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-06",
       "actual_date": "2026-10-06",
@@ -2978,10 +2979,10 @@
       "actual_kwh": 1606.31,
       "previous_prediction_kwh": 1570.010464,
       "prediction_error_kwh": 36.299536,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-07": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-07",
       "actual_date": "2026-10-07",
@@ -3023,10 +3024,10 @@
       "actual_kwh": 1609.13,
       "previous_prediction_kwh": 1510.67474,
       "prediction_error_kwh": 98.45526,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-08": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-08",
       "actual_date": "2026-10-08",
@@ -3068,10 +3069,10 @@
       "actual_kwh": 1648.31,
       "previous_prediction_kwh": 1512.072988,
       "prediction_error_kwh": 136.237012,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     },
     "2026-10-09": {
-      "processed_at": "2026-10-11T07:46:10.964803+05:30",
+      "processed_at": "2026-10-11T08:01:05.850933+05:30",
       "device_id": 153,
       "date": "2026-10-09",
       "actual_date": "2026-10-09",
@@ -3113,10 +3114,10 @@
       "actual_kwh": 1656.75,
       "previous_prediction_kwh": 1548.987199,
       "prediction_error_kwh": 107.762801,
-      "evaluated_at": "2026-10-11T07:46:10.964803+05:30"
+      "evaluated_at": "2026-10-11T08:01:05.850933+05:30"
     }
   },
-  "last_run": "2026-10-11T07:46:10.964803+05:30",
+  "last_run": "2026-10-11T08:01:05.850933+05:30",
   "forecast_history": {
     "2026-09-12": {
       "generated_at": "2026-09-12T00:00:51.866287+05:30",
@@ -3181,7 +3182,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-11": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-10",
       "base_prediction_kwh": 1633.734315,
       "correction_kwh": 0.0,
@@ -3193,7 +3194,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-15": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-14",
       "base_prediction_kwh": 1522.205588,
       "correction_kwh": 0.0,
@@ -3205,7 +3206,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-16": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-15",
       "base_prediction_kwh": 1563.672656,
       "correction_kwh": 0.0,
@@ -3217,7 +3218,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-17": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-16",
       "base_prediction_kwh": 1628.351174,
       "correction_kwh": 0.0,
@@ -3229,7 +3230,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-18": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-17",
       "base_prediction_kwh": 1659.561125,
       "correction_kwh": 0.0,
@@ -3241,7 +3242,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-19": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-18",
       "base_prediction_kwh": 1584.500054,
       "correction_kwh": 0.0,
@@ -3253,7 +3254,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-20": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-19",
       "base_prediction_kwh": 1532.022398,
       "correction_kwh": 0.0,
@@ -3265,7 +3266,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-21": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-20",
       "base_prediction_kwh": 1546.038825,
       "correction_kwh": 0.0,
@@ -3277,7 +3278,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-22": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-21",
       "base_prediction_kwh": 1530.658459,
       "correction_kwh": 0.0,
@@ -3289,7 +3290,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-23": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-22",
       "base_prediction_kwh": 1526.514893,
       "correction_kwh": 0.0,
@@ -3301,7 +3302,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-24": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-23",
       "base_prediction_kwh": 1562.469473,
       "correction_kwh": 0.0,
@@ -3313,7 +3314,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-25": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-24",
       "base_prediction_kwh": 1633.647056,
       "correction_kwh": 0.0,
@@ -3325,7 +3326,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-26": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-25",
       "base_prediction_kwh": 1685.395577,
       "correction_kwh": 0.0,
@@ -3337,7 +3338,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-27": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-26",
       "base_prediction_kwh": 1655.598994,
       "correction_kwh": 0.0,
@@ -3349,7 +3350,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-28": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-27",
       "base_prediction_kwh": 1631.019422,
       "correction_kwh": 0.0,
@@ -3361,7 +3362,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-29": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-28",
       "base_prediction_kwh": 1607.469549,
       "correction_kwh": 0.0,
@@ -3373,7 +3374,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-30": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-29",
       "base_prediction_kwh": 1553.485997,
       "correction_kwh": 0.0,
@@ -3385,7 +3386,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-08-31": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-08-30",
       "base_prediction_kwh": 1556.264101,
       "correction_kwh": 0.0,
@@ -3397,7 +3398,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-03": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-02",
       "base_prediction_kwh": 1533.50226,
       "correction_kwh": 0.0,
@@ -3409,7 +3410,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-04": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-03",
       "base_prediction_kwh": 1573.56046,
       "correction_kwh": 0.0,
@@ -3421,7 +3422,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-05": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-04",
       "base_prediction_kwh": 1641.597514,
       "correction_kwh": 0.0,
@@ -3433,7 +3434,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-06": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-05",
       "base_prediction_kwh": 1659.804087,
       "correction_kwh": 0.0,
@@ -3445,7 +3446,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-07": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-06",
       "base_prediction_kwh": 1571.371259,
       "correction_kwh": 0.0,
@@ -3457,7 +3458,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-08": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-07",
       "base_prediction_kwh": 1568.9419,
       "correction_kwh": 0.0,
@@ -3469,7 +3470,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-09": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-08",
       "base_prediction_kwh": 1516.827408,
       "correction_kwh": 0.0,
@@ -3481,7 +3482,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-10": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-09",
       "base_prediction_kwh": 1515.874765,
       "correction_kwh": 0.0,
@@ -3493,7 +3494,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-11": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-10",
       "base_prediction_kwh": 1544.356473,
       "correction_kwh": 0.0,
@@ -3505,7 +3506,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-16": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-15",
       "base_prediction_kwh": 1590.750318,
       "correction_kwh": 0.0,
@@ -3517,7 +3518,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-18": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-17",
       "base_prediction_kwh": 1546.813298,
       "correction_kwh": 0.0,
@@ -3529,7 +3530,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-19": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-18",
       "base_prediction_kwh": 1576.913679,
       "correction_kwh": 0.0,
@@ -3541,7 +3542,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-20": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-19",
       "base_prediction_kwh": 1542.35645,
       "correction_kwh": 0.0,
@@ -3553,7 +3554,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-21": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-20",
       "base_prediction_kwh": 1774.219079,
       "correction_kwh": 0.0,
@@ -3565,7 +3566,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-22": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-21",
       "base_prediction_kwh": 1542.399082,
       "correction_kwh": 0.0,
@@ -3577,7 +3578,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-23": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-22",
       "base_prediction_kwh": 1568.341096,
       "correction_kwh": 0.0,
@@ -3589,7 +3590,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-24": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-23",
       "base_prediction_kwh": 1748.746239,
       "correction_kwh": 0.0,
@@ -3601,7 +3602,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-25": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-24",
       "base_prediction_kwh": 1519.719456,
       "correction_kwh": 0.0,
@@ -3613,7 +3614,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-26": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-25",
       "base_prediction_kwh": 1552.177223,
       "correction_kwh": 0.0,
@@ -3625,7 +3626,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-27": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-26",
       "base_prediction_kwh": 1575.90217,
       "correction_kwh": 0.0,
@@ -3637,7 +3638,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-28": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-27",
       "base_prediction_kwh": 1500.38044,
       "correction_kwh": 0.0,
@@ -3649,7 +3650,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-29": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-28",
       "base_prediction_kwh": 1526.21758,
       "correction_kwh": 0.0,
@@ -3661,7 +3662,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-09-30": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-29",
       "base_prediction_kwh": 1484.668518,
       "correction_kwh": 0.0,
@@ -3673,7 +3674,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-01": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-09-30",
       "base_prediction_kwh": 1464.890595,
       "correction_kwh": 0.0,
@@ -3685,7 +3686,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-02": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-01",
       "base_prediction_kwh": 1492.933737,
       "correction_kwh": 0.0,
@@ -3697,7 +3698,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-03": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-02",
       "base_prediction_kwh": 1507.56877,
       "correction_kwh": 0.0,
@@ -3709,7 +3710,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-04": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-03",
       "base_prediction_kwh": 1537.297109,
       "correction_kwh": 0.0,
@@ -3721,7 +3722,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-05": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-04",
       "base_prediction_kwh": 1553.125678,
       "correction_kwh": 0.0,
@@ -3733,7 +3734,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-06": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-05",
       "base_prediction_kwh": 1570.010464,
       "correction_kwh": 0.0,
@@ -3745,7 +3746,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-07": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-06",
       "base_prediction_kwh": 1510.67474,
       "correction_kwh": 0.0,
@@ -3757,7 +3758,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-08": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-07",
       "base_prediction_kwh": 1512.072988,
       "correction_kwh": 0.0,
@@ -3769,7 +3770,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-09": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-08",
       "base_prediction_kwh": 1548.987199,
       "correction_kwh": 0.0,
@@ -3781,7 +3782,7 @@
       "learning_guard": "baseline held: fewer than 5 feedback samples"
     },
     "2026-10-10": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-09",
       "base_prediction_kwh": 1578.693968,
       "correction_kwh": 0.0,
@@ -4476,7 +4477,7 @@
       "learning_guard": "hourly correction capped at 25% of profile"
     },
     "2026-10-11": {
-      "generated_at": "2026-10-11T07:46:10.964803+05:30",
+      "generated_at": "2026-10-11T08:01:05.850933+05:30",
       "source_date": "2026-10-10",
       "base_prediction_kwh": [
         57.559767,
@@ -4616,20 +4617,20 @@
   "model_version": "device153-adaptive-v2",
   "health": {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-10-11T07:46:10.964803+05:30",
-    "last_run": "2026-10-11T07:46:10.964803+05:30",
+    "last_successful_collection": "2026-10-11T08:01:05.850933+05:30",
+    "last_run": "2026-10-11T08:01:05.850933+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 946.52,
-      "daily": 940.54
+      "hourly": 1276.62,
+      "daily": 868.37
     },
     "missing_hours": [],
     "data_quality": {
       "score": 100.0,
-      "completed_hours": 7,
-      "expected_completed_hours": 7,
+      "completed_hours": 8,
+      "expected_completed_hours": 8,
       "completeness": 1.0,
-      "api_latency_ms": 946.52,
+      "api_latency_ms": 1276.62,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
@@ -4690,9 +4691,9 @@
       "reason": "insufficient history for rollback decision",
       "evaluated_cycles": 3
     },
-    "hourly_collection_at": "2026-10-11T07:46:10.964803+05:30",
-    "daily_total_collection_at": "2026-10-11T07:46:10.964803+05:30",
-    "dashboard_payload_generated_at": "2026-10-11T07:46:10.964803+05:30",
+    "hourly_collection_at": "2026-10-11T08:01:05.850933+05:30",
+    "daily_total_collection_at": "2026-10-11T08:01:05.850933+05:30",
+    "dashboard_payload_generated_at": "2026-10-11T08:01:05.850933+05:30",
     "dashboard_build": "2026-09-14-r5"
   },
   "model_guard": {
@@ -4700,7 +4701,7 @@
     "reason": "insufficient history for rollback decision",
     "evaluated_cycles": 3
   },
-  "last_daily_total_collection": "2026-10-11T07:46:10.964803+05:30",
+  "last_daily_total_collection": "2026-10-11T08:01:05.850933+05:30",
   "daily_quality_history": {
     "2026-09-14": {
       "data_status": "daily_total_only",
@@ -4849,7 +4850,7 @@
         "daily_total_kwh": 1605.37,
         "hourly_residual_not_allocated_kwh": null
       },
-      "recorded_at": "2026-10-11T07:46:10.964803+05:30"
+      "recorded_at": "2026-10-11T08:01:05.850933+05:30"
     }
   },
   "daily_totals": {
