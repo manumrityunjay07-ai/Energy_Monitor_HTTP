@@ -1,3 +1,5 @@
+"""Test suite for Energy Monitor collector and contract safety."""
+
 import tempfile
 import unittest
 from datetime import datetime
