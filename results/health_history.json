@@ -4538,12 +4538,12 @@
   },
   {
     "collector_status": "healthy",
-    "last_successful_collection": "2026-11-02T05:30:46.832534+05:30",
-    "last_run": "2026-11-02T05:30:46.832534+05:30",
+    "last_successful_collection": "2026-11-02T05:45:45.714970+05:30",
+    "last_run": "2026-11-02T05:45:45.714970+05:30",
     "device_id": 153,
     "api_latency_ms": {
-      "hourly": 1124.51,
-      "daily": 937.38
+      "hourly": 975.88,
+      "daily": 934.21
     },
     "missing_hours": [],
     "data_quality": {
@@ -4551,7 +4551,7 @@
       "completed_hours": 5,
       "expected_completed_hours": 5,
       "completeness": 1.0,
-      "api_latency_ms": 1124.51,
+      "api_latency_ms": 975.88,
       "status": "complete",
       "data_status": "complete",
       "daily_hourly_consistency": {
