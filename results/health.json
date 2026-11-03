@@ -1,19 +1,19 @@
 {
   "collector_status": "healthy",
-  "last_successful_collection": "2026-11-03T23:46:23.164510+05:30",
-  "last_run": "2026-11-03T23:46:23.164510+05:30",
+  "last_successful_collection": "2026-11-04T00:01:30.536172+05:30",
+  "last_run": "2026-11-04T00:01:30.536172+05:30",
   "device_id": 153,
   "api_latency_ms": {
-    "hourly": 1058.8,
-    "daily": 1034.74
+    "hourly": 949.76,
+    "daily": 919.62
   },
   "missing_hours": [],
   "data_quality": {
     "score": 100.0,
-    "completed_hours": 23,
-    "expected_completed_hours": 23,
+    "completed_hours": 0,
+    "expected_completed_hours": 0,
     "completeness": 1.0,
-    "api_latency_ms": 1058.8,
+    "api_latency_ms": 949.76,
     "status": "complete",
     "data_status": "complete",
     "daily_hourly_consistency": {
@@ -46,7 +46,7 @@
         22,
         23
       ],
-      "daily_total_kwh": 1503.19,
+      "daily_total_kwh": 1464.38,
       "hourly_residual_not_allocated_kwh": null
     }
   },
@@ -57,10 +57,10 @@
   },
   "model_evaluation": {
     "evaluated_days": 57,
-    "mae_kwh": 153.554169,
-    "rmse_kwh": 199.9258,
-    "mape_percent": 11.096659,
-    "bias_kwh": -54.194648
+    "mae_kwh": 154.29001,
+    "rmse_kwh": 200.632966,
+    "mape_percent": 11.180845,
+    "bias_kwh": -61.220811
   },
   "model_versions": [
     "device153-adaptive-v2"
@@ -74,8 +74,8 @@
     "reason": "insufficient history for rollback decision",
     "evaluated_cycles": 3
   },
-  "hourly_collection_at": "2026-11-03T23:46:23.164510+05:30",
-  "daily_total_collection_at": "2026-11-03T23:46:23.164510+05:30",
-  "dashboard_payload_generated_at": "2026-11-03T23:46:23.164510+05:30",
+  "hourly_collection_at": "2026-11-04T00:01:30.536172+05:30",
+  "daily_total_collection_at": "2026-11-04T00:01:30.536172+05:30",
+  "dashboard_payload_generated_at": "2026-11-04T00:01:30.536172+05:30",
   "dashboard_build": "2026-09-14-r5"
 }
