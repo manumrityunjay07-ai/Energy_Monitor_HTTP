@@ -1,19 +1,19 @@
 {
   "collector_status": "healthy",
-  "last_successful_collection": "2026-11-08T23:45:46.643835+05:30",
-  "last_run": "2026-11-08T23:45:46.643835+05:30",
+  "last_successful_collection": "2026-11-09T00:00:47.851843+05:30",
+  "last_run": "2026-11-09T00:00:47.851843+05:30",
   "device_id": 153,
   "api_latency_ms": {
-    "hourly": 1011.98,
-    "daily": 954.82
+    "hourly": 996.96,
+    "daily": 997.9
   },
   "missing_hours": [],
   "data_quality": {
     "score": 100.0,
-    "completed_hours": 23,
-    "expected_completed_hours": 23,
+    "completed_hours": 0,
+    "expected_completed_hours": 0,
     "completeness": 1.0,
-    "api_latency_ms": 1011.98,
+    "api_latency_ms": 996.96,
     "status": "complete",
     "data_status": "complete",
     "daily_hourly_consistency": {
@@ -46,7 +46,7 @@
         22,
         23
       ],
-      "daily_total_kwh": 832.56,
+      "daily_total_kwh": 737.87,
       "hourly_residual_not_allocated_kwh": null
     }
   },
@@ -56,26 +56,26 @@
     "rate": 0.6
   },
   "model_evaluation": {
-    "evaluated_days": 57,
-    "mae_kwh": 168.877068,
-    "rmse_kwh": 226.346929,
-    "mape_percent": 13.114844,
-    "bias_kwh": -107.589222
+    "evaluated_days": 58,
+    "mae_kwh": 187.459065,
+    "rmse_kwh": 266.585309,
+    "mape_percent": 15.596879,
+    "bias_kwh": -128.588302
   },
   "model_versions": [
     "device153-adaptive-v2"
   ],
   "error": null,
   "model_version": "device153-adaptive-v2",
-  "learning_samples": 58,
+  "learning_samples": 59,
   "learning_status": "adaptive",
   "rollback_guard": {
     "adaptation_enabled": true,
     "reason": "insufficient history for rollback decision",
     "evaluated_cycles": 3
   },
-  "hourly_collection_at": "2026-11-08T23:45:46.643835+05:30",
-  "daily_total_collection_at": "2026-11-08T23:45:46.643835+05:30",
-  "dashboard_payload_generated_at": "2026-11-08T23:45:46.643835+05:30",
+  "hourly_collection_at": "2026-11-09T00:00:47.851843+05:30",
+  "daily_total_collection_at": "2026-11-09T00:00:47.851843+05:30",
+  "dashboard_payload_generated_at": "2026-11-09T00:00:47.851843+05:30",
   "dashboard_build": "2026-09-14-r5"
 }
